@@ -6064,3 +6064,8 @@ body.tg-hidescroll {
 .bg-custom {
     background-color: #f8f9fa45;
 }
+
+.ftype {
+    font-size: 14px !important;
+    font-weight: 600;
+}

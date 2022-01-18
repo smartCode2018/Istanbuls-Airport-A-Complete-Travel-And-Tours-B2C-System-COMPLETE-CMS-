@@ -24,28 +24,100 @@
                 <div class="search-box container">
                     <ul class="search-tabs clearfix">
                         <li class="active"><a href="#flight-status-tab" data-toggle="tab">FLIGHT STATUS</a></li>
-                        <li ><a href="#cruises-tab" data-toggle="tab">CRUISES</a></li>
-                        <li ><a href="#hotels-tab" data-toggle="tab">HOTELS</a></li>
+                        <li><a href="#cruises-tab" data-toggle="tab">CRUISES</a></li>
+                        <li><a href="#hotels-tab" data-toggle="tab">HOTELS</a></li>
                         <li><a href="#flights-tab" data-toggle="tab">FLIGHTS</a></li>
                         <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li>
                         <li><a href="#cars-tab" data-toggle="tab">CARS</a></li>
+                        
+                       
                         <li><a href="#online-checkin-tab" data-toggle="tab">ONLINE CHECK IN</a></li>
                     </ul>
                     <div class="visible-mobile">
                         <ul id="mobile-search-tabs" class="search-tabs clearfix">
-                            <li><a href="#cruises-tab">CRUISES</a></li>
-                            <li class="active"><a href="#hotels-tab">HOTELS</a></li>
+                            <li class="active"><a href="#flight-status-tab">FLIGHT STATUS</a></li>
+                            <li><a href="#hotels-tab">HOTELS</a></li>
                             <li><a href="#flights-tab">FLIGHTS</a></li>
                             <li><a href="#flight-and-hotel-tab">FLIGHT &amp; HOTELS</a></li>
                             <li><a href="#cars-tab">CARS</a></li>
                             <li><a href="#cruises-tab">CRUISES</a></li>
-                            <li><a href="#flight-status-tab">FLIGHT STATUS</a></li>
                             <li><a href="#online-checkin-tab">ONLINE CHECK IN</a></li>
                         </ul>
                     </div>
                     
                     <div class="search-tab-content">
-                        <div class="tab-pane fade active in" id="hotels-tab">
+                        <div class="tab-pane fade active in" id="flight-status-tab">
+                            <form action="flight-list-view.html" method="post">
+                                <div class="container">
+                                    
+                                </div>
+                                <div class="row">
+                                    {{-- <h4 class="title text-align-center">Search Flight Details</h4> --}}
+                                    <div style="margin-bottom:30px; background:#80808030; padding-top:13px; padding-bottom:13px; margin-left:7px; margin-right:7px; " class="col-lg-12">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-md-3">
+                                                <label class="radio radio-inline radio-square ftype">
+                                                    <input type="radio" name="ftype" checked="checked">ARIVAL
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-md-3">
+                                                <label style="" class="radio radio-inline radio-square ftype">
+                                                    <input type="radio" name="ftype">DEPATURE
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-md-3">
+                                                <label style="" class="radio radio-inline radio-square ftype">
+                                                    <input type="radio" name="fterminal">DOMESTIC
+                                                </label>
+                                            </div>
+                                            <div class="col-xs-6 col-md-3">
+                                                <label style="" class="radio radio-inline radio-square ftype">
+                                                    <input type="radio" name="fterminal" checked="checked">INTERNATIONAL
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        
+                                        <div class="form-group row">
+                                            
+                                            <div class="col-xs-6">
+                                                <label>FLIGHT NUMBER</label>
+                                                <input type="text" class="input-text full-width" placeholder="Enter flight No (TK 2522)" />
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <label>DESTINATION</label>
+                                                <input type="text" class="input-text full-width" placeholder="enter a city or place name " />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xs-6 col-md-2">
+                                        {{-- <h4 class="title">When</h4> --}}
+                                        <div class="form-group">
+                                            <label>FLIGHT DATE</label>
+                                            <div class="datepicker-wrap">
+                                                <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xs-6 col-md-2">
+                                        {{-- <h4 class="title">Who</h4> --}}
+                                        <div class="form-group">
+                                            <label>Flight Number</label>
+                                            <input type="text" class="input-text full-width" placeholder="enter flight number" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-2 fixheight">
+                                        <label class="hidden-xs">&nbsp;</label>
+                                        <button class="icon-check btn-block full-width">SEARCH NOW</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="hotels-tab">
                             <form action="hotel-list-view.html" method="post">
                                 <div class="row">
                                     <div class="form-group col-sm-6 col-md-3">
@@ -511,47 +583,7 @@
                             </form>
                         </div>
                         
-                        <div class="tab-pane fade" id="flight-status-tab">
-                            <form action="flight-list-view.html" method="post">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <h4 class="title">Where</h4>
-                                        <div class="form-group row">
-                                            <div class="col-xs-6">
-                                                <label>Leaving From</label>
-                                                <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <label>Going To</label>
-                                                <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-xs-6 col-md-2">
-                                        <h4 class="title">When</h4>
-                                        <div class="form-group">
-                                            <label>Departure Date</label>
-                                            <div class="datepicker-wrap">
-                                                <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-xs-6 col-md-2">
-                                        <h4 class="title">Who</h4>
-                                        <div class="form-group">
-                                            <label>Flight Number</label>
-                                            <input type="text" class="input-text full-width" placeholder="enter flight number" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-2 fixheight">
-                                        <label class="hidden-xs">&nbsp;</label>
-                                        <button class="icon-check full-width">SEARCH NOW</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                       
                         
                         <div class="tab-pane fade" id="online-checkin-tab">
                             <form>
