@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--[if IE 8]>          <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->  <html> <!--<![endif]-->
+    <head>
+        <!-- Page Title -->
+        <title>ISTANBUL AIRPORT</title>
+        
+        <!-- Meta Tags -->
+        <meta charset="utf-8">
+        <meta name="keywords" content="Istanbul-Airport" />
+        <meta name="description" content="Istanbul-Airport Services">
+        <meta name="Justice" content="UI Redesign">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Theme Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/animate.min.css">
+        
+        <!-- Current Page Styles -->
+        <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/settings.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="components/revolution_slider/css/style.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="components/jquery.bxslider/jquery.bxslider.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="components/flexslider/flexslider.css" media="screen" />
+
+        <link rel="stylesheet" href="css/tss.css">
+        
+        <!-- Main Style -->
+        <link id="main-style" rel="stylesheet" href="css/style.css">
+        
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- Updated Styles -->
+        <link rel="stylesheet" href="css/updates.css">
+
+
+        <link rel="stylesheet" href="css/owl.carousel.css">
+
+        
+        <!-- Responsive Styles -->
+        <link rel="stylesheet" href="css/responsive.css">
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        
+        <!-- CSS for IE -->
+        <!--[if lte IE 9]>
+            <link rel="stylesheet" type="text/css" href="css/ie.css" />
+        <![endif]-->
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+        <![endif]-->
+    </head>
+<body>
+  <div id="page-wrapper">
+    <header id="header" class="navbar-static-top">
+        <div class="topnav hidden-xs">
+            <div class="container">
+                <ul class="quick-menu pull-left">
+                   
+                    <li class="ribbon">
+                        <a href="#">English</a>
+                        <ul class="menu mini">
+                            <li><a href="#" title="Dansk">Dansk</a></li>
+                            <li><a href="#" title="Deutsch">Deutsch</a></li>
+                            <li class="active"><a href="#" title="English">English</a></li>
+                            <li><a href="#" title="Español">Español</a></li>
+                            <li><a href="#" title="Français">Français</a></li>
+                            <li><a href="#" title="Italiano">Italiano</a></li>
+                            <li><a href="#" title="Magyar">Magyar</a></li>
+                            <li><a href="#" title="Nederlands">Nederlands</a></li>
+                            <li><a href="#" title="Norsk">Norsk</a></li>
+                            <li><a href="#" title="Polski">Polski</a></li>
+                            <li><a href="#" title="Português">Português</a></li>
+                            <li><a href="#" title="Suomi">Suomi</a></li>
+                            <li><a href="#" title="Svenska">Svenska</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="quick-menu pull-right">
+                   
+                    <li class="ribbon currency">
+                        <a href="#" title="">USD</a>
+                        <ul class="menu mini">
+                            <li><a href="#" title="AUD">AUD</a></li>
+                            <li><a href="#" title="BRL">BRL</a></li>
+                            <li class="active"><a href="#" title="USD">USD</a></li>
+                            <li><a href="#" title="CAD">CAD</a></li>
+                            <li><a href="#" title="CHF">CHF</a></li>
+                            <li><a href="#" title="CNY">CNY</a></li>
+                            <li><a href="#" title="CZK">CZK</a></li>
+                            <li><a href="#" title="DKK">DKK</a></li>
+                            <li><a href="#" title="EUR">EUR</a></li>
+                            <li><a href="#" title="GBP">GBP</a></li>
+                            <li><a href="#" title="HKD">HKD</a></li>
+                            <li><a href="#" title="HUF">HUF</a></li>
+                            <li><a href="#" title="IDR">IDR</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            
+            <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+                Mobile Menu Toggle
+            </a>
+
+            <div class="container">
+                <h1 class="logo navbar-brand">
+                    <a href="index.html" title="Istanbul Airport - home">
+                        COMPANY LOGO
+                        <!-- <img src="images/logo.png" alt="Istanbul Airport" /> -->
+                    </a>
+                </h1>
+                
+                <nav id="main-menu" role="navigation">
+                    <ul class="menu">
+                        <li class="">
+                            <a href="index.html">Home</a>
+                       
+                        </li>
+                        <li class="">
+                            <a href="#">Hotels</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Flights</a>
+                        </li>
+                        <li class="">
+                            <a href="#">E-Visa</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Cruises | Tours</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Preminum Services</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Cart</a>
+                        </li>
+                       
+                    </ul>
+                </nav>
+            </div>
+            
+            <nav id="mobile-menu-01" class="mobile-menu collapse">
+                <ul id="mobile-primary-menu" class="menu">
+                    <li class="">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="">
+                        <a href="#">Hotels</a>
+                    </li>
+                    <li class="">
+                        <a href="#">Flights</a>
+                    </li>
+                    <li class="">
+                            <a href="#">E-Visa</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Cruises | Tours</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Preminum Services</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Cart</a>
+                        </li>
+                </ul>
+                
+                <ul class="mobile-topnav container">
+                    
+                    <li class="ribbon language menu-color-skin">
+                        <a href="#" data-toggle="collapse">ENGLISH</a>
+                        <ul class="menu mini">
+                            <li><a href="#" title="Dansk">Dansk</a></li>
+                            <li><a href="#" title="Deutsch">Deutsch</a></li>
+                            <li class="active"><a href="#" title="English">English</a></li>
+                            <li><a href="#" title="Español">Español</a></li>
+                            <li><a href="#" title="Français">Français</a></li>
+                            <li><a href="#" title="Italiano">Italiano</a></li>
+                            <li><a href="#" title="Magyar">Magyar</a></li>
+                            <li><a href="#" title="Nederlands">Nederlands</a></li>
+                            <li><a href="#" title="Norsk">Norsk</a></li>
+                            <li><a href="#" title="Polski">Polski</a></li>
+                            <li><a href="#" title="Português">Português</a></li>
+                            <li><a href="#" title="Suomi">Suomi</a></li>
+                            <li><a href="#" title="Svenska">Svenska</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="ribbon currency menu-color-skin">
+                        <a href="#">USD</a>
+                        <ul class="menu mini">
+                            <li><a href="#" title="AUD">AUD</a></li>
+                            <li><a href="#" title="BRL">BRL</a></li>
+                            <li class="active"><a href="#" title="USD">USD</a></li>
+                            <li><a href="#" title="CAD">CAD</a></li>
+                            <li><a href="#" title="CHF">CHF</a></li>
+                            <li><a href="#" title="CNY">CNY</a></li>
+                            <li><a href="#" title="CZK">CZK</a></li>
+                            <li><a href="#" title="DKK">DKK</a></li>
+                            <li><a href="#" title="EUR">EUR</a></li>
+                            <li><a href="#" title="GBP">GBP</a></li>
+                            <li><a href="#" title="HKD">HKD</a></li>
+                            <li><a href="#" title="HUF">HUF</a></li>
+                            <li><a href="#" title="IDR">IDR</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div> 
+    </header>
+    @yield('content')
+    <footer id="footer">
+        <div class="footer-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <h2>Discover</h2>
+                        <ul class="discover triangle hover row">
+                            <li class="col-xs-6"><a href="#">Safety</a></li>
+                            <li class="col-xs-6"><a href="#">About</a></li>
+                            <li class="col-xs-6"><a href="#">Grandoria Picks</a></li>
+                            <li class="col-xs-6"><a href="#">Latest Jobs</a></li>
+                            <li class="active col-xs-6"><a href="#">Mobile</a></li>
+                            <li class="col-xs-6"><a href="#">Press Releases</a></li>
+                            <li class="col-xs-6"><a href="#">Why Host</a></li>
+                            <li class="col-xs-6"><a href="#">Blog Posts</a></li>
+                            <li class="col-xs-6"><a href="#">Social Connect</a></li>
+                            <li class="col-xs-6"><a href="#">Help Topics</a></li>
+                            <li class="col-xs-6"><a href="#">Site Map</a></li>
+                            <li class="col-xs-6"><a href="#">Policies</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <h2>Travel News</h2>
+                        <ul class="travel-news">
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <h5 class="s-title"><a href="#">Amazing Places</a></h5>
+                                    <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                    <span class="date">15 Jan, 2022</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
+                                    <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
+                                    <span class="date">15 Jan, 2022</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <h2>Mailing List</h2>
+                        <p>Sign up for our mailing list to get latest updates and offers.</p>
+                        <br />
+                        <div class="icon-check">
+                            <input type="text" class="input-text full-width" placeholder="your email" />
+                        </div>
+                        <br />
+                        <span>We respect your privacy</span>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <h2>About Istanbul Airport</h2>
+                        <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massaidp nequetiam lore elerisque.</p>
+                        <br />
+                        <address class="contact-details">
+                            <span class="contact-phone"><i class="soap-icon-phone"></i> 0-000-000-HELLO</span>
+                            <br />
+                            <a href="#" class="contact-email">help@istanbulairport.com</a>
+                        </address>
+                        <ul class="social-icons clearfix">
+                            <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                            <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
+                            <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                            <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
+                            <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
+                            <li class="dribble"><a title="dribble" href="#" data-toggle="tooltip"><i class="soap-icon-dribble"></i></a></li>
+                            <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom gray-area">
+            <div class="container">
+                <div class="logo pull-left">
+                    <a href="index.html" title="Istanbul Airport - home">
+                        <!-- <img src="images/logo.png" alt="Istanbul-Airport" /> -->
+                    </a>
+                </div>
+                <div class="pull-right">
+                    <a id="back-to-top" href="#" class="animated" data-animation-type="bounce"><i class="soap-icon-longarrow-up circle"></i></a>
+                </div>
+                <div class="copyright pull-right">
+                    <p>&copy; 2022 Istanbul Airport Services</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </div>
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.noconflict.js"></script>
+  <script type="text/javascript" src="js/modernizr.2.7.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.1.10.4.min.js"></script>
+
+
+
+  
+  <script src="js/jquery-scrolltofixed.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/scrollbar.min.js"></script>
+  <script src="js/main.js"></script>
+
+  
+  <!-- Twitter Bootstrap -->
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  
+  <!-- load revolution slider scripts -->
+  <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.plugins.min.js"></script>
+  <script type="text/javascript" src="components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
+  
+  <!-- load BXSlider scripts -->
+  <script type="text/javascript" src="components/jquery.bxslider/jquery.bxslider.min.js"></script>
+
+  <!-- Flex Slider -->
+  <script type="text/javascript" src="components/flexslider/jquery.flexslider-min.js"></script>
+
+  <!-- Google Map Api -->
+  <script type='text/javascript' src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+  <script type="text/javascript" src="js/gmap3.min.js"></script>
+  
+  <!-- parallax -->
+  <script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+  
+  <!-- waypoint -->
+  <script type="text/javascript" src="js/waypoints.min.js"></script>
+
+  <!-- load page Javascript -->
+  <script type="text/javascript" src="js/theme-scripts.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  
+  <script type="text/javascript">
+      tjq(document).ready(function() {
+          tjq('.revolution-slider').revolution(
+          {
+              dottedOverlay:"none",
+              delay:9000,
+              startwidth:1170,
+              startheight:646,
+              onHoverStop:"on",
+              hideThumbs:10,
+              fullWidth:"on",
+              forceFullWidth:"on",
+              navigationType:"none",
+              shadow:0,
+              spinner:"spinner4",
+              hideTimerBar:"on",
+          });
+      });
+  </script>
+</body>
+</html>
