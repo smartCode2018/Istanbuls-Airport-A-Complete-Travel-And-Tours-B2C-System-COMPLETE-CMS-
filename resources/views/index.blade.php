@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="row">
                                     {{-- <h4 class="title text-align-center">Search Flight Details</h4> --}}
-                                    <div style="margin-bottom:30px; background:#80808030; padding-top:13px; padding-bottom:13px; margin-left:7px; margin-right:7px; " class="col-lg-12">
+                                    <div style="margin-bottom:20px; background:#80808030; padding-top:13px; padding-bottom:13px; margin-left:7px; margin-right:7px; " class="col-lg-12">
                                         <div class="row">
                                             <div class="col-xs-6 col-md-3">
                                                 <label class="radio radio-inline radio-square ftype">
@@ -109,7 +109,7 @@
                                             <input type="text" class="input-text full-width" placeholder="enter flight number" />
                                         </div>
                                     </div>
-                                    <div class="form-group col-md-2 fixheight">
+                                    <div class="form-group col-md-2">
                                         <label class="hidden-xs">&nbsp;</label>
                                         <button class="icon-check btn-block full-width">SEARCH NOW</button>
                                     </div>
