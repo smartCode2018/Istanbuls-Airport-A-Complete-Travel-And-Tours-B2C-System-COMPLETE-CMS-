@@ -24,7 +24,7 @@
                 <div class="search-box container">
                     <ul class="search-tabs clearfix">
                         <li class="active"><a href="#flight-status-tab" data-toggle="tab">FLIGHT STATUS</a></li>
-                        <li class="active"><a href="#cruises-tab" data-toggle="tab">CRUISES</a></li>
+                        <li ><a href="#cruises-tab" data-toggle="tab">CRUISES</a></li>
                         <li ><a href="#hotels-tab" data-toggle="tab">HOTELS</a></li>
                         <li><a href="#flights-tab" data-toggle="tab">FLIGHTS</a></li>
                         <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li>
