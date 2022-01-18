@@ -1,6 +1,6 @@
 @extends('layouts.welcome')
         @section('content')
-        <div style="background-image: url('images/assets/slider/3.jpg');
+        <div style="background-image: url('images/assets/slider/6.jpg');
         background-size: cover;" id="slideshow">
             <div class="fullwidthbanner-container">
                 <div style="padding-top: 180px; padding-bottom: 150px;" class="container">
@@ -86,7 +86,7 @@
                                                 <input type="text" class="input-text full-width" placeholder="Enter flight No (TK 2522)" />
                                             </div>
                                             <div class="col-xs-6">
-                                                <label>DESTINATION</label>
+                                                <label>CITY</label>
                                                 <input type="text" class="input-text full-width" placeholder="enter a city or place name " />
                                             </div>
                                         </div>
@@ -105,8 +105,8 @@
                                     <div class="col-xs-6 col-md-2">
                                         {{-- <h4 class="title">Who</h4> --}}
                                         <div class="form-group">
-                                            <label>Flight Number</label>
-                                            <input type="text" class="input-text full-width" placeholder="enter flight number" />
+                                            <label>AIRLINE</label>
+                                            <input type="text" class="input-text full-width" placeholder="Airline" />
                                         </div>
                                     </div>
                                     <div class="form-group col-md-2">
