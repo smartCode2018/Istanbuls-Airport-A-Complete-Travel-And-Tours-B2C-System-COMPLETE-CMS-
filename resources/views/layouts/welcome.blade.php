@@ -15,35 +15,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Theme Styles -->
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="../css/animate.min.css">
+        <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
         
         <!-- Current Page Styles -->
-        <link rel="stylesheet" type="text/css" href="../components/revolution_slider/css/settings.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../components/revolution_slider/css/style.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../components/jquery.bxslider/jquery.bxslider.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../components/flexslider/flexslider.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="{{asset('components/revolution_slider/css/settings.css')}}" media="screen" />
+        <link rel="stylesheet" type="text/css" href="{{asset('components/revolution_slider/css/style.css')}}" media="screen" />
+        <link rel="stylesheet" type="text/css" href="{{asset('components/jquery.bxslider/jquery.bxslider.css')}}" media="screen" />
+        <link rel="stylesheet" type="text/css" href="{{asset('components/flexslider/flexslider.css')}}" media="screen" />
 
-        <link rel="stylesheet" href="../css/tss.css">
+        <link rel="stylesheet" href="{{asset('css/tss.css')}}">
         
         <!-- Main Style -->
-        <link id="main-style" rel="stylesheet" href="../css/style.css">
+        <link id="main-style" rel="stylesheet" href="{{asset('css/style.css')}}">
         
         <!-- Custom Styles -->
-        <link rel="stylesheet" href="../css/custom.css">
+        <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 
         <!-- Updated Styles -->
-        <link rel="stylesheet" href="../css/updates.css">
+        <link rel="stylesheet" href="{{asset('css/updates.css')}}">
 
 
-        <link rel="stylesheet" href="../css/owl.carousel.css">
+        <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
 
         
         <!-- Responsive Styles -->
-        <link rel="stylesheet" href="../css/responsive.css">
-        <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+        <script src="{{asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
         
         <!-- CSS for IE -->
         <!--[if lte IE 9]>
@@ -319,48 +319,48 @@
     </footer>
   </div>
   <!-- Javascript -->
-  <script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.noconflict.js"></script>
-  <script type="text/javascript" src="../js/modernizr.2.7.1.min.js"></script>
-  <script type="text/javascript" src="../js/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.placeholder.js"></script>
-  <script type="text/javascript" src="../js/jquery-ui.1.10.4.min.js"></script>
+  <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/jquery.noconflict.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/modernizr.2.7.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/jquery-migrate-1.2.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/jquery.placeholder.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/jquery-ui.1.10.4.min.js')}}"></script>
 
 
 
   
-  <script src="../js/jquery-scrolltofixed.js"></script>
-  <script src="../js/owl.carousel.min.js"></script>
-  <script src="../js/scrollbar.min.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="{{asset('js/jquery-scrolltofixed.js')}}"></script>
+  <script src="{{asset('js/owl.carousel.min.js')}}"></script>
+  <script src="{{asset('js/scrollbar.min.js')}}"></script>
+  <script src="{{asset('js/main.js')}}"></script>
 
   
   <!-- Twitter Bootstrap -->
-  <script type="text/javascript" src="../js/bootstrap.js"></script>
+  <script type="text/javascript" src="{{asset('js/bootstrap.js')}}"></script>
   
   <!-- load revolution slider scripts -->
-  <script type="text/javascript" src="../components/revolution_slider/js/jquery.themepunch.plugins.min.js"></script>
-  <script type="text/javascript" src="../components/revolution_slider/js/jquery.themepunch.revolution.min.js"></script>
+  <script type="text/javascript" src="{{asset('components/revolution_slider/js/jquery.themepunch.plugins.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('components/revolution_slider/js/jquery.themepunch.revolution.min.js')}}"></script>
   
   <!-- load BXSlider scripts -->
-  <script type="text/javascript" src="../components/jquery.bxslider/jquery.bxslider.min.js"></script>
+  <script type="text/javascript" src="{{asset('components/jquery.bxslider/jquery.bxslider.min.js')}}"></script>
 
   <!-- Flex Slider -->
-  <script type="text/javascript" src="../components/flexslider/jquery.flexslider-min.js"></script>
+  <script type="text/javascript" src="{{asset('components/flexslider/jquery.flexslider-min.js')}}"></script>
 
   <!-- Google Map Api -->
   <script type='text/javascript' src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
-  <script type="text/javascript" src="../js/gmap3.min.js"></script>
+  <script type="text/javascript" src="{{asset('js/gmap3.min.js')}}"></script>
   
   <!-- parallax -->
-  <script type="text/javascript" src="../js/jquery.stellar.min.js"></script>
+  <script type="text/javascript" src="{{asset('js/jquery.stellar.min.js')}}"></script>
   
   <!-- waypoint -->
-  <script type="text/javascript" src="../js/waypoints.min.js"></script>
+  <script type="text/javascript" src="{{asset('js/waypoints.min.js')}}"></script>
 
   <!-- load page Javascript -->
-  <script type="text/javascript" src="../js/theme-scripts.js"></script>
-  <script type="text/javascript" src="../js/scripts.js"></script>
+  <script type="text/javascript" src="{{asset('js/theme-scripts.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/theme-scripts.js')}}"></script>
   
   <script type="text/javascript">
       tjq(document).ready(function() {
