@@ -47,32 +47,32 @@
                     
                     <div class="search-tab-content">
                         <div class="tab-pane fade active in" id="flight-status-tab">
-                            <form action="flight-list-view.html" method="post">
+                            <form action="{{route('flight.status')}}" method="get">
                                 <div class="container">
                                     
                                 </div>
                                 <div class="row">
                                     {{-- <h4 class="title text-align-center">Search Flight Details</h4> --}}
-                                    <div style="margin-bottom:20px; background:#80808030; padding-top:13px; padding-bottom:13px; margin-left:7px; margin-right:7px; " class="col-lg-12">
+                                    <div class="col-lg-12 ftype-wrapper">
                                         <div class="row">
                                             <div class="col-xs-6 col-md-3">
                                                 <label class="radio radio-inline radio-square ftype">
-                                                    <input type="radio" name="ftype" checked="checked">ARIVAL
+                                                    <input id="arival" type="radio" name="ftype" checked="checked">ARIVAL
                                                 </label>
                                             </div>
                                             <div class="col-xs-6 col-md-3">
                                                 <label style="" class="radio radio-inline radio-square ftype">
-                                                    <input type="radio" name="ftype">DEPATURE
+                                                    <input id="departure" type="radio" name="ftype">DEPATURE
                                                 </label>
                                             </div>
                                             <div class="col-xs-6 col-md-3">
                                                 <label style="" class="radio radio-inline radio-square ftype">
-                                                    <input type="radio" name="fterminal">DOMESTIC
+                                                    <input id="domestic" type="radio" name="fterminal">DOMESTIC
                                                 </label>
                                             </div>
                                             <div class="col-xs-6 col-md-3">
                                                 <label style="" class="radio radio-inline radio-square ftype">
-                                                    <input type="radio" name="fterminal" checked="checked">INTERNATIONAL
+                                                    <input id="international" type="radio" name="fterminal" checked="checked">INTERNATIONAL
                                                 </label>
                                             </div>
                                         </div>
@@ -83,11 +83,11 @@
                                             
                                             <div class="col-xs-6">
                                                 <label>FLIGHT NUMBER</label>
-                                                <input type="text" class="input-text full-width" placeholder="Enter flight No (TK 2522)" />
+                                                <input id="flight-num" type="text" class="input-text full-width" placeholder="Enter flight No (TK 2522)" />
                                             </div>
                                             <div class="col-xs-6">
                                                 <label>CITY</label>
-                                                <input type="text" class="input-text full-width" placeholder="enter a city or place name " />
+                                                <input id="flight-city" type="text" class="input-text full-width" placeholder="enter a city or place name " />
                                             </div>
                                         </div>
                                     </div>
@@ -115,6 +115,42 @@
                                     </div>
                                 </div>
                             </form>
+                            <div style="margin-top: 30px;" class="row">
+                                <div style="text-align: center; display:none" class="t-spinner col-xs-12">
+                                    <img height="100" width="150" src="images/spina.gif" alt="">
+                                </div>
+                                <div style="display:none; border-raidus:5px; " class="autocom-box col-xs-12 table-responsive">
+
+                                    <table style="" class="flight-table-wrapper table table-striped ">
+                                        <thead class="flight-table-head">
+                                          <tr>
+                                            <th>AIRLINE</th>
+                                            <th>FLIGHT NO</th>
+                                            <th>SCHEDULE</th>
+                                            <th>ESTIMATED</th>
+                                            <th>GATE</th>
+                                            <th>DEPATURE</th>
+                                            <th>STATUS</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody style="font-size: 14px; font-weight:bold">
+                                            @foreach ($flight_status as $item)
+                                            <tr>
+                                                <td style="padding: 12px;"><img height="25" width="100" src="images/airline_logo/{{$item['airline']}}.png" alt=""></td>
+                                                <td>{{$item['flight_no']}}</td>
+                                                <td>{{$item['schedule']}}</td>
+                                                <td>{{$item['estimated']}}</td>
+                                                <td>{{$item['gate']}}</td>
+                                                <td>{{$item['departure']}}</td>
+                                                <td>{{$item['status']}}</td>
+                                              </tr>
+                                            @endforeach
+                                          
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                            </div>
                         </div>
 
                         <div class="tab-pane fade" id="hotels-tab">
@@ -864,4 +900,54 @@
                     </div>
                 </div>
             </div>
+            <script type="text/javascript">
+                let flight_status = {!! json_encode($flight_status)!!};
+                const tspinner = document.querySelector(".t-spinner")
+                const input = document.querySelector("#flight-num")
+                const input_city = document.querySelector("#flight-city")
+                const autocomBox = document.querySelector(".autocom-box")
+
+                const arival = document.querySelector("#arival")
+                const depart = document.querySelector("#departure")
+                const domestic = document.querySelector("#domestic")
+                const inter = document.querySelector("#international")
+            
+
+                input.onkeyup = (e) => {
+                    showTable(e)
+                }
+                input_city.onkeyup = (e) => {
+                    showTable(e)
+                }
+
+                arival.onclick = (e) => {
+                    showTable(e)
+                }
+
+                depart.onclick = (e) => {
+                    showTable(e)
+                }
+                domestic.onclick = (e) => {
+                    showTable(e)
+                }
+                inter.onclick = (e) => {
+                    showTable(e)
+                }
+
+                const showTable = (e) =>{
+                    if(autocomBox.style.display ='block'){
+                        autocomBox.style.display ='none'
+                    }
+                    tspinner.style.display = 'block'
+                    setTimeout(() => {
+                        tspinner.style.display = 'none'
+                        if(input && input.value){
+                            autocomBox.style.display ='block'
+                        }
+                        
+                    }, 1000)();
+                }
+                
+                
+            </script>
             @endsection

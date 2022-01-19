@@ -14,7 +14,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        // Call function to fetch flight details from API endpoint.
+
+        // Dummy flight data
+        $flight_status = [
+             ['airline'=>"TK", 'flight_no'=>"TK 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"],
+             ['airline'=>"SK", 'flight_no'=>"SK 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"],
+             ['airline'=>"JU", 'flight_no'=>"JU 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"],
+             ['airline'=>"SQ", 'flight_no'=>"SQ 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"],
+             ['airline'=>"TK", 'flight_no'=>"TK 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"],
+             ['airline'=>"SK", 'flight_no'=>"SK 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"]
+        ];
+
+        //var_dump($flight_status);
+        return view('index', [
+            'flight_status' => $flight_status
+        ]);
     }
 
     /**

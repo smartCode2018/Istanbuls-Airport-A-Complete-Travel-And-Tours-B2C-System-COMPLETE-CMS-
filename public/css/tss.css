@@ -6065,7 +6065,25 @@ body.tg-hidescroll {
     background-color: #f8f9fa45;
 }
 
-.ftype {
+.ftype-wrapper {
+    margin-bottom: 20px;
+    background: #80808030;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    margin-left: 9px;
+    margin-right: 13px;
+}
+
+.ftype-wrapper label {
     font-size: 14px !important;
     font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.flight-table-wrapper {
+    box-shadow: -11px 14px 10px -17px #000000;
+}
+
+.flight-table-head{
+    font-weight:bold; background:#e01514; color:#fff; height:35px;
 }
