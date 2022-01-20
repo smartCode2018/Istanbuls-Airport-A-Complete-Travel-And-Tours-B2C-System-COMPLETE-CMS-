@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Evisa;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EvisaController extends Controller
@@ -14,7 +15,8 @@ class EvisaController extends Controller
      */
     public function index()
     {
-        //
+        $date = Carbon::now();
+        return view('evisabooking', compact('date'));
     }
 
     /**
@@ -35,7 +37,27 @@ class EvisaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $this->validate($request, [
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'country_of_birth' => 'required',
+            'place_of_birth' => 'required',
+            'dob' => 'required',
+            'gender' => 'required',
+            'mother_name' => 'required',
+            'father_name' => 'required',
+            'passport_number' => 'required',
+            'passport_issue_date' => 'required',
+            'passport_exp_date' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'zipcode' => 'required'
+        ]);
+        
+        $evisa = Evisa::create($request->all());
+        return view('evisa_success', $request->all());
     }
 
     /**

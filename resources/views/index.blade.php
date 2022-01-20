@@ -1,4 +1,7 @@
 @extends('layouts.welcome')
+@section('title')
+   Istanbuls Airport 
+@endsection
         @section('content')
         <div style="background-image: url('images/assets/slider/6.jpg');
         background-size: cover;" id="slideshow">
@@ -645,7 +648,7 @@
                                        </div>
                                         <div style="width: 50%" class="form-group">
                                             <label class="hidden-xs">&nbsp;</label>
-                                            <a href="#" class="banner-action-btn fw-bold full-width">APPLY FOR E-VISA</a>
+                                            <a href="{{route('evisa.booking')}}" class="banner-action-btn fw-bold full-width">APPLY FOR E-VISA</a>
                                         </div>
                                     </div>
                                     

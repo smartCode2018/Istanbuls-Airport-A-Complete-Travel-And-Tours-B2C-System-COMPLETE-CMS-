@@ -1,5 +1,8 @@
 @extends('layouts.welcome')
 @section('content')
+@section('title')
+   Flight Status 
+@endsection
 <div class="page-title-container">
     <div class="container">
         <div class="page-title pull-left">

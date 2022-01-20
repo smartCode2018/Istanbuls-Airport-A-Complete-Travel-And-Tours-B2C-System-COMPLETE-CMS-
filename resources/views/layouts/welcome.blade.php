@@ -4,7 +4,7 @@
 <!--[if gt IE 9]><!-->  <html> <!--<![endif]-->
     <head>
         <!-- Page Title -->
-        <title>ISTANBUL AIRPORT</title>
+        <title>@yield('title')</title>
         
         <!-- Meta Tags -->
         <meta charset="utf-8">
@@ -134,7 +134,7 @@
                             <a href="{{ route('flight.status') }}">Flights</a>
                         </li>
                         <li class="">
-                            <a href="#">E-Visa</a>
+                            <a href="{{route('evisa.booking')}}">E-Visa</a>
                         </li>
                         <li class="">
                             <a href="#">Cruises | Tours</a>
@@ -156,19 +156,13 @@
                         <a href="index.html">Home</a>
                     </li>
                     <li class="">
-                        <a href="#">Hotels</a>
+                        <a href="{{route('flight.status')}}">Flights</a>
                     </li>
                     <li class="">
-                        <a href="#">Flights</a>
+                        <a href="{{route('evisa.booking')}}">E-Visa</a>
                     </li>
                     <li class="">
-                            <a href="#">E-Visa</a>
-                        </li>
-                        <li class="">
                             <a href="#">Cruises | Tours</a>
-                        </li>
-                        <li class="">
-                            <a href="#">Preminum Services</a>
                         </li>
                         <li class="">
                             <a href="#">Cart</a>
