@@ -24,6 +24,7 @@
                 <div class="search-box container">
                     <ul class="search-tabs clearfix">
                         <li class="active"><a href="#flight-status-tab" data-toggle="tab">FLIGHT STATUS</a></li>
+                        <li><a href="#e-visa" data-toggle="tab">E-VISA</a></li>
                         <li><a href="#cruises-tab" data-toggle="tab">CRUISES</a></li>
                         <li><a href="#hotels-tab" data-toggle="tab">HOTELS</a></li>
                         <li><a href="#flights-tab" data-toggle="tab">FLIGHTS</a></li>
@@ -31,17 +32,18 @@
                         <li><a href="#cars-tab" data-toggle="tab">CARS</a></li>
                         
                        
-                        <li><a href="#online-checkin-tab" data-toggle="tab">ONLINE CHECK IN</a></li>
+                        
                     </ul>
                     <div class="visible-mobile">
                         <ul id="mobile-search-tabs" class="search-tabs clearfix">
                             <li class="active"><a href="#flight-status-tab">FLIGHT STATUS</a></li>
+                            <li><a href="#e-visa">E-VISA</a></li>
                             <li><a href="#hotels-tab">HOTELS</a></li>
                             <li><a href="#flights-tab">FLIGHTS</a></li>
                             <li><a href="#flight-and-hotel-tab">FLIGHT &amp; HOTELS</a></li>
                             <li><a href="#cars-tab">CARS</a></li>
                             <li><a href="#cruises-tab">CRUISES</a></li>
-                            <li><a href="#online-checkin-tab">ONLINE CHECK IN</a></li>
+                            
                         </ul>
                     </div>
                     
@@ -67,12 +69,12 @@
                                             </div>
                                             <div class="col-xs-6 col-md-3">
                                                 <label style="" class="radio radio-inline radio-square ftype">
-                                                    <input id="domestic" type="radio" name="fterminal">DOMESTIC
+                                                    <input id="domestic" type="radio" name="fterminal" checked="checked">DOMESTIC
                                                 </label>
                                             </div>
                                             <div class="col-xs-6 col-md-3">
                                                 <label style="" class="radio radio-inline radio-square ftype">
-                                                    <input id="international" type="radio" name="fterminal" checked="checked">INTERNATIONAL
+                                                    <input id="international" type="radio" name="fterminal" >INTERNATIONAL
                                                 </label>
                                             </div>
                                         </div>
@@ -621,34 +623,38 @@
                         
                        
                         
-                        <div class="tab-pane fade" id="online-checkin-tab">
+                        <div class="tab-pane fade" id="e-visa">
                             <form>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <h4 class="title">Where</h4>
-                                        <div class="form-group row">
-                                            <div class="col-xs-6">
-                                                <label>Leaving From</label>
-                                                <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <label>Going To</label>
-                                                <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
-                                            </div>
+                                <div class="row flight-table-wrapper">
+                                    <div style="margin:10px; padding-top:10px; background:#ebebeb0d" class="col-md-7">
+                                        <h3 style="font-weight:bold; background:#80808014; padding:13px;" class="title">Turkey E-Visa Application</h3>
+                                       <div style="font-size: 14px; text-align:justify">
+                                        <p>
+                                            The Turkish Government has launched an online visa service, which is electronic permission valid for 180 days that grants its holder entry to the Republic of Turkey and a stay of up to 3 months in the Turkish land. 
+                                        </p>
+                                        <p>You can apply for Electronic Visa in Turkey quickly, smoothly from anywhere in the World.</p>
+                                        <p>
+                                            Easy and simple steps are all you need to follow in order to get your visa to enter Turkey :
+
+                                            First of all, choose your Nationality, fill out the form below with your passport information.
+
+                                            And then make payment using your credit or debit card. Check your email for the confirmation letter.
+
+                                           
+                                        </p>
+                                       </div>
+                                        <div style="width: 50%" class="form-group">
+                                            <label class="hidden-xs">&nbsp;</label>
+                                            <a href="#" class="banner-action-btn fw-bold full-width">APPLY FOR E-VISA</a>
                                         </div>
                                     </div>
                                     
-                                    <div class="col-xs-6 col-md-2">
-                                        <h4 class="title">When</h4>
-                                        <div class="form-group">
-                                            <label>Departure Date</label>
-                                            <div class="datepicker-wrap">
-                                                <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                                            </div>
-                                        </div>
+                                    <div style="margin-top: 20px; text-align:center" class="col-xs-12 col-md-4">
+                                        <img   class="img-responsive" src="{{asset('images/evisa.jpg')}}" alt="">
+                                        
                                     </div>
                                     
-                                    <div class="col-xs-6 col-md-2">
+                                    {{-- <div class="col-xs-6 col-md-2">
                                         <h4 class="title">Who</h4>
                                         <div class="form-group">
                                             <label>Full Name</label>
@@ -658,7 +664,7 @@
                                     <div class="form-group col-md-2 fixheight">
                                         <label class="hidden-xs">&nbsp;</label>
                                         <button class="icon-check full-width">SEARCH NOW</button>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </form>
                         </div>

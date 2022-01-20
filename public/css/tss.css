@@ -6004,8 +6004,8 @@ body.tg-hidescroll {
 .banner-action-btn:hover {
     border-style: solid !important;
     background: transparent;
-    border-color: #fff;
-    color: #fff;
+    border-color: #000;
+    color: #000;
     font-weight: bold;
 }
 
@@ -6067,7 +6067,7 @@ body.tg-hidescroll {
 
 .ftype-wrapper {
     margin-bottom: 20px;
-    background: #80808030;
+    background: #80808014;
     padding-top: 13px;
     padding-bottom: 13px;
     margin-left: 9px;
@@ -6084,6 +6084,9 @@ body.tg-hidescroll {
     box-shadow: -11px 14px 10px -17px #000000;
 }
 
-.flight-table-head{
-    font-weight:bold; background:#e01514; color:#fff; height:35px;
+.flight-table-head {
+    font-weight: bold;
+    background: #e01514;
+    color: #fff;
+    height: 35px;
 }
