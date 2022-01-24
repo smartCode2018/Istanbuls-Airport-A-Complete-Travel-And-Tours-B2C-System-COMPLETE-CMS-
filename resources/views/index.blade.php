@@ -3,14 +3,14 @@
    Istanbuls Airport 
 @endsection
         @section('content')
-        <div style="background-image: url('images/assets/slider/6.jpg');
+        <div style="background-image: url('images/assets/slider/is2.png');
         background-size: cover;" id="slideshow">
             <div class="fullwidthbanner-container">
                 <div style="padding-top: 180px; padding-bottom: 150px;" class="container">
                 	<div class="row" >
-								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 									<div  class="bg-dark" >
-										<h1 style=" margin-bottom: 10px; font-size: 50px; font-weight: bold; color: rgb(46, 46, 46);" >AIRPORT SERVICES</h1>
+										<h1 style=" margin-bottom: 10px; font-size: 50px; font-weight: bold; color:#f5f5f526;" >AIRPORT SERVICES</h1>
 										<h2 style="margin-bottom: 40px; font-weight:bold; font-size: 25px; font-family: 'Mulish', sans-serif; color: rgb(46, 46, 46);;">All in one place</h2>
 										<div style="text-align: left !important;">
 											<a  href="#" class="banner-action-btn fw-bold">Explore Services</a>
