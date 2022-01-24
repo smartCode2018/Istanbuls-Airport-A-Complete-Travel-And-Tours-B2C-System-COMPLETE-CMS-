@@ -28,11 +28,11 @@
                     <ul class="search-tabs clearfix">
                         <li class="active"><a href="#flight-status-tab" data-toggle="tab">FLIGHT STATUS</a></li>
                         <li><a href="#e-visa" data-toggle="tab">E-VISA</a></li>
-                        <li><a href="#cruises-tab" data-toggle="tab">CRUISES</a></li>
-                        <li><a href="#hotels-tab" data-toggle="tab">HOTELS</a></li>
-                        <li><a href="#flights-tab" data-toggle="tab">FLIGHTS</a></li>
-                        <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li>
-                        <li><a href="#cars-tab" data-toggle="tab">CARS</a></li>
+                        <li><a href="#airport-service-tab" data-toggle="tab">AIRPORT ACCESS</a></li>
+                        <li><a href="#premium-service-tab" data-toggle="tab">PREMIUM SERVICES</a></li>
+                        <li><a href="#visit-istanbul-tab" data-toggle="tab">VISIT ISTANBUL</a></li>
+                        {{-- <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li> --}}
+                        <li><a href="#covid-tab" data-toggle="tab">COVID-19</a></li>
                         
                        
                         
@@ -41,11 +41,11 @@
                         <ul id="mobile-search-tabs" class="search-tabs clearfix">
                             <li class="active"><a href="#flight-status-tab">FLIGHT STATUS</a></li>
                             <li><a href="#e-visa">E-VISA</a></li>
-                            <li><a href="#hotels-tab">HOTELS</a></li>
-                            <li><a href="#flights-tab">FLIGHTS</a></li>
-                            <li><a href="#flight-and-hotel-tab">FLIGHT &amp; HOTELS</a></li>
-                            <li><a href="#cars-tab">CARS</a></li>
-                            <li><a href="#cruises-tab">CRUISES</a></li>
+                            <li><a href="#airport-service-tab">AIRPORT ACCESS</a></li>
+                            <li><a href="#premium-service-tab">PREMIUM SERVICES</a></li>
+                            <li><a href="#visit-istanbul-tab">VISIT ISTANBUL</a></li>
+                            {{-- <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li> --}}
+                            <li><a href="#covid-tab">COVID-19</a></li>
                             
                         </ul>
                     </div>
@@ -158,9 +158,69 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="hotels-tab">
+                        <div class="tab-pane fade" id="e-visa">
+                            <form>
+                                <div class="row flight-table-wrapper">
+                                    
+                                    <div style=" padding:10px; background:#fdfdfd0d" class="col-md-6">
+                                        <h3 style="font-weight:bold; background:#80808014; padding:13px;" class="title">Turkey E-Visa Application</h3>
+                                       <div style="font-size: 14px; text-align:justify">
+                                        <p>
+                                            The Turkish Government has launched an online visa service, which is electronic permission valid for 180 days that grants its holder entry to the Republic of Turkey and a stay of up to 3 months in the Turkish land. 
+                                        </p>
+                                        <p>You can apply for Electronic Visa in Turkey quickly, smoothly from anywhere in the World.</p>
+                                        <p>
+                                            Easy and simple steps are all you need to follow in order to get your visa to enter Turkey :
+
+                                            Click the button below to start
+                                           
+                                        </p>
+                                       </div>
+                                        <div style="width: 50%" class="form-group">
+                                            <label class="hidden-xs">&nbsp;</label>
+                                            <a href="{{route('evisa.booking')}}" class="banner-action-btn fw-bold full-width">APPLY FOR E-VISA</a>
+                                        </div>
+                                    </div>
+                                    
+                                   
+                                        <div class="col-sm-12 col-md-3 ">
+                                            <div class="panel ">
+                                                <div class="panel-heading ">
+                                                    <img class="img-responsive right-shadow" src="{{asset('images/evisa.jpg')}}" alt="">
+                                                </div>
+                                                <div class="panel-body">
+                                                    <h3>How to obtain an evisa</h3>
+                                                    <div style="width: 80%" class="form-group">
+                                                        <label class="hidden-xs">&nbsp;</label>
+                                                        <a href="#" class="tour-btn fw-bold full-width">Read More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-12 col-md-3 ">
+                                            <div class="panel ">
+                                                <div class="panel-heading ">
+                                                    <img style="min-height: 175px;" class="img-responsive right-shadow" src="{{asset('images/tours/12.jpg')}}" alt="">
+                                                </div>
+                                                <div class="panel-body"></div>
+                                                    <h3>How to obtain an evisa</h3>
+                                                    <div style="width: 80%" class="form-group">
+                                                        <label class="hidden-xs">&nbsp;</label>
+                                                        <a href="#" class="tour-btn fw-bold full-width">Read More</a>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                     
+                                     
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="airport-service-tab">
                             <form action="hotel-list-view.html" method="post">
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="form-group col-sm-6 col-md-3">
                                         <h4 class="title">Where</h4>
                                         <label>Your Destination</label>
@@ -228,12 +288,12 @@
                                         <label class="hidden-xs">&nbsp;</label>
                                         <button type="submit" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">SEARCH NOW</button>
                                     </div>
-                                </div>
+                                </div> --}}
                             </form>
                         </div>
-                        <div class="tab-pane fade" id="flights-tab">
+                        <div class="tab-pane fade" id="premium-service-tab">
                             <form action="flight-list-view.html" method="post">
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="col-md-4">
                                         <h4 class="title">Where</h4>
                                         <div class="form-group">
@@ -330,13 +390,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </form>
                         </div>
                         
-                        <div class="tab-pane fade" id="flight-and-hotel-tab">
+                        <div class="tab-pane fade" id="visit-istanbul-tab">
                             <form action="flight-list-view.html" method="post">
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="col-md-4">
                                         <h4 class="title">Where</h4>
                                         <div class="form-group">
@@ -433,13 +493,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </form>
                         </div>
                         
-                        <div class="tab-pane fade" id="cars-tab">
+                        <div class="tab-pane fade" id="covid-tab">
                             <form action="car-list-view.html" method="post">
-                                <div class="row">
+                                {{-- <div class="row">
                                     <div class="col-md-4">
                                         <h4 class="title">Where</h4>
                                         <div class="form-group">
@@ -539,138 +599,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </form>
-                        </div>
-                        
-                        <div class="tab-pane fade" id="cruises-tab">
-                            <form action="cruise-list-view.html" method="post">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h4 class="title">Where</h4>
-                                        <div class="form-group">
-                                            <label>Your Destination</label>
-                                            <input type="text" class="input-text full-width" placeholder="enter a destination or hotel name" />
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-4">
-                                        <h4 class="title">When</h4>
-                                        <div class="form-group row">
-                                            <div class="col-xs-6">
-                                                <label>Departure Date</label>
-                                                <div class="datepicker-wrap">
-                                                    <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <label>Cruise Length</label>
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="">select length</option>
-                                                        <option value="1">1-2 Nights</option>
-                                                        <option value="2">3-4 Nights</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-4">
-                                        <h4 class="title">Who</h4>
-                                        <div class="form-group row">
-                                            <div class="col-xs-6">
-                                                <label>Cruise Line</label>
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="">select cruise line</option>
-                                                        <option>Azamara Club Cruises</option>
-                                                        <option>Carnival Cruise Lines</option>
-                                                        <option>Celebrity Cruises</option>
-                                                        <option>Costa Cruise Lines</option>
-                                                        <option>Cruise &amp; Maritime Voyages</option>
-                                                        <option>Crystal Cruises</option>
-                                                        <option>Cunard Line Ltd.</option>
-                                                        <option>Disney Cruise Line</option>
-                                                        <option>Holland America Line</option>
-                                                        <option>Hurtigruten Cruise Line</option>
-                                                        <option>MSC Cruises</option>
-                                                        <option>Norwegian Cruise Line</option>
-                                                        <option>Oceania Cruises</option>
-                                                        <option>Orion Expedition Cruises</option>
-                                                        <option>P&amp;O Cruises</option>
-                                                        <option>Paul Gauguin Cruises</option>
-                                                        <option>Peter Deilmann Cruises</option>
-                                                        <option>Princess Cruises</option>
-                                                        <option>Regent Seven Seas Cruises</option>
-                                                        <option>Royal Caribbean International</option>
-                                                        <option>Seabourn Cruise Line</option>
-                                                        <option>Silversea Cruises</option>
-                                                        <option>Star Clippers</option>
-                                                        <option>Swan Hellenic Cruises</option>
-                                                        <option>Thomson Cruises</option>
-                                                        <option>Viking River Cruises</option>
-                                                        <option>Windstar Cruises</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <label>&nbsp;</label>
-                                                <button class="icon-check full-width">SEARCH NOW</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        
-                       
-                        
-                        <div class="tab-pane fade" id="e-visa">
-                            <form>
-                                <div class="row flight-table-wrapper">
-                                    <div style="margin:10px; padding-top:10px; background:#ebebeb0d" class="col-md-7">
-                                        <h3 style="font-weight:bold; background:#80808014; padding:13px;" class="title">Turkey E-Visa Application</h3>
-                                       <div style="font-size: 14px; text-align:justify">
-                                        <p>
-                                            The Turkish Government has launched an online visa service, which is electronic permission valid for 180 days that grants its holder entry to the Republic of Turkey and a stay of up to 3 months in the Turkish land. 
-                                        </p>
-                                        <p>You can apply for Electronic Visa in Turkey quickly, smoothly from anywhere in the World.</p>
-                                        <p>
-                                            Easy and simple steps are all you need to follow in order to get your visa to enter Turkey :
-
-                                            First of all, choose your Nationality, fill out the form below with your passport information.
-
-                                            And then make payment using your credit or debit card. Check your email for the confirmation letter.
-
-                                           
-                                        </p>
-                                       </div>
-                                        <div style="width: 50%" class="form-group">
-                                            <label class="hidden-xs">&nbsp;</label>
-                                            <a href="{{route('evisa.booking')}}" class="banner-action-btn fw-bold full-width">APPLY FOR E-VISA</a>
-                                        </div>
-                                    </div>
-                                    
-                                    <div style="margin-top: 20px; text-align:center" class="col-xs-12 col-md-4">
-                                        <img   class="img-responsive" src="{{asset('images/evisa.jpg')}}" alt="">
-                                        
-                                    </div>
-                                    
-                                    {{-- <div class="col-xs-6 col-md-2">
-                                        <h4 class="title">Who</h4>
-                                        <div class="form-group">
-                                            <label>Full Name</label>
-                                            <input type="text" class="input-text full-width" placeholder="enter your full name" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-2 fixheight">
-                                        <label class="hidden-xs">&nbsp;</label>
-                                        <button class="icon-check full-width">SEARCH NOW</button>
-                                    </div> --}}
-                                </div>
-                            </form>
-                        </div>
+                        </div>         
                     </div>
                 </div>
             </div>
@@ -681,10 +612,10 @@
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 								<div class="tg-sectionhead tg-sectionheadvtwo">
 									<div class="">
-										<h2 style="font-size: 30px;">Popular <span style="color: #E01514;" class="">Tours</span></h2>
+										<h2 style="font-size: 30px;">Things <span style="color: #E01514;" class="">To Do</span></h2>
 									</div>
 									<div class="tg-description">
-										<p>Explore All Conners Of The World With Us</p>
+										<p>Explore All Conners Of Istanbul With Us</p>
 									</div>
 								</div>
 								<div id="tg-populartoursslider" class="tg-populartoursslider tg-populartours owl-carousel">
@@ -695,14 +626,14 @@
 										</figure>
 										<div class="tg-populartourcontent">
 											<div class="tg-populartourtitle">
-												<h3><a href="javascript:void(0);">City Tours in Europe, Paris</a></h3>
+												<h3><a href="javascript:void(0);">Food</a></h3>
 											</div>
 											<div class="tg-description">
 												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh...</p>
 											</div>
 											<div class="tg-populartourfoot">
 												<div class="tg-durationrating">
-													<a class="tour-btn" href="#">View Location</a>
+													<a class="tour-btn" href="#">Read More</a>
 												</div>
 												
 											</div>
@@ -712,7 +643,7 @@
 										<figure><a href="javascript:void(0);"><img src="images/tours/2.jpg" alt="image destinations"></a></figure>
 										<div class="tg-populartourcontent">
 											<div class="tg-populartourtitle">
-												<h3><a href="javascript:void(0);">Best of Canada Tours and Travel</a></h3>
+												<h3><a href="javascript:void(0);">Culture</a></h3>
 											</div>
 											<div class="tg-description">
 												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh...</p>
@@ -729,14 +660,14 @@
 										<figure><a href="javascript:void(0);"><img src="images/tours/3.jpg" alt="image destinations"></a></figure>
 										<div class="tg-populartourcontent">
 											<div class="tg-populartourtitle">
-												<h3><a href="javascript:void(0);">Italy – 3 Days in Rome</a></h3>
+												<h3><a href="javascript:void(0);">Events</a></h3>
 											</div>
 											<div class="tg-description">
 												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh...</p>
 											</div>
 											<div class="tg-populartourfoot">
 												<div class="tg-durationrating">
-													<a class="tour-btn" href="#">View Location</a>
+													<a class="tour-btn" href="#">Read More</a>
 												</div>
 												
 											</div>
@@ -746,14 +677,14 @@
 										<figure><a href="javascript:void(0);"><img src="images/tours/1.jpeg" alt="image destinations"></a></figure>
 										<div class="tg-populartourcontent">
 											<div class="tg-populartourtitle">
-												<h3><a href="javascript:void(0);">Best of Canada Tours and Travel</a></h3>
+												<h3><a href="javascript:void(0);">Tours</a></h3>
 											</div>
 											<div class="tg-description">
 												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh...</p>
 											</div>
 											<div class="tg-populartourfoot">
 												<div class="tg-durationrating">
-													<a class="tour-btn" href="#">View Location</a>
+													<a class="tour-btn" href="#">Read More</a>
 												</div>
 												
 											</div>

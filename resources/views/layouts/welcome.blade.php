@@ -45,6 +45,8 @@
         <!-- Responsive Styles -->
         <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
         <script src="{{asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         
         <!-- CSS for IE -->
         <!--[if lte IE 9]>
@@ -57,6 +59,7 @@
         <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
         <![endif]-->
+        @livewireStyles
     </head>
 <body>
   <div id="page-wrapper">
@@ -138,7 +141,19 @@
                             <a href="{{route('evisa.booking')}}">E-Visa</a>
                         </li>
                         <li class="">
-                            <a href="#">Cruises | Tours</a>
+                            <a href="#">Airport Access</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Preminum Service</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Visit Istanbul</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Covid  19</a>
+                        </li>
+                        <li class="">
+                            <a href="#">News</a>
                         </li>
                         {{-- <li class="">
                             <a href="#">Preminum Services</a>
@@ -163,11 +178,20 @@
                         <a href="{{route('evisa.booking')}}">E-Visa</a>
                     </li>
                     <li class="">
-                            <a href="#">Cruises | Tours</a>
-                        </li>
-                        <li class="">
-                            <a href="#">Cart</a>
-                        </li>
+                        <a href="#">Airport Access</a>
+                    </li>
+                    <li class="">
+                        <a href="#">Preminum Service</a>
+                    </li>
+                    <li class="">
+                        <a href="#">Visit Istanbul</a>
+                    </li>
+                    <li class="">
+                        <a href="#">Covid  19</a>
+                    </li>
+                    <li class="">
+                        <a href="#">News</a>
+                    </li>
                 </ul>
                 
                 <ul class="mobile-topnav container">
@@ -425,6 +449,6 @@ $('div.setup-panel div a.btn-success').trigger('click');
 </script>
 
 
-
+@livewireScripts
 </body>
 </html>

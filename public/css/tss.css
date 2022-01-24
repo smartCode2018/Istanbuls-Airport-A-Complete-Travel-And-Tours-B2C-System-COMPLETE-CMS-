@@ -6136,3 +6136,8 @@ body.tg-hidescroll {
     line-height: 1.428571429;
     border-radius: 15px;
 }
+
+.right-shadow {
+    -webkit-box-shadow: 2px 6px 12px -10px #000000;
+    box-shadow: 2px 6px 12px -10px #000000;
+}

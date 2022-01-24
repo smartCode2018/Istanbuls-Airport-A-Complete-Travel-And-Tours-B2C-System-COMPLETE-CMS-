@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\Evisa;
+use App\Models\Traveldocument;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -16,7 +18,9 @@ class EvisaController extends Controller
     public function index()
     {
         $date = Carbon::now();
-        return view('evisabooking', compact('date'));
+        $countries = Country::all();
+        $travel_docs = Traveldocument::all();
+        return view('evisabooking', compact('countries','travel_docs'));
     }
 
     /**
