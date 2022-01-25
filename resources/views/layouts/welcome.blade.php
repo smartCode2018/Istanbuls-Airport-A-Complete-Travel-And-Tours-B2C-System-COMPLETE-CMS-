@@ -120,8 +120,10 @@
             <div class="container">
                 <h1 class="logo navbar-brand">
                     <a href="index.html" title="Istanbul Airport - home">
-                        COMPANY LOGO
-                        <!-- <img src="images/logo.png" alt="Istanbul Airport" /> -->
+                        <img style="height: 60px !important; width:150px !important;" class="img-responsive" src="{{asset('images/logo/logo.png')}}" alt="Travelo HTML5 Template" />
+                        {{-- <img height="50" width="200" src="{{asset('images/logo/logo.png')}}" alt="Travelo HTML5 Template" /> --}}
+                        {{-- COMPANY LOGO --}}
+                        {{-- <img src="{{asset('images/tours/logo.png')}}" alt="Istanbul Airport" /> --}}
                     </a>
                 </h1>
                 

@@ -3,14 +3,14 @@
    Istanbuls Airport 
 @endsection
         @section('content')
-        <div style="background-image: url('images/assets/slider/is2.png');
+        <div style="background-image: url('{{asset('images/assets/slider/6.jpg')}}');
         background-size: cover;" id="slideshow">
             <div class="fullwidthbanner-container">
-                <div style="padding-top: 180px; padding-bottom: 150px;" class="container">
+                <div style="padding-top: 160px; padding-bottom: 150px;" class="container">
                 	<div class="row" >
 								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 									<div  class="bg-dark" >
-										<h1 style=" margin-bottom: 10px; font-size: 50px; font-weight: bold; color:#f5f5f526;" >AIRPORT SERVICES</h1>
+										<h1 style=" margin-bottom: 10px; font-size: 50px; font-weight: bold; color:#000;" >AIRPORT SERVICES</h1>
 										<h2 style="margin-bottom: 40px; font-weight:bold; font-size: 25px; font-family: 'Mulish', sans-serif; color: rgb(46, 46, 46);;">All in one place</h2>
 										<div style="text-align: left !important;">
 											<a  href="#" class="banner-action-btn fw-bold">Explore Services</a>
@@ -605,14 +605,129 @@
                     </div>
                 </div>
             </div>
-            
-	          <section class="tg-sectionspace tg-haslayout">
+
+            <div style="background: #e9e9e91f">
+                <div  class="container section">
+                    <h2 style="font-size: 30px; text-align:center">Things <span style="color: #E01514;" class="">To Do</span></h2>
+                    <div  class="tg-description text-center">
+                        <p>Explore All Conners Of Istanbul With Us</p>
+                    </div>
+                    <div class="row image-box style3">
+                        <div class="col-sms-6 col-sm-6 col-md-3">
+                            <article class="box">
+                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                    <a href="" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/culture2.jpg')}}"></a>
+                                </figure>
+                                <div style="text-align: start !important" class="details text-center">
+                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Culture</strong></h4>
+                                    {{-- <p class="offers-content">(15 deal offers)</p> --}}
+                                    {{-- <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                        <span style="width: 80%;" class="five-stars"></span>
+                                    </div> --}}
+                                    {{-- <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p> --}}
+                                    <a class="tour-btn" href="#">Explore Culture</a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sms-6 col-sm-6 col-md-3">
+                            <article class="box">
+                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                    <a href="#" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/event3.jpg')}}"></a>
+                                </figure>
+                                <div style="text-align: start !important" class="details text-center">
+                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Events</strong></h4>
+                                    {{-- <p class="offers-content">(15 deal offers)</p> --}}
+                                    {{-- <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                        <span style="width: 80%;" class="five-stars"></span>
+                                    </div> --}}
+                                    {{-- <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p> --}}
+                                    <a class="tour-btn" href="#">Read More</a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sms-6 col-sm-6 col-md-3">
+                            <article class="box">
+                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                    <a href="" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/food1.jpg')}}"></a>
+                                </figure>
+                                <div style="text-align: start !important" class="details text-center">
+                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Food</strong></h4>
+                                    {{-- <p class="offers-content">(15 deal offers)</p> --}}
+                                    {{-- <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                        <span style="width: 80%;" class="five-stars"></span>
+                                    </div> --}}
+                                    {{-- <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p> --}}
+                                    <a class="tour-btn" href="#">Explore Food</a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sms-6 col-sm-6 col-md-3">
+                            <article class="box">
+                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                    <a href="" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/lifestyle3.jpg')}}"></a>
+                                </figure>
+                                <div style="text-align: start !important" class="details text-center">
+                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Lifestyle</strong></h4>
+                                    <a class="tour-btn" href="#">Learn More</a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sms-6 col-sm-6 col-md-3">
+                            <article class="box">
+                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                    <a href="" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/tours1.jpg')}}"></a>
+                                </figure>
+                                <div style="text-align: start !important" class="details text-center">
+                                    <h4 style="margin-bottom: 10px;" class="box-title"><strong>Tours</strong></h4>
+                                    <a class="tour-btn" href="#">Explore</a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sms-6 col-sm-6 col-md-3">
+                            <article class="box">
+                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                    <a href="#" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/park1.jpg')}}"></a>
+                                </figure>
+                                <div style="text-align: start !important" class="details text-center">
+                                    <h4 style="margin-bottom: 10px;" class="box-title"><strong>Parks</strong></h4>
+                                    <a class="tour-btn" href="#">Explore</a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sms-6 col-sm-6 col-md-3">
+                            <article class="box">
+                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                    <a href="#" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/locals2.jpg')}}"></a>
+                                </figure>
+                                <div style="text-align: start !important" class="details text-center">
+                                    <h4 style="margin-bottom: 10px;" class="box-title"><strong>Locals</strong></h4>
+                                    <a class="tour-btn" href="#">Read More</a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sms-6 col-sm-6 col-md-3">
+                            <article class="box">
+                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                    <a href="#" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/12.jpg')}}"></a>
+                                </figure>
+                                <div style="text-align: start !important" class="details text-center">
+                                    <h4 style="margin-bottom: 10px;" class="box-title"><strong>Covid Checks</strong></h4>
+                                    <a class="tour-btn" href="#">Read More</a>
+                                </div>
+                            </article>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+                
+	          <section style=" margin-top:40px; margin-bottom:60px !important;" class=" tg-haslayout">
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 								<div class="tg-sectionhead tg-sectionheadvtwo">
 									<div class="">
-										<h2 style="font-size: 30px;">Things <span style="color: #E01514;" class="">To Do</span></h2>
+										<h2 style="font-size: 30px;">Popular <span style="color: #E01514;" class="">Tours</span></h2>
 									</div>
 									<div class="tg-description">
 										<p>Explore All Conners Of Istanbul With Us</p>
@@ -626,7 +741,7 @@
 										</figure>
 										<div class="tg-populartourcontent">
 											<div class="tg-populartourtitle">
-												<h3><a href="javascript:void(0);">Food</a></h3>
+												<h3><a href="javascript:void(0);">Istanbul Mall</a></h3>
 											</div>
 											<div class="tg-description">
 												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh...</p>
@@ -643,7 +758,7 @@
 										<figure><a href="javascript:void(0);"><img src="images/tours/2.jpg" alt="image destinations"></a></figure>
 										<div class="tg-populartourcontent">
 											<div class="tg-populartourtitle">
-												<h3><a href="javascript:void(0);">Culture</a></h3>
+												<h3><a href="javascript:void(0);">Mega Park</a></h3>
 											</div>
 											<div class="tg-description">
 												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh...</p>
@@ -660,7 +775,7 @@
 										<figure><a href="javascript:void(0);"><img src="images/tours/3.jpg" alt="image destinations"></a></figure>
 										<div class="tg-populartourcontent">
 											<div class="tg-populartourtitle">
-												<h3><a href="javascript:void(0);">Events</a></h3>
+												<h3><a href="javascript:void(0);">Musium</a></h3>
 											</div>
 											<div class="tg-description">
 												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh...</p>
@@ -677,7 +792,7 @@
 										<figure><a href="javascript:void(0);"><img src="images/tours/1.jpeg" alt="image destinations"></a></figure>
 										<div class="tg-populartourcontent">
 											<div class="tg-populartourtitle">
-												<h3><a href="javascript:void(0);">Tours</a></h3>
+												<h3><a href="javascript:void(0);">Subways</a></h3>
 											</div>
 											<div class="tg-description">
 												<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh...</p>
@@ -696,7 +811,7 @@
 					</div>
 			  </section>
 
-			  <div class="section container">
+			  <div class="section container tg-sectionspace">
                 <h2 style="font-size: 30px;">Explore Our <span style="color: #E01514;" class="fw-bold">Top Destinations</span></h2>
                 <div class="row image-box hotel listing-style1">
                     <div class="col-sms-6 col-sm-6 col-md-3">
@@ -787,59 +902,97 @@
 
         </section>
     <div class="global-map-area section parallax" data-stellar-background-ratio="0.5">
-                <div class="container">
-                    <div class="text-center description">
-                        <h1 style="font-size: 30px;">We Provide You An Ultimate Tour Experience</h1>
-                        <p>Nunc cursus libero purusac congue arcu cursus utsed vitae pulvinar massa idporta neque.</p>
-                        <p>Etiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
-                    </div>
-                    <br />
-                    <div class="row image-box style8">
-                        <div class="col-md-4">
-                            <article class="box animated" data-animation-type="fadeInUp">
-                                <figure class="middle-block">
-                                    <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172" />
-                                    <span class="opacity-wrapper"></span>
-                                </figure>
-                                <div class="details">
-                                    <h2 class="box-title">Travel</h2>
-                                    <p>
-                                        Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
-                                    </p>
-                                </div>
-                            </article>
+
+        <div class="container">
+            <h2 style="font-size: 30px; color:#fff">Recent <span style="color: #E01514;" class="">News</span></h2>
+            <div class="image-carousel style2" data-animation="slide" data-item-width="370" data-item-margin="30">
+                <ul class="slides image-box style10">
+                    <li class="box post">
+                        <figure>
+                            <a href="pages-blog-read.html" class="hover-effect"><img src="{{asset('images/assets/blog/1.jpg')}}" alt="" /></a>
+                            <figcaption class="entry-date">
+                                <label class="date">04</label>
+                                <label class="month">Jan</label>
+                            </figcaption>
+                        </figure>
+                        <div class="details">
+                            <a href="pages-blog-read.html" class="button">MORE</a>
+                            <h4 class="post-title entry-title">TURKEY ENTRY - HES CODE</h4>
+                            <div class="post-meta single-line-meta vcard">
+                                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
+                                <span class="sep">|</span>
+                                <a href="#" class="comment">1 COMMENT</a>
+                                <span class="hidden updated">Aug 29, 2013</span>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <article class="box animated" data-animation-type="fadeInUp">
-                                <figure class="middle-block">
-                                    <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172" />
-                                    <span class="opacity-wrapper"></span>
-                                </figure>
-                                <div class="details">
-                                    <h2 class="box-title">Discover</h2>
-                                    <p>
-                                        Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
-                                    </p>
-                                </div>
-                            </article>
+                    </li>
+                    <li class="box post">
+                        <figure>
+                            <a style="max-height:210px;" href="pages-blog-read.html" class="hover-effect"><img src="{{asset('images/assets/blog/2.jpg')}}" alt="" /></a>
+                            <figcaption class="entry-date">
+                                <label class="date">06</label>
+                                <label class="month">Jan</label>
+                            </figcaption>
+                        </figure>
+                        <div class="details">
+                            <a href="pages-blog-read.html" class="button">MORE</a>
+                            <h4 class="post-title entry-title">TURKEY E - VISA</h4>
+                            <div class="post-meta single-line-meta vcard">
+                                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
+                                <span class="sep">|</span>
+                                <a href="#" class="comment">1 COMMENT</a>
+                                <span class="hidden updated">Aug 29, 2013</span>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <article class="box animated" data-animation-type="fadeInUp">
-                                <figure class="middle-block">
-                                    <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172" />
-                                    <span class="opacity-wrapper"></span>
-                                </figure>
-                                <div class="details">
-                                    <h2 class="box-title">Enjoy</h2>
-                                    <p>
-                                        Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
-                                    </p>
-                                </div>
-                            </article>
+                    </li>
+                    <li class="box post">
+                        <figure>
+                            <a style="max-height:210px;" href="pages-blog-read.html" class="hover-effect"><img src="{{asset('images/assets/blog/3.jpg')}}" alt="" /></a>
+                            <figcaption class="entry-date">
+                                <label class="date">18</label>
+                                <label class="month">Jan</label>
+                            </figcaption>
+                        </figure>
+                        <div class="details">
+                            <a href="pages-blog-read.html" class="button">MORE</a>
+                            <h4 class="post-title entry-title">AIRPORT TAXI</h4>
+                            <div class="post-meta single-line-meta vcard">
+                                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
+                                <span class="sep">|</span>
+                                <a href="#" class="comment">1 COMMENT</a>
+                                <span class="hidden updated">Aug 29, 2013</span>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                    <li class="box post">
+                        <figure>
+                            <a style="max-height:210px;" href="pages-blog-read.html" class="hover-effect"><img src="{{asset('images/assets/blog/4.jpg')}}" alt="" /></a>
+                            <figcaption class="entry-date">
+                                <label class="date">24</label>
+                                <label class="month">Jan</label>
+                            </figcaption>
+                        </figure>
+                        <div class="details">
+                            <a href="pages-blog-read.html" class="button">MORE</a>
+                            <h4 class="post-title entry-title">TRAVEL TIPS</h4>
+                            <div class="post-meta single-line-meta vcard">
+                                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
+                                <span class="sep">|</span>
+                                <a href="#" class="comment">1 COMMENT</a>
+                                <span class="hidden updated">Aug 29, 2013</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
+        </div>
+
+
+
+
+
+
+    </div>
             <script type="text/javascript">
                 let flight_status = {!! json_encode($flight_status)!!};
                 const tspinner = document.querySelector(".t-spinner")

@@ -6061,12 +6061,14 @@ body.tg-hidescroll {
 }
 
 .bg-custom {
-    background-color: #f8f9fa45;
+    /* background-color: #f8f9fa45; */
+    background-color: #f1f1f15c;
 }
 
 .ftype-wrapper {
     margin-bottom: 20px;
-    background: #80808014;
+    /* background: #80808014; */
+    background: #f1f1f15c;
     padding-top: 13px;
     padding-bottom: 13px;
     margin-left: 9px;
