@@ -235,7 +235,7 @@
                                     <div   class="form-group col-sm-6 col-md-3">
                                         <label id="dropoff">DROP OFF LOCATION</label>
                                         <label style="display: none" id="pickup">PICK UP LOCATION</label>
-                                        <input id="pac-input" type="text" class="input-text full-width" placeholder="Search For Location" />
+                                        <input required id="pac-input" type="text" class="input-text full-width" placeholder="Search For Location" />
                                         
                                     </div>
                                     
@@ -269,9 +269,9 @@
                                         </div>
                                     </div>
                                     
-                                    <div style="margin-top: 22px;" class="form-group col-sm-6 col-md-2">
+                                    <div style="margin-top: 22px;" class="form-group col-sm-6 col-md-3">
                                         {{-- <label class="hidden-xs">&nbsp;</label> --}}
-                                        <button name="submit" type="submit" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">CONTINUE</button>
+                                        <button name="submit"  type="submit" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">CONTINUE</button>
                                     </div>
                                 </div>
                                 <div class="row">
