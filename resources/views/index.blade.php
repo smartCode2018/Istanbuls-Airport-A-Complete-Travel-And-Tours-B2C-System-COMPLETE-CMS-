@@ -219,76 +219,70 @@
                         </div>
 
                         <div class="tab-pane fade" id="airport-service-tab">
-                            <form action="hotel-list-view.html" method="post">
-                                {{-- <div class="row">
+                            <form action="" method="POST">
+                                @csrf
+                                <div class="row">
                                     <div class="form-group col-sm-6 col-md-3">
-                                        <h4 class="title">Where</h4>
-                                        <label>Your Destination</label>
-                                        <input type="text" class="input-text full-width" placeholder="enter a destination or hotel name" />
-                                    </div>
-                                    
-                                    <div class="form-group col-sm-6 col-md-4">
-                                        <h4 class="title">When</h4>
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                <label>Check In</label>
-                                                <div class="datepicker-wrap">
-                                                    <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <label>Check Out</label>
-                                                <div class="datepicker-wrap">
-                                                    <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                                                </div>
-                                            </div>
+                                        <label>SELECT TYPE</label>
+                                        <div class="selector">
+                                            <select id="access-type" onchange="showForm()" class="full-width">
+                                                <option value="from">FROM ISTANBUL AIRPORT (IST)</option>
+                                                <option value="to">TO ISTANBUL AIRPORT (IST)</option>
+                                            </select>
                                         </div>
                                     </div>
                                     
+                                    <div   class="form-group col-sm-6 col-md-3">
+                                        <label id="dropoff">DROP OFF LOCATION</label>
+                                        <label style="display: none" id="pickup">PICK UP LOCATION</label>
+                                        <input id="pac-input" type="text" class="input-text full-width" placeholder="Search For Location" />
+                                        
+                                    </div>
+                                    
                                     <div class="form-group col-sm-6 col-md-3">
-                                        <h4 class="title">Who</h4>
                                         <div class="row">
-                                            <div class="col-xs-4">
-                                                <label>Rooms</label>
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="1">01</option>
-                                                        <option value="2">02</option>
-                                                        <option value="3">03</option>
-                                                        <option value="4">04</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-4">
+                                            <div class="col-xs-6">
                                                 <label>Adults</label>
                                                 <div class="selector">
-                                                    <select class="full-width">
+                                                    <select required class="full-width">
                                                         <option value="1">01</option>
                                                         <option value="2">02</option>
                                                         <option value="3">03</option>
                                                         <option value="4">04</option>
+                                                        <option value="5+">5 - 10</option>
+                                                        <option value="10+">10+</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-4">
+                                            <div class="col-xs-6">
                                                 <label>Kids</label>
                                                 <div class="selector">
-                                                    <select class="full-width">
+                                                    <select required class="full-width">
                                                         <option value="1">01</option>
                                                         <option value="2">02</option>
                                                         <option value="3">03</option>
                                                         <option value="4">04</option>
+                                                        <option value="5+">5 - 10</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <div class="form-group col-sm-6 col-md-2 fixheight">
-                                        <label class="hidden-xs">&nbsp;</label>
-                                        <button type="submit" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">SEARCH NOW</button>
+                                    <div style="margin-top: 22px;" class="form-group col-sm-6 col-md-2">
+                                        {{-- <label class="hidden-xs">&nbsp;</label> --}}
+                                        <button name="submit" type="submit" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">CONTINUE</button>
                                     </div>
-                                </div> --}}
+                                </div>
+                                <div class="row">
+                                    <div style="display:flex; justify-content:center; align-items:center" class="form-group col-md-12">
+                                        <div style="height: 350px !important; width:100%" id="map"></div>
+                                        <div id="infowindow-content">
+                                            <span id="place-name" class="title"></span><br />
+                                            <span id="place-address"></span>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                         <div class="tab-pane fade" id="premium-service-tab">
@@ -721,7 +715,7 @@
                 </div>
             </div>
                 
-	          <section style=" margin-top:40px; margin-bottom:60px !important;" class=" tg-haslayout">
+	          <section style="  margin-bottom:60px !important;" class=" tg-haslayout">
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -989,9 +983,6 @@
 
 
 
-
-
-
     </div>
             <script type="text/javascript">
                 let flight_status = {!! json_encode($flight_status)!!};
@@ -1040,7 +1031,19 @@
                         
                     }, 1000)();
                 }
-                
-                
+
+                const showForm = () => {
+                    let access_type = document.querySelector("#access-type").value;
+                    let dropoff = document.querySelector("#dropoff")
+                    let pickup = document.querySelector("#pickup")
+
+                    if(access_type == 'from'){
+                        pickup.style.display = 'none'
+                        dropoff.style.display = 'block'
+                    }else if(access_type == 'to'){
+                        dropoff.style.display = 'none'
+                        pickup.style.display = 'block'
+                    }
+                }
             </script>
             @endsection

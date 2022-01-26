@@ -14,7 +14,7 @@
         </ul>
     </div>
 </div>
-<section id="content" class="gray-area">
+<section style="background:#0000001f" id="content" class="gray-area">
     <div class="container">
         <div class="row">
             <div id="main" class="col-sm-8 col-md-9">
