@@ -212,8 +212,6 @@
                                                     </div>
                                                 </div>
                                         </div>
-                                     
-                                     
                                 </div>
                             </form>
                         </div>
@@ -221,7 +219,11 @@
                         <div class="tab-pane fade" id="airport-service-tab">
                             <form action="" method="POST">
                                 @csrf
+                                
                                 <div class="row">
+                                    <div class="col-md-12">
+                                        <h2>Book Qick Taxi</h2>
+                                    </div>
                                     <div class="form-group col-sm-6 col-md-3">
                                         <label>SELECT TYPE</label>
                                         <div class="selector">
@@ -276,11 +278,30 @@
                                 </div>
                                 <div class="row">
                                     <div style="display:flex; justify-content:center; align-items:center" class="form-group col-md-12">
-                                        <div style="height: 350px !important; width:100%" id="map"></div>
+                                        <div style="height: 350px !important; width:100%; display:none;" id="map"></div>
                                         <div id="infowindow-content">
                                             <span id="place-name" class="title"></span><br />
                                             <span id="place-address"></span>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h2>Browse More Services</h2>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-group airport-service-ul">
+                                            <li class="list-group-item airport-service-list"><a href=""><div> AIRPORT TO CITY CENTER <span class="airport-service-span"><i  class="airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
+                                            <li class="list-group-item airport-service-list"><a href=""><div>CITY CENTER TO AIRPORT<span class="airport-service-span" ><i class=" airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
+                                            <li class="list-group-item airport-service-list"><a href=""><div>FASTEST WAY TO|FROM THE AIRPORT<span class="airport-service-span"><i class=" airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul  class="list-group airport-service-ul">
+                                            <li class="list-group-item airport-service-list"><a href=""><div>AIRPORT SHUTTLE BUS <span class="airport-service-span"><i class="airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
+                                            <li class="list-group-item airport-service-list"><a href=""><div>TERMINAL SERVICES <span class="airport-service-span"><i  class=" airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
+                                            <li class="list-group-item airport-service-list"><a href=""><div>PRIVATE AIRPORT TAXI<span class="airport-service-span"><i  class="airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
+                                          </ul>
                                     </div>
                                 </div>
                             </form>
@@ -1043,6 +1064,16 @@
                     }else if(access_type == 'to'){
                         dropoff.style.display = 'none'
                         pickup.style.display = 'block'
+                    }
+                }
+
+                const smap = document.querySelector("#pac-input")
+                const dmap = document.querySelector('#map')
+                smap.onkeyup = (e) => {
+                    if(smap && smap.value){
+                        dmap.style.display='block'
+                    }else{
+                        dmap.style.display='none'
                     }
                 }
             </script>

@@ -6092,6 +6092,40 @@ body.tg-hidescroll {
     height: 35px;
 }
 
+.airport-service-ul {
+    background: #e015143d !important;
+    padding: 1px !important;
+    font-weight: bold !important;
+}
+
+.airport-service-ul .li {
+}
+
+.airport-service-list:hover {
+    background: #e01514 !important;
+    color: #fff !important;
+    cursor: pointer;
+}
+
+.airport-service-list a:hover {
+    color: #fff !important;
+}
+
+.airport-service-span {
+    float: right;
+}
+.airport-service-span:hover {
+    color: #fff !important;
+}
+
+.airport-service-li {
+    color: #e01514;
+}
+
+.airport-service-li:hover {
+    color: #fff !important;
+}
+
 .stepwizard-step p {
     margin-top: 0px;
     color: #666;

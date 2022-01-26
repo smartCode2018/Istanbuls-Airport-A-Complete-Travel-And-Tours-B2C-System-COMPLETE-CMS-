@@ -61,6 +61,7 @@
         <![endif]-->
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script>
+            
             function initMap() {
                 const map = new google.maps.Map(document.getElementById("map"), {
                     center: { lat: 40.749933, lng: -73.98633 },

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDashboard;
+use App\Http\Controllers\AirportServicesController;
 use App\Http\Controllers\EvisaController;
 use App\Http\Controllers\FlightStatusController;
 use App\Http\Controllers\HomeController;
@@ -22,6 +23,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/flight/status', [FlightStatusController::class, 'index'])->name('flight.status');
 Route::get('/evisa/booking', [EvisaController::class, 'index'])->name('evisa.booking');
 Route::post('/evisa/booking', [EvisaController::class, 'store'])->name('evisa.submit');
+Route::post('/airport_services', [AirportServicesController::class, 'create'])->name('airportservices');
 
 
 
