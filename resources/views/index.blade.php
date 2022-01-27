@@ -1077,18 +1077,5 @@
                     }
                 }
 
-
-                const qickTaxi = (event) => {
-                    event.preventDefault()
-                    const smap = document.querySelector("#pac-input").value
-                    const access_type = document.querySelector("#access-type").value
-                    const adults = document.querySelector("#adults").value
-                    const kids = document.querySelector("#kids").value
-
-                    const surl = ""
-
-                    // window.location.replace("http://www.w3schools.com");
-                }
-
             </script>
             @endsection

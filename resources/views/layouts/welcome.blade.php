@@ -191,10 +191,7 @@
             <div class="container">
                 <h1 class="logo navbar-brand">
                     <a href="index.html" title="Istanbul Airport - home">
-                        <img style="height: 60px !important; width:150px !important;" class="img-responsive" src="{{asset('images/logo/logo.png')}}" alt="Travelo HTML5 Template" />
-                        {{-- <img height="50" width="200" src="{{asset('images/logo/logo.png')}}" alt="Travelo HTML5 Template" /> --}}
-                        {{-- COMPANY LOGO --}}
-                        {{-- <img src="{{asset('images/tours/logo.png')}}" alt="Istanbul Airport" /> --}}
+                        <img style="height: 60px !important; width:150px !important;" class="img-responsive" src="{{asset('images/logo/logo.png')}}" alt="Istanbuls Airport" />
                     </a>
                 </h1>
                 
@@ -211,7 +208,7 @@
                             <a href="{{ route('flight.status') }}">Flights</a>
                         </li>
                         <li class="">
-                            <a href="{{route('evisa.booking')}}">E-Visa</a>
+                            <a href="{{route('evisa')}}">E-Visa</a>
                         </li>
                         <li class="">
                             <a href="#">Airport Access</a>
@@ -228,12 +225,7 @@
                         <li class="">
                             <a href="#">News</a>
                         </li>
-                        {{-- <li class="">
-                            <a href="#">Preminum Services</a>
-                        </li>
-                        <li class="">
-                            <a href="#">Cart</a>
-                        </li> --}}
+                       
                        
                     </ul>
                 </nav>
@@ -411,7 +403,9 @@
     </footer>
   </div>
   <!-- Javascript -->
-  
+
+  {{-- imported using laravel mix --}}
+  {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> --}}
   <script type="text/javascript" src="{{asset('js/jquery.noconflict.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/modernizr.2.7.1.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/jquery-migrate-1.2.1.min.js')}}"></script>
@@ -445,8 +439,6 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIU0A3mNHA1Y90-dmcx2xZQPV_G6Hi-9E&callback=initMap&libraries=places&v=weekly"
       async
     ></script>
-  {{-- <script type='text/javascript' src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
-  <script type="text/javascript" src="{{asset('js/gmap3.min.js')}}"></script> --}}
   
   <!-- parallax -->
   <script type="text/javascript" src="{{asset('js/jquery.stellar.min.js')}}"></script>
@@ -518,14 +510,12 @@
             }
 
             if (isValid) nextStepWizard.removeAttr('disabled').trigger('click');
-});
+        });
 
-$('div.setup-panel div a.btn-success').trigger('click');
-});
+        $('div.setup-panel div a.btn-success').trigger('click');
+    });
 })(jQuery);
 </script>
-
-
 {{-- @livewireScripts --}}
 </body>
 </html>

@@ -17,10 +17,7 @@ class EvisaController extends Controller
      */
     public function index()
     {
-        $date = Carbon::now();
-        $countries = Country::all();
-        $travel_docs = Traveldocument::all();
-        return view('evisabooking', compact('countries','travel_docs'));
+       return view('evisa');
     }
 
     /**
@@ -30,7 +27,10 @@ class EvisaController extends Controller
      */
     public function create()
     {
-        //
+        $date = Carbon::now();
+        $countries = Country::all();
+        $travel_docs = Traveldocument::all();
+        return view('evisabooking', compact('countries','travel_docs'));
     }
 
     /**
