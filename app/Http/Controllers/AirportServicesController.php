@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
+use App\Models\Traveldocument;
 use Illuminate\Http\Request;
 
 class AirportServicesController extends Controller
@@ -17,12 +19,6 @@ class AirportServicesController extends Controller
     }
 
     //rendering view
-    public function airportTaxiBooking(Request $request){
-        dd($request->all());
-        // return view('airport_taxi_booking');
-
-    }
-
 
 
 
@@ -31,9 +27,13 @@ class AirportServicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, $type)
     {
-        //
+        $countries = Country::all();
+        $travel_docs = Traveldocument::all();
+        $form = $request->all();
+        $taxi_type = $type;
+        return view('airport_taxi_booking', compact('countries','travel_docs','form', 'taxi_type'));
     }
 
     /**
@@ -44,7 +44,8 @@ class AirportServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // save to db
+        dd($request->all());
     }
 
     /**

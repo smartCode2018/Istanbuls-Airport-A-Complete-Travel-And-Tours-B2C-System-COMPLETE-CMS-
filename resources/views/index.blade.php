@@ -217,7 +217,7 @@
                         </div>
 
                         <div class="tab-pane fade" id="airport-service-tab">
-                            <form action="{{route('airport-taxi-booking')}}" method="post">
+                            <form action="{{route('airport-taxi-booking', ['type' => 'personal_taxi'])}}" method="post">
                                @csrf
                                 <div class="row">
                                     <div class="col-md-12">

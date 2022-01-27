@@ -98,9 +98,5 @@
         </div>
     </div>
 </div>
-<form role="form" action="{{url('sss')}}" method="POST">
-    @csrf
-    @method('POST')
-    <button type="submit">Click</button>   
-</form>
+
 @endsection
