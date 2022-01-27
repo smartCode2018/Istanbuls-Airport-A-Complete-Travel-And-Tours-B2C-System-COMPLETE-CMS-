@@ -1,3 +1,6 @@
+/* -------------------------------------
+		CUSTOM FUNCTION WRITE HERE
+-------------------------------------- */
 "use strict";
 jQuery(document).on("ready", function () {
     /* -------------------------------------
@@ -273,11 +276,11 @@ jQuery(document).on("ready", function () {
     /* -------------------------------------
 			MASONRY GALLERY
 	-------------------------------------- */
-    // var _tg_masnorygallery = jQuery('.tg-faqs');
-    // _tg_masnorygallery.packery({
-    // 	itemSelector: '.tg-item',
-    // 	columnWidth: 0,
-    // });
+    var _tg_masnorygallery = jQuery(".tg-faqs");
+    _tg_masnorygallery.packery({
+        itemSelector: ".tg-item",
+        columnWidth: 0,
+    });
     /* -------------------------------------
 			POPULAR tOUR SLIDER
 	-------------------------------------- */
@@ -337,21 +340,21 @@ jQuery(document).on("ready", function () {
     /* -------------------------------------
 			Google Map
 	-------------------------------------- */
-    // jQuery(".tg-locationmap").gmap3({
-    //     marker: {
-    //         address: "1600 Elizabeth St, Melbourne, Victoria, Australia",
-    //         options: {
-    //             title: "Travelu",
-    //         },
-    //     },
-    //     map: {
-    //         options: {
-    //             zoom: 16,
-    //             scrollwheel: false,
-    //             disableDoubleClickZoom: true,
-    //         },
-    //     },
-    // });
+    jQuery(".tg-locationmap").gmap3({
+        marker: {
+            address: "1600 Elizabeth St, Melbourne, Victoria, Australia",
+            options: {
+                title: "Travelu",
+            },
+        },
+        map: {
+            options: {
+                zoom: 16,
+                scrollwheel: false,
+                disableDoubleClickZoom: true,
+            },
+        },
+    });
     /* ---------------------------------------
 			FULL PAGE SEARCH
 	--------------------------------------- */
@@ -406,22 +409,22 @@ jQuery(document).on("ready", function () {
     jQuery("a[data-rel]").each(function () {
         jQuery(this).attr("rel", jQuery(this).data("rel"));
     });
-    // jQuery("a[data-rel^='prettyPhoto']").prettyPhoto({
-    //     animation_speed: "normal",
-    //     theme: "dark_square",
-    //     slideshow: 3000,
-    //     autoplay_slideshow: false,
-    //     social_tools: false,
-    // });
+    jQuery("a[data-rel^='prettyPhoto']").prettyPhoto({
+        animation_speed: "normal",
+        theme: "dark_square",
+        slideshow: 3000,
+        autoplay_slideshow: false,
+        social_tools: false,
+    });
     /* ---------------------------------------
 			MOBILE MENU
 	--------------------------------------- */
-    // jQuery("#menu").mmenu({
-    //     extensions: ["border-full", "pagedim-black"],
-    // });
+    jQuery("#menu").mmenu({
+        extensions: ["border-full", "pagedim-black"],
+    });
 });
 /* -------------------------------------
- LOADER
+			LOADER
 -------------------------------------- */
 jQuery(window).on("load", function () {
     jQuery(".loader").fadeOut(800);

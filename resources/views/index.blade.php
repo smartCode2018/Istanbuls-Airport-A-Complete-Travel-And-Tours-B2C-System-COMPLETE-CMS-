@@ -164,7 +164,7 @@
                                     
                                     <div style=" padding:10px; background:#fdfdfd0d" class="col-md-6">
                                         <h3 style="font-weight:bold; background:#80808014; padding:13px;" class="title">Turkey E-Visa Application</h3>
-                                       <div style="font-size: 14px; text-align:justify">
+                                       <div style="font-size: 14px; text-align:justify; padding:13px 13px 0px 13px;">
                                         <p>
                                             The Turkish Government has launched an online visa service, which is electronic permission valid for 180 days that grants its holder entry to the Republic of Turkey and a stay of up to 3 months in the Turkish land. 
                                         </p>
@@ -176,7 +176,7 @@
                                            
                                         </p>
                                        </div>
-                                        <div style="width: 50%" class="form-group">
+                                        <div style="width: 50%; margin-left:13px;" class="form-group">
                                             <label class="hidden-xs">&nbsp;</label>
                                             <a href="{{route('evisa.booking')}}" class="banner-action-btn fw-bold full-width">APPLY FOR E-VISA</a>
                                         </div>
@@ -198,28 +198,27 @@
                                             </div>
                                         </div>
 
-
                                         <div class="col-sm-12 col-md-3 ">
                                             <div class="panel ">
                                                 <div class="panel-heading ">
                                                     <img style="min-height: 175px;" class="img-responsive right-shadow" src="{{asset('images/tours/12.jpg')}}" alt="">
                                                 </div>
-                                                <div class="panel-body"></div>
+                                                <div class="panel-body">
                                                     <h3>How to obtain an evisa</h3>
                                                     <div style="width: 80%" class="form-group">
                                                         <label class="hidden-xs">&nbsp;</label>
                                                         <a href="#" class="tour-btn fw-bold full-width">Read More</a>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </div>
                                 </div>
                             </form>
                         </div>
 
                         <div class="tab-pane fade" id="airport-service-tab">
-                            <form action="" method="POST">
-                                @csrf
-                                
+                            <form action="{{route('airport-taxi-booking')}}" method="post">
+                               @csrf
                                 <div class="row">
                                     <div class="col-md-12">
                                         <h2>Book Qick Taxi</h2>
@@ -227,7 +226,7 @@
                                     <div class="form-group col-sm-6 col-md-3">
                                         <label>SELECT TYPE</label>
                                         <div class="selector">
-                                            <select id="access-type" onchange="showForm()" class="full-width">
+                                            <select name="taxi_type" id="access-type" onchange="showForm()" class="full-width">
                                                 <option value="from">FROM ISTANBUL AIRPORT (IST)</option>
                                                 <option value="to">TO ISTANBUL AIRPORT (IST)</option>
                                             </select>
@@ -237,7 +236,7 @@
                                     <div   class="form-group col-sm-6 col-md-3">
                                         <label id="dropoff">DROP OFF LOCATION</label>
                                         <label style="display: none" id="pickup">PICK UP LOCATION</label>
-                                        <input required id="pac-input" type="text" class="input-text full-width" placeholder="Search For Location" />
+                                        <input name="location" required id="pac-input" type="text" class="input-text full-width" placeholder="Search For Location" />
                                         
                                     </div>
                                     
@@ -246,7 +245,7 @@
                                             <div class="col-xs-6">
                                                 <label>Adults</label>
                                                 <div class="selector">
-                                                    <select required class="full-width">
+                                                    <select name="num_adult" id="adults" required class="full-width">
                                                         <option value="1">01</option>
                                                         <option value="2">02</option>
                                                         <option value="3">03</option>
@@ -259,7 +258,7 @@
                                             <div class="col-xs-6">
                                                 <label>Kids</label>
                                                 <div class="selector">
-                                                    <select required class="full-width">
+                                                    <select name="num_kids" id="kids" required class="full-width">
                                                         <option value="1">01</option>
                                                         <option value="2">02</option>
                                                         <option value="3">03</option>
@@ -273,9 +272,10 @@
                                     
                                     <div style="margin-top: 22px;" class="form-group col-sm-6 col-md-3">
                                         {{-- <label class="hidden-xs">&nbsp;</label> --}}
-                                        <button name="submit"  type="submit" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">CONTINUE</button>
+                                        <button  type="submit" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">CONTINUE</button>
                                     </div>
                                 </div>
+                            </form>
                                 <div class="row">
                                     <div style="display:flex; justify-content:center; align-items:center" class="form-group col-md-12">
                                         <div style="height: 350px !important; width:100%; display:none;" id="map"></div>
@@ -304,7 +304,7 @@
                                           </ul>
                                     </div>
                                 </div>
-                            </form>
+                            
                         </div>
                         <div class="tab-pane fade" id="premium-service-tab">
                             <form action="flight-list-view.html" method="post">
@@ -621,8 +621,8 @@
                 </div>
             </div>
 
-            <div style="background: #e9e9e91f">
-                <div  class="container section">
+            <div style="background: #e9e9e91f;">
+                <div style="padding-top: 30px !important"  class="container section">
                     <h2 style="font-size: 30px; text-align:center">Things <span style="color: #E01514;" class="">To Do</span></h2>
                     <div  class="tg-description text-center">
                         <p>Explore All Conners Of Istanbul With Us</p>
@@ -693,7 +693,7 @@
                                     <a href="" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/tours1.jpg')}}"></a>
                                 </figure>
                                 <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 10px;" class="box-title"><strong>Tours</strong></h4>
+                                    <h4 style="margin-bottom: 20px !important;" class="box-title"><strong>Tours</strong></h4>
                                     <a class="tour-btn" href="#">Explore</a>
                                 </div>
                             </article>
@@ -704,7 +704,7 @@
                                     <a href="#" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/park1.jpg')}}"></a>
                                 </figure>
                                 <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 10px;" class="box-title"><strong>Parks</strong></h4>
+                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Parks</strong></h4>
                                     <a class="tour-btn" href="#">Explore</a>
                                 </div>
                             </article>
@@ -715,7 +715,7 @@
                                     <a href="#" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/locals2.jpg')}}"></a>
                                 </figure>
                                 <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 10px;" class="box-title"><strong>Locals</strong></h4>
+                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Locals</strong></h4>
                                     <a class="tour-btn" href="#">Read More</a>
                                 </div>
                             </article>
@@ -726,7 +726,7 @@
                                     <a href="#" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/12.jpg')}}"></a>
                                 </figure>
                                 <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 10px;" class="box-title"><strong>Covid Checks</strong></h4>
+                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Covid Checks</strong></h4>
                                     <a class="tour-btn" href="#">Read More</a>
                                 </div>
                             </article>
@@ -1076,5 +1076,19 @@
                         dmap.style.display='none'
                     }
                 }
+
+
+                const qickTaxi = (event) => {
+                    event.preventDefault()
+                    const smap = document.querySelector("#pac-input").value
+                    const access_type = document.querySelector("#access-type").value
+                    const adults = document.querySelector("#adults").value
+                    const kids = document.querySelector("#kids").value
+
+                    const surl = ""
+
+                    // window.location.replace("http://www.w3schools.com");
+                }
+
             </script>
             @endsection

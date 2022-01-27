@@ -12,7 +12,8 @@
         <meta name="description" content="Istanbul-Airport Services">
         <meta name="Justice" content="UI Redesign">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=0, minimal-ui">
         
         <!-- Theme Styles -->
         @yield('bootstrap')
@@ -47,7 +48,7 @@
         <script src="{{asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
+        <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
         <!-- CSS for IE -->
         <!--[if lte IE 9]>
             <link rel="stylesheet" type="text/css" href="css/ie.css" />
@@ -410,7 +411,7 @@
     </footer>
   </div>
   <!-- Javascript -->
-  <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
+  
   <script type="text/javascript" src="{{asset('js/jquery.noconflict.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/modernizr.2.7.1.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/jquery-migrate-1.2.1.min.js')}}"></script>

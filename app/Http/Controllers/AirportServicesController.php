@@ -16,6 +16,16 @@ class AirportServicesController extends Controller
         //
     }
 
+    //rendering view
+    public function airportTaxiBooking(Request $request){
+        dd($request->all());
+        // return view('airport_taxi_booking');
+
+    }
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
