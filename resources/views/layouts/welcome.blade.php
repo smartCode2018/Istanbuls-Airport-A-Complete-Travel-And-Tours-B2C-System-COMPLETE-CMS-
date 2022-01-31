@@ -201,6 +201,7 @@
                             <a href="{{ route('home') }}">Home</a>
                        
                         </li>
+                        
                         {{-- <li class="">
                             <a href="#">Hotels</a>
                         </li> --}}
@@ -208,7 +209,7 @@
                             <a href="{{ route('flight.status') }}">Flights</a>
                         </li>
                         <li class="">
-                            <a href="{{route('evisa')}}">E-Visa</a>
+                            <a href="{{url('evisa')}}">E-Visa</a>
                         </li>
                         <li class="">
                             <a href="#">Airport Access</a>
@@ -240,7 +241,7 @@
                         <a href="{{route('flight.status')}}">Flights</a>
                     </li>
                     <li class="">
-                        <a href="{{route('evisa.booking')}}">E-Visa</a>
+                        <a href="{{url('evisa')}}">E-Visa</a>
                     </li>
                     <li class="">
                         <a href="#">Airport Access</a>

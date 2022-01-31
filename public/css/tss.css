@@ -6177,3 +6177,7 @@ body.tg-hidescroll {
     -webkit-box-shadow: 2px 6px 12px -10px #000000;
     box-shadow: 2px 6px 12px -10px #000000;
 }
+
+.bg-color {
+    background-color: #80808029 !important;
+}

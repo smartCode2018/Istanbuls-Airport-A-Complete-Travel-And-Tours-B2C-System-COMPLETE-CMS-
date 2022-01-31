@@ -1044,13 +1044,11 @@
                         autocomBox.style.display ='none'
                     }
                     tspinner.style.display = 'block'
-                    setTimeout(() => {
-                        tspinner.style.display = 'none'
-                        if(input && input.value){
+
+                    tspinner.style.display = 'none'
+                        if(input && input.value || input_city && input_city.value){
                             autocomBox.style.display ='block'
-                        }
-                        
-                    }, 1000)();
+                        };
                 }
 
                 const showForm = () => {

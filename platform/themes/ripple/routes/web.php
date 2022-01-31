@@ -13,10 +13,6 @@ Route::group(['namespace' => 'Theme\Ripple\Http\Controllers', 'middleware' => ['
 
         // my custom route ends
 
-
-
-
-
         Route::get('ajax/search', 'RippleController@getSearch')->name('public.ajax.search');
 
     });

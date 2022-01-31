@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 //Public Routes
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/flight/status', [FlightStatusController::class, 'index'])->name('flight.status');
-Route::get('/evisa', [EvisaController::class, 'index'])->name('evisa');
+// Route::get('/evisa', [EvisaController::class, 'index'])->name('evisa');
 Route::get('/evisa/booking', [EvisaController::class, 'create'])->name('evisa.booking');
 Route::post('/evisa/booking', [EvisaController::class, 'store'])->name('evisa.submit');
 Route::post('/airport_services/airport_taxi/{type}', [AirportServicesController::class, 'create'])->name('airport-taxi-booking');
