@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Home;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -27,8 +28,15 @@ class HomeController extends Controller
         ];
 
         //var_dump($flight_status);
+
+        $menus = DB::select('select * from menu_nodes where position != 0 ORDER BY position');
+        $recent_news = DB::select('select * from posts ORDER BY updated_at ASC LIMIT 6');
+        // dd($recent_news);
+
         return view('index', [
-            'flight_status' => $flight_status
+            'flight_status' => $flight_status,
+            'menus' => $menus,
+            'recent_news' => $recent_news
         ]);
     }
 

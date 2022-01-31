@@ -7,6 +7,7 @@ use App\Models\Evisa;
 use App\Models\Traveldocument;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EvisaController extends Controller
 {
@@ -17,7 +18,8 @@ class EvisaController extends Controller
      */
     public function index()
     {
-       return view('evisa');
+        $menus = DB::select('select * from menu_nodes where position != 0 ORDER BY position');
+       return view('evisa', compact('menus'));
     }
 
     /**

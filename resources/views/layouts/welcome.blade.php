@@ -5,6 +5,7 @@
     <head>
         <!-- Page Title -->
         <title>@yield('title')</title>
+        <link rel="shortcut icon" type="image/jpg" href="{{asset('images/logo/logo.png')}}"/>
         
         <!-- Meta Tags -->
         <meta charset="utf-8">
@@ -199,13 +200,10 @@
                     <ul class="menu">
                         <li class="">
                             <a href="{{ route('home') }}">Home</a>
-                       
                         </li>
+                        @yield('menus')
                         
                         {{-- <li class="">
-                            <a href="#">Hotels</a>
-                        </li> --}}
-                        <li class="">
                             <a href="{{ route('flight.status') }}">Flights</a>
                         </li>
                         <li class="">
@@ -222,7 +220,7 @@
                         </li>
                         <li class="">
                             <a href="#">Covid  19</a>
-                        </li>
+                        </li> --}}
                         {{-- <li class="">
                             <a href="{{route('public.news')}}">News</a>
                         </li> --}}

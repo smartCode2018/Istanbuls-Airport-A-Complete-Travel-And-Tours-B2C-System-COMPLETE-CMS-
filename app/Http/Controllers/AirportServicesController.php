@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Country;
 use App\Models\Traveldocument;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AirportServicesController extends Controller
 {
@@ -33,7 +34,8 @@ class AirportServicesController extends Controller
         $travel_docs = Traveldocument::all();
         $form = $request->all();
         $taxi_type = $type;
-        return view('airport_taxi_booking', compact('countries','travel_docs','form', 'taxi_type'));
+        $menus = DB::select('select * from menu_nodes where position != 0 ORDER BY position');
+        return view('airport_taxi_booking', compact('countries','travel_docs','form', 'taxi_type', 'menus'));
     }
 
     /**

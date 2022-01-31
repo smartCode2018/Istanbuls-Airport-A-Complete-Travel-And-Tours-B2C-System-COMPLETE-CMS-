@@ -2,6 +2,17 @@
 @section('title')
    Istanbuls Airport 
 @endsection
+@section('menus')
+@foreach ($menus as $menu)
+<li class="">
+    @if ($menu->title == 'Contact')
+      {{-- skip   --}}
+    @else
+    <a href="{{ url($menu->url) }}">{{$menu->title}}</a>
+    @endif
+</li>
+@endforeach
+@endsection
         @section('content')
         <div style="background-image: url('{{asset('images/assets/slider/6.jpg')}}');
         background-size: cover;" id="slideshow">
@@ -922,6 +933,7 @@
             <h2 style="font-size: 30px; color:#fff">Recent <span style="color: #E01514;" class="">News</span></h2>
             <div class="image-carousel style2" data-animation="slide" data-item-width="370" data-item-margin="30">
                 <ul class="slides image-box style10">
+                    @foreach ($recent_news as $item)
                     <li class="box post">
                         <figure>
                             <a href="pages-blog-read.html" class="hover-effect"><img src="{{asset('images/assets/blog/1.jpg')}}" alt="" /></a>
@@ -941,63 +953,8 @@
                             </div>
                         </div>
                     </li>
-                    <li class="box post">
-                        <figure>
-                            <a style="max-height:210px;" href="pages-blog-read.html" class="hover-effect"><img src="{{asset('images/assets/blog/2.jpg')}}" alt="" /></a>
-                            <figcaption class="entry-date">
-                                <label class="date">06</label>
-                                <label class="month">Jan</label>
-                            </figcaption>
-                        </figure>
-                        <div class="details">
-                            <a href="pages-blog-read.html" class="button">MORE</a>
-                            <h4 class="post-title entry-title">TURKEY E - VISA</h4>
-                            <div class="post-meta single-line-meta vcard">
-                                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
-                                <span class="sep">|</span>
-                                <a href="#" class="comment">1 COMMENT</a>
-                                <span class="hidden updated">Aug 29, 2013</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="box post">
-                        <figure>
-                            <a style="max-height:210px;" href="pages-blog-read.html" class="hover-effect"><img src="{{asset('images/assets/blog/3.jpg')}}" alt="" /></a>
-                            <figcaption class="entry-date">
-                                <label class="date">18</label>
-                                <label class="month">Jan</label>
-                            </figcaption>
-                        </figure>
-                        <div class="details">
-                            <a href="pages-blog-read.html" class="button">MORE</a>
-                            <h4 class="post-title entry-title">AIRPORT TAXI</h4>
-                            <div class="post-meta single-line-meta vcard">
-                                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
-                                <span class="sep">|</span>
-                                <a href="#" class="comment">1 COMMENT</a>
-                                <span class="hidden updated">Aug 29, 2013</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="box post">
-                        <figure>
-                            <a style="max-height:210px;" href="pages-blog-read.html" class="hover-effect"><img src="{{asset('images/assets/blog/4.jpg')}}" alt="" /></a>
-                            <figcaption class="entry-date">
-                                <label class="date">24</label>
-                                <label class="month">Jan</label>
-                            </figcaption>
-                        </figure>
-                        <div class="details">
-                            <a href="pages-blog-read.html" class="button">MORE</a>
-                            <h4 class="post-title entry-title">TRAVEL TIPS</h4>
-                            <div class="post-meta single-line-meta vcard">
-                                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
-                                <span class="sep">|</span>
-                                <a href="#" class="comment">1 COMMENT</a>
-                                <span class="hidden updated">Aug 29, 2013</span>
-                            </div>
-                        </div>
-                    </li>
+                    @endforeach
+                    
                 </ul>
             </div>
         </div>
