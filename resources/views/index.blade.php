@@ -657,7 +657,7 @@
                                             <span style="width: 80%;" class="five-stars"></span>
                                         </div> --}}
                                         {{-- <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p> --}}
-                                        <a class="tour-btn" href="{{url(strtolower($category->name))}}">Explore Culture</a>
+                                        <a class="tour-btn" href="{{url(\Illuminate\Support\Str::slug(strtolower($category->name), '-'))}}">Explore Culture</a>
                                     </div>
                                 </article>
                             </div>
@@ -764,7 +764,7 @@
                         <div class="col-sms-6 col-sm-6 col-md-3">
                             <article class="box">
                                 <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                    <a href="#" class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" style="max-height: 180px" src="{{asset('storage/'.$item->image)}}" alt=""></a>
+                                    <a href="{{url(\Illuminate\Support\Str::slug(strtolower($item->name), '-'))}}" class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" style="max-height: 180px" src="{{asset('storage/'.$item->image)}}" alt=""></a>
                                 </figure>
                                 <div style="background: #ebebeb08;" class="details">
                                     {{-- <span class="price">
@@ -778,8 +778,8 @@
                                     </div>
                                     <p class="description">{{ \Illuminate\Support\Str::limit($item->description, 50, $end='...') }}</p>
                                     <div class="action">
-                                        <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-                                        <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
+                                        <a href="{{url(\Illuminate\Support\Str::slug(strtolower($item->name), '-'))}}" class="button btn-small red">READ MORE</a>
+                                        {{-- <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a> --}}
                                     </div>
                                 </div>
                             </article>
@@ -798,14 +798,14 @@
                     @foreach ($recent_news as $item)
                     <li class="box post">
                         <figure>
-                            <a href="pages-blog-read.html" class="hover-effect"><img style="max-height: 290px;" class="img-responsive" src="{{asset('storage/'.$item->image)}}" alt="" /></a>
+                            <a href="{{url(\Illuminate\Support\Str::slug(strtolower($item->name), '-'))}}" class="hover-effect"><img style="max-height: 290px;" class="img-responsive" src="{{asset('storage/'.$item->image)}}" alt="" /></a>
                             <figcaption class="entry-date">
                                 <label class="date">{{\Carbon\Carbon::parse($item->updated_at)->day}}</label>
                                 <label class="month">{{\Carbon\Carbon::parse($item->updated_at)->format('M')}}</label>
                             </figcaption>
                         </figure>
                         <div class="details">
-                            <a href="pages-blog-read.html" class="button">MORE</a>
+                            <a href="{{url(\Illuminate\Support\Str::slug(strtolower($item->name), '-'))}}" class="button">MORE</a>
                             <h4 class="post-title entry-title">{{\Illuminate\Support\Str::limit($item->name, 20, $end='...')}}</h4>
                             <div class="post-meta single-line-meta vcard">
                                 DATE <span class="fn"><a rel="author" href="#" class="author"></a></span>

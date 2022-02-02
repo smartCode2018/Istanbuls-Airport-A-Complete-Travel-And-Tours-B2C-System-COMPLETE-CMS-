@@ -134,6 +134,7 @@
         {{-- @livewireStyles --}}
     </head>
 <body>
+    {{-- {{$me = \Botble\Menu\Models\MenuNode::select('title')->where('position', '!=0')->get()}} --}}
   <div id="page-wrapper">
     <header id="header" class="navbar-static-top">
         <div class="topnav hidden-xs">
