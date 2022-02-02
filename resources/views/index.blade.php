@@ -638,116 +638,36 @@
                     <div  class="tg-description text-center">
                         <p>Explore All Conners Of Istanbul With Us</p>
                     </div>
+                    
                     <div class="row image-box style3">
-                        <div class="col-sms-6 col-sm-6 col-md-3">
-                            <article class="box">
-                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                    <a href="" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/culture2.jpg')}}"></a>
-                                </figure>
-                                <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Culture</strong></h4>
-                                    {{-- <p class="offers-content">(15 deal offers)</p> --}}
-                                    {{-- <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                        <span style="width: 80%;" class="five-stars"></span>
-                                    </div> --}}
-                                    {{-- <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p> --}}
-                                    <a class="tour-btn" href="#">Explore Culture</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-sms-6 col-sm-6 col-md-3">
-                            <article class="box">
-                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                    <a href="#" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/event3.jpg')}}"></a>
-                                </figure>
-                                <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Events</strong></h4>
-                                    {{-- <p class="offers-content">(15 deal offers)</p> --}}
-                                    {{-- <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                        <span style="width: 80%;" class="five-stars"></span>
-                                    </div> --}}
-                                    {{-- <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p> --}}
-                                    <a class="tour-btn" href="#">Read More</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-sms-6 col-sm-6 col-md-3">
-                            <article class="box">
-                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                    <a href="" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/food1.jpg')}}"></a>
-                                </figure>
-                                <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Food</strong></h4>
-                                    {{-- <p class="offers-content">(15 deal offers)</p> --}}
-                                    {{-- <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                        <span style="width: 80%;" class="five-stars"></span>
-                                    </div> --}}
-                                    {{-- <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p> --}}
-                                    <a class="tour-btn" href="#">Explore Food</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-sms-6 col-sm-6 col-md-3">
-                            <article class="box">
-                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                    <a href="" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/lifestyle3.jpg')}}"></a>
-                                </figure>
-                                <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Lifestyle</strong></h4>
-                                    <a class="tour-btn" href="#">Learn More</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-sms-6 col-sm-6 col-md-3">
-                            <article class="box">
-                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                    <a href="" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/tours1.jpg')}}"></a>
-                                </figure>
-                                <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 20px !important;" class="box-title"><strong>Tours</strong></h4>
-                                    <a class="tour-btn" href="#">Explore</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-sms-6 col-sm-6 col-md-3">
-                            <article class="box">
-                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                    <a href="#" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/park1.jpg')}}"></a>
-                                </figure>
-                                <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Parks</strong></h4>
-                                    <a class="tour-btn" href="#">Explore</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-sms-6 col-sm-6 col-md-3">
-                            <article class="box">
-                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                    <a href="#" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/locals2.jpg')}}"></a>
-                                </figure>
-                                <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Locals</strong></h4>
-                                    <a class="tour-btn" href="#">Read More</a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-sms-6 col-sm-6 col-md-3">
-                            <article class="box">
-                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                    <a href="#" class=""><img width="270" height="160" alt="" src="{{asset('images/tours/12.jpg')}}"></a>
-                                </figure>
-                                <div style="text-align: start !important" class="details text-center">
-                                    <h4 style="margin-bottom: 20px;" class="box-title"><strong>Covid Checks</strong></h4>
-                                    <a class="tour-btn" href="#">Read More</a>
-                                </div>
-                            </article>
-                        </div>
+                        @foreach ($categories as $category)
+                        <?php 
+                          $image = explode("/",$category->meta_value);
+                          $image = explode('"',$image[1])[0];
+                        ?>
+                            <div class="col-sms-6 col-sm-6 col-md-3">
+                                <article class="box">
+                                    <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                        <a href="" class=""><img width="270" height="160" alt="" src="{{asset('/storage/categories/'.$image)}}"></a>
+                                    </figure>
+                                    <div style="text-align: start !important" class="details text-center">
+                                        <h4 style="margin-bottom: 20px;" class="box-title"><strong>{{$category->name}}</strong></h4>
+                                        {{-- <p class="offers-content">(15 deal offers)</p> --}}
+                                        {{-- <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                            <span style="width: 80%;" class="five-stars"></span>
+                                        </div> --}}
+                                        {{-- <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p> --}}
+                                        <a class="tour-btn" href="{{url(strtolower($category->name))}}">Explore Culture</a>
+                                    </div>
+                                </article>
+                            </div>
+                        @endforeach
                         
                     </div>
                 </div>
             </div>
                 
-	          <section style="  margin-bottom:60px !important;" class=" tg-haslayout">
+	          {{-- <section style="  margin-bottom:60px !important;" class=" tg-haslayout">
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -835,94 +755,36 @@
 							</div>
 						</div>
 					</div>
-			  </section>
+			  </section> --}}
 
 			  <div class="section container tg-sectionspace">
                 <h2 style="font-size: 30px;">Explore Our <span style="color: #E01514;" class="fw-bold">Top Destinations</span></h2>
                 <div class="row image-box hotel listing-style1">
-                    <div class="col-sms-6 col-sm-6 col-md-3">
-                        <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" height="160" src="images/tours/3.jpg" alt=""></a>
-                            </figure>
-                            <div class="details">
-                                <span class="price">
-                                    <small>avg/night</small>
-                                    $360
-                                </span>
-                                <h4 class="box-title">Hotel Hilton<small>Paris france</small></h4>
-                                <div class="feedback">
-                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
-                                    <span class="review">270 reviews</span>
+                    @foreach ($featured as $item)
+                        <div class="col-sms-6 col-sm-6 col-md-3">
+                            <article class="box">
+                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                    <a href="#" class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" style="max-height: 180px" src="{{asset('storage/'.$item->image)}}" alt=""></a>
+                                </figure>
+                                <div style="background: #ebebeb08;" class="details">
+                                    {{-- <span class="price">
+                                        <small>INTREST(S)</small>
+                                        {{$item->views}}
+                                    </span> --}}
+                                    <h4 class="box-title">{{\Illuminate\Support\Str::limit($item->name, 20, $end='...')}}<small></small></h4>
+                                    <div style="padding-bottom: 10px !important;" class="feedback">
+                                        {{-- <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div> --}}
+                                        <span  class="review">{{$item->views}} Intrests</span>
+                                    </div>
+                                    <p class="description">{{ \Illuminate\Support\Str::limit($item->description, 50, $end='...') }}</p>
+                                    <div class="action">
+                                        <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
+                                        <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
+                                    </div>
                                 </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
-                                <div class="action">
-                                    <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-                                    <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sms-6 col-sm-6 col-md-3">
-                        <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.6">
-                                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" height="160" src="images/tours/2.jpg" alt=""></a>
-                            </figure>
-                            <div class="details">
-                                <span class="price"><small>avg/night</small>$188</span>
-                                <h4 class="box-title">Forte Do Vale<small>Albufeira</small></h4>
-                                <div class="feedback">
-                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
-                                    <span class="review">170 reviews</span>
-                                </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
-                                <div class="action">
-                                    <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-                                    <a href="#" class="button btn-small yellow popup-map" data-box="37.089072, -8.247880">VIEW ON MAP</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sms-6 col-sm-6 col-md-3">
-                        <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.9">
-                                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" height="160" src="images/tours/1.jpeg" alt=""></a>
-                            </figure>
-                            <div class="details">
-                                <span class="price"><small>avg/night</small>$322</span>
-                                <h4 class="box-title">Gran Canaria<small>spain</small></h4>
-                                <div class="feedback">
-                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
-                                    <span class="review">485 reviews</span>
-                                </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
-                                <div class="action">
-                                    <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-                                    <a href="#" class="button btn-small yellow popup-map" data-box="40.463667, -3.749220">VIEW ON MAP</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-sms-6 col-sm-6 col-md-3">
-                        <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="1.2">
-                                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" height="160" src="images/tours/3.jpg" alt=""></a>
-                            </figure>
-                            <div class="details">
-                                <span class="price"><small>avg/night</small>$170</span>
-                                <h4 class="box-title">Roosevelt Hotel<small>New york</small></h4>
-                                <div class="feedback">
-                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
-                                    <span class="review">75 reviews</span>
-                                </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
-                                <div class="action">
-                                    <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-                                    <a href="#" class="button btn-small yellow popup-map" data-box="40.705631, -73.978003">VIEW ON MAP</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+                            </article>
+                        </div>                    
+                    @endforeach         
                 </div>
             </div>
 
@@ -936,20 +798,20 @@
                     @foreach ($recent_news as $item)
                     <li class="box post">
                         <figure>
-                            <a href="pages-blog-read.html" class="hover-effect"><img src="{{asset('images/assets/blog/1.jpg')}}" alt="" /></a>
+                            <a href="pages-blog-read.html" class="hover-effect"><img style="max-height: 290px;" class="img-responsive" src="{{asset('storage/'.$item->image)}}" alt="" /></a>
                             <figcaption class="entry-date">
-                                <label class="date">04</label>
-                                <label class="month">Jan</label>
+                                <label class="date">{{\Carbon\Carbon::parse($item->updated_at)->day}}</label>
+                                <label class="month">{{\Carbon\Carbon::parse($item->updated_at)->format('M')}}</label>
                             </figcaption>
                         </figure>
                         <div class="details">
                             <a href="pages-blog-read.html" class="button">MORE</a>
-                            <h4 class="post-title entry-title">TURKEY ENTRY - HES CODE</h4>
+                            <h4 class="post-title entry-title">{{\Illuminate\Support\Str::limit($item->name, 20, $end='...')}}</h4>
                             <div class="post-meta single-line-meta vcard">
-                                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
+                                DATE <span class="fn"><a rel="author" href="#" class="author"></a></span>
                                 <span class="sep">|</span>
-                                <a href="#" class="comment">1 COMMENT</a>
-                                <span class="hidden updated">Aug 29, 2013</span>
+                                <a href="#" class="comment"></a>
+                                <span class="updated">{{ \Carbon\Carbon::parse($item->updated_at)->diffForHumans() }}</span>
                             </div>
                         </div>
                     </li>

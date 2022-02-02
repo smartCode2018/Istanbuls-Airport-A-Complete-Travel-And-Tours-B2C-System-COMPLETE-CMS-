@@ -21,13 +21,17 @@ return [
 
     ],
 
+    // 'backgrounds' => [
+    //     'vendor/core/core/acl/images/backgrounds/1.jpg',
+    //     'vendor/core/core/acl/images/backgrounds/2.jpg',
+    //     'vendor/core/core/acl/images/backgrounds/3.jpg',
+    //     'vendor/core/core/acl/images/backgrounds/4.jpg',
+    //     'vendor/core/core/acl/images/backgrounds/5.jpg',
+    //     'vendor/core/core/acl/images/backgrounds/6.jpg',
+    //     'vendor/core/core/acl/images/backgrounds/7.jpg',
+    // ],
+
     'backgrounds' => [
-        'vendor/core/core/acl/images/backgrounds/1.jpg',
-        'vendor/core/core/acl/images/backgrounds/2.jpg',
-        'vendor/core/core/acl/images/backgrounds/3.jpg',
-        'vendor/core/core/acl/images/backgrounds/4.jpg',
-        'vendor/core/core/acl/images/backgrounds/5.jpg',
-        'vendor/core/core/acl/images/backgrounds/6.jpg',
-        'vendor/core/core/acl/images/backgrounds/7.jpg',
+        'vendor/core/core/acl/images/backgrounds/1.jpg'
     ],
 ];
