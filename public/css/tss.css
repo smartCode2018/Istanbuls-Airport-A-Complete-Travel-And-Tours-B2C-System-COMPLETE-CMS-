@@ -6069,6 +6069,7 @@ body.tg-hidescroll {
     margin-bottom: 20px;
     /* background: #80808014; */
     background: #f1f1f15c;
+    color: rgb(10, 4, 49);
     padding-top: 13px;
     padding-bottom: 13px;
     margin-left: 9px;
@@ -6079,6 +6080,9 @@ body.tg-hidescroll {
     font-size: 14px !important;
     font-weight: 600;
     margin-bottom: 5px;
+}
+.f-title {
+    color: rgb(10, 4, 49);
 }
 
 .flight-table-wrapper {

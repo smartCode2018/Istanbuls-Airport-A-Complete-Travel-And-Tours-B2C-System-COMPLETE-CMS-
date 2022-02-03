@@ -4,11 +4,11 @@
 @endsection
 @section('menus')
 @foreach ($menus as $menu)
-<li class="">
+<li class="f-title text-custom-size">
     @if ($menu->title == 'Contact')
       {{-- skip   --}}
     @else
-    <a href="{{ url($menu->url) }}">{{$menu->title}}</a>
+    <a href="{{ url($menu->url) }}"><b>{{$menu->title}}</b></a>
     @endif
 </li>
 @endforeach
@@ -24,7 +24,7 @@
 										<h1 style=" margin-bottom: 10px; font-size: 50px; font-weight: bold; color:#000;" >AIRPORT SERVICES</h1>
 										<h2 style="margin-bottom: 40px; font-weight:bold; font-size: 25px; font-family: 'Mulish', sans-serif; color: rgb(46, 46, 46);;">All in one place</h2>
 										<div style="text-align: left !important;">
-											<a  href="#" class="banner-action-btn fw-bold">Explore Services</a>
+											<a style="font-size: 18px;"  href="#" class="banner-action-btn fw-bold">EXPLORE SERVICES</a>
 										</div>
 									</div>
 									
@@ -36,7 +36,7 @@
         <section id="content">
             <div class="search-box-wrapper">
                 <div class="search-box container">
-                    <ul class="search-tabs clearfix">
+                    <ul class="search-tabs clearfix text-custom-size">
                         <li class="active"><a href="#flight-status-tab" data-toggle="tab">FLIGHT STATUS</a></li>
                         <li><a href="#e-visa" data-toggle="tab">E-VISA</a></li>
                         <li><a href="#airport-service-tab" data-toggle="tab">AIRPORT ACCESS</a></li>
@@ -64,16 +64,14 @@
                     <div class="search-tab-content">
                         <div class="tab-pane fade active in" id="flight-status-tab">
                             <form action="{{route('flight.status')}}" method="get">
-                                <div class="container">
-                                    
-                                </div>
+                                
                                 <div class="row">
-                                    {{-- <h4 class="title text-align-center">Search Flight Details</h4> --}}
+                                    <h2 style="text-align-last: center" class="f-title"><strong>Search Flight Details</strong></h2>
                                     <div class="col-lg-12 ftype-wrapper">
                                         <div class="row">
                                             <div class="col-xs-6 col-md-3">
                                                 <label class="radio radio-inline radio-square ftype">
-                                                    <input id="arival" type="radio" name="ftype" checked="checked">ARIVAL
+                                                    <input st id="arival" type="radio" name="ftype" checked="checked">ARIVAL
                                                 </label>
                                             </div>
                                             <div class="col-xs-6 col-md-3">
@@ -98,11 +96,11 @@
                                         <div class="form-group row">
                                             
                                             <div class="col-xs-6">
-                                                <label>FLIGHT NUMBER</label>
+                                                <label class="f-title">FLIGHT NUMBER</label>
                                                 <input id="flight-num" type="text" class="input-text full-width" placeholder="Enter flight No (TK 2522)" />
                                             </div>
                                             <div class="col-xs-6">
-                                                <label>CITY</label>
+                                                <label class="f-title">CITY</label>
                                                 <input id="flight-city" type="text" class="input-text full-width" placeholder="enter a city or place name " />
                                             </div>
                                         </div>
@@ -111,7 +109,7 @@
                                     <div class="col-xs-6 col-md-2">
                                         {{-- <h4 class="title">When</h4> --}}
                                         <div class="form-group">
-                                            <label>FLIGHT DATE</label>
+                                            <label class="f-title">FLIGHT DATE</label>
                                             <div class="datepicker-wrap">
                                                 <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
                                             </div>
@@ -121,7 +119,7 @@
                                     <div class="col-xs-6 col-md-2">
                                         {{-- <h4 class="title">Who</h4> --}}
                                         <div class="form-group">
-                                            <label>AIRLINE</label>
+                                            <label class="f-title">AIRLINE</label>
                                             <input type="text" class="input-text full-width" placeholder="Airline" />
                                         </div>
                                     </div>
@@ -173,19 +171,15 @@
                             <form>
                                 <div class="row flight-table-wrapper">
                                     
-                                    <div style=" padding:10px; background:#fdfdfd0d" class="col-md-6">
-                                        <h3 style="font-weight:bold; background:#80808014; padding:13px;" class="title">Turkey E-Visa Application</h3>
+                                    <div style=" padding:10px;" class="col-md-6">
+                                        <h3 style="font-weight:bold; background:#80808014; padding:13px;" class="title f-title">Turkey E-Visa Application</h3>
                                        <div style="font-size: 14px; text-align:justify; padding:13px 13px 0px 13px;">
                                         <p>
                                             The Turkish Government has launched an online visa service, which is electronic permission valid for 180 days that grants its holder entry to the Republic of Turkey and a stay of up to 3 months in the Turkish land. 
                                         </p>
-                                        <p>You can apply for Electronic Visa in Turkey quickly, smoothly from anywhere in the World.</p>
-                                        <p>
-                                            Easy and simple steps are all you need to follow in order to get your visa to enter Turkey :
+                                        <p>You can apply for Electronic Visa in Turkey quickly, smoothly from anywhere in the World. Easy and simple steps are all you need to follow in order to get your visa to enter Turkey :
 
-                                            Click the button below to start
-                                           
-                                        </p>
+                                            Click the button below to start</p>
                                        </div>
                                         <div style="width: 50%; margin-left:13px;" class="form-group">
                                             <label class="hidden-xs">&nbsp;</label>
@@ -194,33 +188,18 @@
                                     </div>
                                     
                                    
-                                        <div class="col-sm-12 col-md-3 ">
+                                        <div class="col-sm-12 col-md-5 ">
                                             <div class="panel ">
                                                 <div class="panel-heading ">
-                                                    <img class="img-responsive right-shadow" src="{{asset('images/evisa.jpg')}}" alt="">
+                                                    <img class="img-responsive right-shadow" src="{{asset('images/assets/others/4.jpg')}}" alt="">
                                                 </div>
-                                                <div class="panel-body">
+                                                {{-- <div class="panel-body">
                                                     <h3>How to obtain an evisa</h3>
                                                     <div style="width: 80%" class="form-group">
                                                         <label class="hidden-xs">&nbsp;</label>
                                                         <a href="#" class="tour-btn fw-bold full-width">Read More</a>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12 col-md-3 ">
-                                            <div class="panel ">
-                                                <div class="panel-heading ">
-                                                    <img style="min-height: 175px;" class="img-responsive right-shadow" src="{{asset('images/tours/12.jpg')}}" alt="">
-                                                </div>
-                                                <div class="panel-body">
-                                                    <h3>How to obtain an evisa</h3>
-                                                    <div style="width: 80%" class="form-group">
-                                                        <label class="hidden-xs">&nbsp;</label>
-                                                        <a href="#" class="tour-btn fw-bold full-width">Read More</a>
-                                                    </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                 </div>
@@ -232,12 +211,12 @@
                                @csrf
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h2>Book Qick Taxi</h2>
+                                        <h2 class="f-title"><strong>Book Qick Taxi</strong> </h2>
                                     </div>
                                     <div class="form-group col-sm-6 col-md-3">
-                                        <label>SELECT TYPE</label>
+                                        <label class="f-title">SELECT TYPE</label>
                                         <div class="selector">
-                                            <select name="taxi_type" id="access-type" onchange="showForm()" class="full-width">
+                                            <select name="taxi_type" id="access-type" onchange="showForm()" class="full-width f-title">
                                                 <option value="from">FROM ISTANBUL AIRPORT (IST)</option>
                                                 <option value="to">TO ISTANBUL AIRPORT (IST)</option>
                                             </select>
@@ -245,16 +224,16 @@
                                     </div>
                                     
                                     <div   class="form-group col-sm-6 col-md-3">
-                                        <label id="dropoff">DROP OFF LOCATION</label>
+                                        <label id="dropoff" class="f-title">DROP OFF LOCATION</label>
                                         <label style="display: none" id="pickup">PICK UP LOCATION</label>
-                                        <input name="location" required id="pac-input" type="text" class="input-text full-width" placeholder="Search For Location" />
+                                        <input name="location" required id="pac-input" type="text" class="input-text full-width f-title" placeholder="Search For Location" />
                                         
                                     </div>
                                     
                                     <div class="form-group col-sm-6 col-md-3">
                                         <div class="row">
                                             <div class="col-xs-6">
-                                                <label>Adults</label>
+                                                <label class="f-title">Adults</label>
                                                 <div class="selector">
                                                     <select name="num_adult" id="adults" required class="full-width">
                                                         <option value="1">01</option>
@@ -267,7 +246,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-xs-6">
-                                                <label>Kids</label>
+                                                <label class="f-title">Kids</label>
                                                 <div class="selector">
                                                     <select name="num_kids" id="kids" required class="full-width">
                                                         <option value="1">01</option>
@@ -297,126 +276,76 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <h2>Browse More Services</h2>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul class="list-group airport-service-ul">
-                                            <li class="list-group-item airport-service-list"><a href=""><div> AIRPORT TO CITY CENTER <span class="airport-service-span"><i  class="airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
-                                            <li class="list-group-item airport-service-list"><a href=""><div>CITY CENTER TO AIRPORT<span class="airport-service-span" ><i class=" airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
-                                            <li class="list-group-item airport-service-list"><a href=""><div>FASTEST WAY TO|FROM THE AIRPORT<span class="airport-service-span"><i class=" airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul  class="list-group airport-service-ul">
-                                            <li class="list-group-item airport-service-list"><a href=""><div>AIRPORT SHUTTLE BUS <span class="airport-service-span"><i class="airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
-                                            <li class="list-group-item airport-service-list"><a href=""><div>TERMINAL SERVICES <span class="airport-service-span"><i  class=" airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
-                                            <li class="list-group-item airport-service-list"><a href=""><div>PRIVATE AIRPORT TAXI<span class="airport-service-span"><i  class="airport-service-li fa fa-arrow-circle-right fa-2x"></i></span></div></a></li>
-                                          </ul>
-                                    </div>
+                                    
                                 </div>
                             
                         </div>
                         <div class="tab-pane fade" id="premium-service-tab">
                             <form action="flight-list-view.html" method="post">
-                                {{-- <div class="row">
-                                    <div class="col-md-4">
-                                        <h4 class="title">Where</h4>
-                                        <div class="form-group">
-                                            <label>Leaving From</label>
-                                            <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Going To</label>
-                                            <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-4">
-                                        <h4 class="title">When</h4>
-                                        <label>Departing On</label>
-                                        <div class="form-group row">
-                                            <div class="col-xs-6">
-                                                <div class="datepicker-wrap">
-                                                    <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h1 style="text-align:center">Meet, Greet & Assist Service</h1>
+                                        <div style="background: #adadad05; padding-top:10px;" class="row">
+                                            <div  class="row image-box style5">
+                                                <div class="col-sm-4">
+                                                    <article class="box">
+                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                                            <a style="max-height:160px;" title="" href="#"><img width="370" height="160" alt="" src="{{asset('images/assets/others/1.jpg')}}"></a>
+                                                            <figcaption class="entry-date">
+                                                                <h3 class="caption-title">BOOK NOW</h3>
+                                                                {{-- <span>3 activities</span> --}}
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="details">
+                                                            <div class="detail">
+                                                                <span class="price"><small>Fee</small>€140</span>
+                                                                <h3 class="box-title"><a href="#"><strong>MEET & GREET ARIVAL</strong> </a></h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </article>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <article class="box">
+                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                                            <a style="max-height:160px;" title="" href="#"><img width="370" height="160" alt="" src="{{asset('images/assets/others/2.jpg')}}"></a>
+                                                            <figcaption class="entry-date">
+                                                                <h3 class="caption-title">BOOK NOW</h3>
+                                                                {{-- <span>3 activities</span> --}}
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="details">
+                                                            <div class="detail">
+                                                                <span class="price"><small>Fee</small>€155</span>
+                                                                <h3 class="box-title"><a href="#"><strong>MEET & GREET DEPARTURE</strong> </a></h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </article>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <article class="box">
+                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                                            <a style="max-height:160px;" title="" href="#"><img width="370" height="160" alt="" src="{{asset('images/assets/others/3.jpg')}}"></a>
+                                                            <figcaption class="entry-date">
+                                                                <h3 class="caption-title">BOOK NOW</h3>
+                                                                {{-- <span>3 activities</span> --}}
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="details">
+                                                            <div class="detail">
+                                                                <span class="price"><small>Fee</small>€250</span>
+                                                                <h3 class="box-title"><a href="#"><strong>MEET & GREET TRANSFER</strong> </a></h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </article>
                                                 </div>
                                             </div>
-                                            <div class="col-xs-6">
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="1">anytime</option>
-                                                        <option value="2">morning</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <label>Arriving On</label>
-                                        <div class="form-group row">
-                                            <div class="col-xs-6">
-                                                <div class="datepicker-wrap">
-                                                    <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="1">anytime</option>
-                                                        <option value="2">morning</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-4">
-                                        <h4 class="title">Who</h4>
-                                        <div class="form-group row">
-                                            <div class="col-xs-3">
-                                                <label>Adults</label>
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="1">01</option>
-                                                        <option value="2">02</option>
-                                                        <option value="3">03</option>
-                                                        <option value="4">04</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-3">
-                                                <label>Kids</label>
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="1">01</option>
-                                                        <option value="2">02</option>
-                                                        <option value="3">03</option>
-                                                        <option value="4">04</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <label>Promo Code</label>
-                                                <input type="text" class="input-text full-width" placeholder="type here" />
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-xs-3">
-                                                <label>Infants</label>
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="1">01</option>
-                                                        <option value="2">02</option>
-                                                        <option value="3">03</option>
-                                                        <option value="4">04</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 pull-right">
-                                                <label>&nbsp;</label>
-                                                <button class="full-width icon-check">SERACH NOW</button>
-                                            </div>
+                                            
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             </form>
                         </div>
                         
@@ -771,7 +700,7 @@
                                         <small>INTREST(S)</small>
                                         {{$item->views}}
                                     </span> --}}
-                                    <h4 class="box-title">{{\Illuminate\Support\Str::limit($item->name, 20, $end='...')}}<small></small></h4>
+                                    <h4 class="box-title f-title">{{\Illuminate\Support\Str::limit($item->name, 20, $end='...')}}<small></small></h4>
                                     <div style="padding-bottom: 10px !important;" class="feedback">
                                         {{-- <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div> --}}
                                         <span  class="review">{{$item->views}} Intrests</span>

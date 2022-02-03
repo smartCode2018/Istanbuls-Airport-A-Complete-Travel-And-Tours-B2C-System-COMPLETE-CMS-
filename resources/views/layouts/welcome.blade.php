@@ -29,7 +29,7 @@
         <link rel="stylesheet" type="text/css" href="{{asset('components/jquery.bxslider/jquery.bxslider.css')}}" media="screen" />
         <link rel="stylesheet" type="text/css" href="{{asset('components/flexslider/flexslider.css')}}" media="screen" />
 
-        <link rel="stylesheet" href="{{asset('css/tss.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('css/tss.css')}}"> --}}
         
         <!-- Main Style -->
         <link id="main-style" rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -199,8 +199,8 @@
                 
                 <nav id="main-menu" role="navigation">
                     <ul class="menu">
-                        <li class="">
-                            <a href="{{ route('home') }}">Home</a>
+                        <li class="f-title text-custom-size">
+                            <a href="{{ route('home') }}"><b>Home</b></a>
                         </li>
                         @yield('menus')
                         
@@ -418,7 +418,7 @@
   <script src="{{asset('js/jquery-scrolltofixed.js')}}"></script>
   <script src="{{asset('js/owl.carousel.min.js')}}"></script>
   <script src="{{asset('js/scrollbar.min.js')}}"></script>
-  <script src="{{asset('js/main.js')}}"></script>
+  {{-- <script src="{{asset('js/main.js')}}"></script> --}}
 
   
   <!-- Twitter Bootstrap -->

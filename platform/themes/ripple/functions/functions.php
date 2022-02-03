@@ -34,6 +34,22 @@ add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function ($form, $data)
 
     }
 
+    if (get_class($data) == \Botble\Blog\Models\Post::class) {
+
+        $test = \MetaBox::getMetaData($data, 'seo_keywords', true);
+
+        $form
+            ->add('seo_keywords', 'text', [
+                'label'      => __('Post Keywords'),
+                'label_attr' => ['class' => 'control-label'],
+                'value'      => $test,
+                'attr'       =>[
+                    'placeholder'  => __('Input keywords'),
+                ],
+            ]);
+
+    }
+
     return $form;
 }, 120, 3);
 
@@ -49,5 +65,8 @@ function save_addition_fields($screen, $request, $data)
 {
     if (get_class($data) == \Botble\Blog\Models\Category::class) {
         MetaBox::saveMetaBoxData($data, 'category_img', $request->input('category_img'));
+    }
+    if (get_class($data) == \Botble\Blog\Models\Post::class) {
+        MetaBox::saveMetaBoxData($data, 'seo_keywords', $request->input('seo_keywords'));
     }
 }
