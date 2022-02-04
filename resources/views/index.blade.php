@@ -2,17 +2,7 @@
 @section('title')
    Istanbuls Airport 
 @endsection
-@section('menus')
-@foreach ($menus as $menu)
-<li class="f-title text-custom-size">
-    @if ($menu->title == 'Contact')
-      {{-- skip   --}}
-    @else
-    <a href="{{ url($menu->url) }}"><b>{{$menu->title}}</b></a>
-    @endif
-</li>
-@endforeach
-@endsection
+
         @section('content')
         <div style="background-image: url('{{asset('images/assets/slider/6.jpg')}}');
         background-size: cover;" id="slideshow">
@@ -96,12 +86,12 @@
                                         <div class="form-group row">
                                             
                                             <div class="col-xs-6">
-                                                <label class="f-title">FLIGHT NUMBER</label>
-                                                <input id="flight-num" type="text" class="input-text full-width" placeholder="Enter flight No (TK 2522)" />
+                                                <label class="f-title text-custom-size">FLIGHT NUMBER</label>
+                                                <input id="flight-num" type="text" class="input-text full-width f-input-custom-style" placeholder="Enter flight No (TK 2522)" />
                                             </div>
                                             <div class="col-xs-6">
                                                 <label class="f-title">CITY</label>
-                                                <input id="flight-city" type="text" class="input-text full-width" placeholder="enter a city or place name " />
+                                                <input id="flight-city" type="text" class="input-text full-width f-input-custom-style" placeholder="enter a city or place name " />
                                             </div>
                                         </div>
                                     </div>
@@ -109,9 +99,9 @@
                                     <div class="col-xs-6 col-md-2">
                                         {{-- <h4 class="title">When</h4> --}}
                                         <div class="form-group">
-                                            <label class="f-title">FLIGHT DATE</label>
+                                            <label class="f-title text-custom-size">FLIGHT DATE</label>
                                             <div class="datepicker-wrap">
-                                                <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                                                <input type="text" class="input-text full-width f-input-custom-style" placeholder="mm/dd/yy" />
                                             </div>
                                         </div>
                                     </div>
@@ -119,13 +109,13 @@
                                     <div class="col-xs-6 col-md-2">
                                         {{-- <h4 class="title">Who</h4> --}}
                                         <div class="form-group">
-                                            <label class="f-title">AIRLINE</label>
-                                            <input type="text" class="input-text full-width" placeholder="Airline" />
+                                            <label class="f-title text-custom-size">AIRLINE</label>
+                                            <input type="text" class="input-text full-width f-input-custom-style" placeholder="Airline" />
                                         </div>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label class="hidden-xs">&nbsp;</label>
-                                        <button class="icon-check btn-block full-width">SEARCH NOW</button>
+                                        <button class="icon-check btn-block full-width f-input-custom-style">SEARCH NOW</button>
                                     </div>
                                 </div>
                             </form>
@@ -183,7 +173,7 @@
                                        </div>
                                         <div style="width: 50%; margin-left:13px;" class="form-group">
                                             <label class="hidden-xs">&nbsp;</label>
-                                            <a href="{{route('evisa.booking')}}" class="banner-action-btn fw-bold full-width">APPLY FOR E-VISA</a>
+                                            <a href="{{route('evisa.booking')}}" class="banner-action-btn fw-bold full-width f-input-custom-style">APPLY FOR E-VISA</a>
                                         </div>
                                     </div>
                                     
@@ -214,9 +204,9 @@
                                         <h2 class="f-title"><strong>Book Qick Taxi</strong> </h2>
                                     </div>
                                     <div class="form-group col-sm-6 col-md-3">
-                                        <label class="f-title">SELECT TYPE</label>
+                                        <label class="f-title text-custom-size">SELECT TYPE</label>
                                         <div class="selector">
-                                            <select name="taxi_type" id="access-type" onchange="showForm()" class="full-width f-title">
+                                            <select name="taxi_type" id="access-type" onchange="showForm()" class="f-input-custom-style full-width f-title">
                                                 <option value="from">FROM ISTANBUL AIRPORT (IST)</option>
                                                 <option value="to">TO ISTANBUL AIRPORT (IST)</option>
                                             </select>
@@ -224,18 +214,18 @@
                                     </div>
                                     
                                     <div   class="form-group col-sm-6 col-md-3">
-                                        <label id="dropoff" class="f-title">DROP OFF LOCATION</label>
+                                        <label id="dropoff" class="f-title text-custom-size">DROP OFF LOCATION</label>
                                         <label style="display: none" id="pickup">PICK UP LOCATION</label>
-                                        <input name="location" required id="pac-input" type="text" class="input-text full-width f-title" placeholder="Search For Location" />
+                                        <input name="location" required id="pac-input" type="text" class="f-input-custom-style input-text full-width f-title" placeholder="Search For Location" />
                                         
                                     </div>
                                     
                                     <div class="form-group col-sm-6 col-md-3">
                                         <div class="row">
                                             <div class="col-xs-6">
-                                                <label class="f-title">Adults</label>
+                                                <label class="f-title text-custom-size">Adults</label>
                                                 <div class="selector">
-                                                    <select name="num_adult" id="adults" required class="full-width">
+                                                    <select  name="num_adult" id="adults" required class="full-width f-input-custom-style">
                                                         <option value="1">01</option>
                                                         <option value="2">02</option>
                                                         <option value="3">03</option>
@@ -246,9 +236,9 @@
                                                 </div>
                                             </div>
                                             <div class="col-xs-6">
-                                                <label class="f-title">Kids</label>
+                                                <label class="f-title text-custom-size">Kids</label>
                                                 <div class="selector">
-                                                    <select name="num_kids" id="kids" required class="full-width">
+                                                    <select  name="num_kids" id="kids" required class="full-width f-input-custom-style">
                                                         <option value="1">01</option>
                                                         <option value="2">02</option>
                                                         <option value="3">03</option>
@@ -262,7 +252,7 @@
                                     
                                     <div style="margin-top: 22px;" class="form-group col-sm-6 col-md-3">
                                         {{-- <label class="hidden-xs">&nbsp;</label> --}}
-                                        <button  type="submit" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">CONTINUE</button>
+                                        <button type="submit" class="full-width icon-check animated f-input-custom-style" data-animation-type="bounce" data-animation-duration="1">CONTINUE</button>
                                     </div>
                                 </div>
                             </form>
@@ -290,7 +280,7 @@
                                                 <div class="col-sm-4">
                                                     <article class="box">
                                                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                                            <a style="max-height:160px;" title="" href="#"><img width="370" height="160" alt="" src="{{asset('images/assets/others/1.jpg')}}"></a>
+                                                            <a style="max-height:160px;" title="" href="{{route('mga-booking', 'arrival')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/1.jpg')}}"></a>
                                                             <figcaption class="entry-date">
                                                                 <h3 class="caption-title">BOOK NOW</h3>
                                                                 {{-- <span>3 activities</span> --}}
@@ -341,6 +331,7 @@
                                                         
                                                     </article>
                                                 </div>
+                                                <div style="text-align: center; font-size:20px; padding-bottom:20px;" class="col-sm-12"><a style="background: #e01514; padding:15px; color:#fff" href="{{url('premium-service')}}" class="" style="height:50px;">Brows More Services</a></div>
                                             </div>
                                             
                                         </div>

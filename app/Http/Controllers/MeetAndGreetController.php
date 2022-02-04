@@ -2,39 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Country;
-use App\Models\Traveldocument;
+use App\Models\MeetAndGreet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class AirportServicesController extends Controller
+class MeetAndGreetController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($type)
     {
-        //
+        $type = $type;
+        return view('meet_and_greet_form', compact('type'));
     }
-
-    //rendering view
-
-
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request, $type)
+    public function create()
     {
-        $countries = Country::all();
-        $travel_docs = Traveldocument::all();
-        $form = $request->all();
-        $taxi_type = $type;
-        return view('airport_taxi_booking', compact('countries','travel_docs','form', 'taxi_type'));
+        //
     }
 
     /**
@@ -45,17 +37,16 @@ class AirportServicesController extends Controller
      */
     public function store(Request $request)
     {
-        // save to db
-        dd($request->all());
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\MeetAndGreet  $meetAndGreet
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(MeetAndGreet $meetAndGreet)
     {
         //
     }
@@ -63,10 +54,10 @@ class AirportServicesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\MeetAndGreet  $meetAndGreet
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(MeetAndGreet $meetAndGreet)
     {
         //
     }
@@ -75,10 +66,10 @@ class AirportServicesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\MeetAndGreet  $meetAndGreet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, MeetAndGreet $meetAndGreet)
     {
         //
     }
@@ -86,10 +77,10 @@ class AirportServicesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\MeetAndGreet  $meetAndGreet
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(MeetAndGreet $meetAndGreet)
     {
         //
     }

@@ -18,8 +18,7 @@ class EvisaController extends Controller
      */
     public function index()
     {
-        $menus = DB::select('select * from menu_nodes where position != 0 ORDER BY position');
-       return view('evisa', compact('menus'));
+       return view('evisa');
     }
 
     /**

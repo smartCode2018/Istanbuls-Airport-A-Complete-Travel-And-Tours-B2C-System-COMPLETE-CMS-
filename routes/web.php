@@ -4,6 +4,7 @@ use App\Http\Controllers\AirportServicesController;
 use App\Http\Controllers\EvisaController;
 use App\Http\Controllers\FlightStatusController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MeetAndGreetController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
 //Public Routes
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/flight/status', [FlightStatusController::class, 'index'])->name('flight.status');
@@ -28,3 +30,4 @@ Route::get('/evisa/booking', [EvisaController::class, 'create'])->name('evisa.bo
 Route::post('/evisa/booking', [EvisaController::class, 'store'])->name('evisa.submit');
 Route::post('/airport_services/airport_taxi/{type}', [AirportServicesController::class, 'create'])->name('airport-taxi-booking');
 Route::put('/airport_services/airport_taxi/', [AirportServicesController::class, 'store'])->name('airport-taxi-booking-store');
+Route::get('/premium_services/meet_and_greet_booking_form/{type}',[MeetAndGreetController::class, 'index'])->name('mga-booking');

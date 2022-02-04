@@ -26,10 +26,9 @@ class FlightStatusController extends Controller
             ['airline'=>"JU", 'flight_no'=>"JU 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"],
             ['airline'=>"SQ", 'flight_no'=>"SQ 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"]
        ];
-       $menus = DB::select('select * from menu_nodes where position != 0 ORDER BY position');
+       
         return view('flight_status', [
-            'flight_status' => $flight_status,
-            'menus' => $menus
+            'flight_status' => $flight_status
         ]);
     }
 

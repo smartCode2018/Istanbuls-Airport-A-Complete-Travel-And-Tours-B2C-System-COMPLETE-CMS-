@@ -1,19 +1,8 @@
 @extends('layouts.welcome')
-@section('content')
 @section('title')
    Flight Status 
 @endsection
-@section('menus')
-@foreach ($menus as $menu)
-<li class="">
-    @if ($menu->title == 'Contact')
-      {{-- skip   --}}
-    @else
-    <a href="{{ url($menu->url) }}">{{$menu->title}}</a>
-    @endif
-</li>
-@endforeach
-@endsection
+@section('content')
 <div class="page-title-container">
     <div class="container">
         <div class="page-title pull-left">

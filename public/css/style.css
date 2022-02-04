@@ -16,7 +16,8 @@ html {
 body {
     font: 75%/150% "Lato", Arial, Helvetica, sans-serif;
     background-color: #fff;
-    color: #838383;
+    /* color: #838383; */
+    color: rgb(10, 4, 49) !important;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -ms-overflow-style: scrollbar;
@@ -14252,6 +14253,18 @@ body {
     background-color: #80808029 !important;
 }
 
-.text-custom-size{
-    font-size: 13px;
+.text-custom-size {
+    font-size: 13px !important;
+}
+
+.f-input-custom-style {
+    height: 40px;
+    font-size: 16px;
+}
+
+.mga-type {
+    background: #0074ff0a;
+    padding: 12px;
+    margin-bottom: 5px;
+    font-size: 20px !important;
 }

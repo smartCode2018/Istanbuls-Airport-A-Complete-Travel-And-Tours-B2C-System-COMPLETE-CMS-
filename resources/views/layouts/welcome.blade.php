@@ -202,31 +202,14 @@
                         <li class="f-title text-custom-size">
                             <a href="{{ route('home') }}"><b>Home</b></a>
                         </li>
-                        @yield('menus')
-                        
-                        {{-- <li class="">
-                            <a href="{{ route('flight.status') }}">Flights</a>
+                        @foreach (\Botble\Menu\Models\MenuNode::where('position', '>', 0)->get() as $item)
+                        @if ($item->title == 'Contact')  
+                        @else
+                        <li  class="text-custom-size">
+                        <a href="{{ url($item->url) }}">{{$item->title}}</a>
                         </li>
-                        <li class="">
-                            <a href="{{url('evisa')}}">E-Visa</a>
-                        </li>
-                        <li class="">
-                            <a href="#">Airport Access</a>
-                        </li>
-                        <li class="">
-                            <a href="#">Preminum Service</a>
-                        </li>
-                        <li class="">
-                            <a href="#">Visit Istanbul</a>
-                        </li>
-                        <li class="">
-                            <a href="#">Covid  19</a>
-                        </li> --}}
-                        {{-- <li class="">
-                            <a href="{{route('public.news')}}">News</a>
-                        </li> --}}
-                       
-                       
+                        @endif
+                        @endforeach
                     </ul>
                 </nav>
             </div>
@@ -234,29 +217,16 @@
             <nav id="mobile-menu-01" class="mobile-menu collapse">
                 <ul id="mobile-primary-menu" class="menu">
                     <li class="">
-                        <a href="index.html">Home</a>
+                        <a href="{{route('home')}}">Home</a>
                     </li>
+                    @foreach (\Botble\Menu\Models\MenuNode::where('position', '>', 0)->get() as $item)
+                    @if ($item->title == 'Contact')  
+                    @else
                     <li class="">
-                        <a href="{{route('flight.status')}}">Flights</a>
+                    <a href="{{ url($item->url) }}">{{$item->title}}</a>
                     </li>
-                    <li class="">
-                        <a href="{{url('evisa')}}">E-Visa</a>
-                    </li>
-                    <li class="">
-                        <a href="#">Airport Access</a>
-                    </li>
-                    <li class="">
-                        <a href="#">Preminum Service</a>
-                    </li>
-                    <li class="">
-                        <a href="#">Visit Istanbul</a>
-                    </li>
-                    <li class="">
-                        <a href="#">Covid  19</a>
-                    </li>
-                    <li class="">
-                        <a href="#">News</a>
-                    </li>
+                    @endif
+                    @endforeach
                 </ul>
                 
                 <ul class="mobile-topnav container">
@@ -307,63 +277,7 @@
         <div class="footer-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-3">
-                        <h2>Discover</h2>
-                        <ul class="discover triangle hover row">
-                            <li class="col-xs-6"><a href="#">Safety</a></li>
-                            <li class="col-xs-6"><a href="#">About</a></li>
-                            <li class="col-xs-6"><a href="#">Grandoria Picks</a></li>
-                            <li class="col-xs-6"><a href="#">Latest Jobs</a></li>
-                            <li class="active col-xs-6"><a href="#">Mobile</a></li>
-                            <li class="col-xs-6"><a href="#">Press Releases</a></li>
-                            <li class="col-xs-6"><a href="#">Why Host</a></li>
-                            <li class="col-xs-6"><a href="#">Blog Posts</a></li>
-                            <li class="col-xs-6"><a href="#">Social Connect</a></li>
-                            <li class="col-xs-6"><a href="#">Help Topics</a></li>
-                            <li class="col-xs-6"><a href="#">Site Map</a></li>
-                            <li class="col-xs-6"><a href="#">Policies</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <h2>Travel News</h2>
-                        <ul class="travel-news">
-                            <li>
-                                <div class="thumb">
-                                    <a href="#">
-                                        <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
-                                    </a>
-                                </div>
-                                <div class="description">
-                                    <h5 class="s-title"><a href="#">Amazing Places</a></h5>
-                                    <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
-                                    <span class="date">15 Jan, 2022</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="thumb">
-                                    <a href="#">
-                                        <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
-                                    </a>
-                                </div>
-                                <div class="description">
-                                    <h5 class="s-title"><a href="#">Travel Insurance</a></h5>
-                                    <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp.</p>
-                                    <span class="date">15 Jan, 2022</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <h2>Mailing List</h2>
-                        <p>Sign up for our mailing list to get latest updates and offers.</p>
-                        <br />
-                        <div class="icon-check">
-                            <input type="text" class="input-text full-width" placeholder="your email" />
-                        </div>
-                        <br />
-                        <span>We respect your privacy</span>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <h2>About Istanbul Airport</h2>
                         <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massaidp nequetiam lore elerisque.</p>
                         <br />
@@ -380,6 +294,42 @@
                             <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
                             <li class="dribble"><a title="dribble" href="#" data-toggle="tooltip"><i class="soap-icon-dribble"></i></a></li>
                             <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <h2>Quick Links</h2>
+                        <ul class="discover triangle hover row">
+                        @foreach (\Botble\Menu\Models\MenuNode::where('position', '>', 0)->get() as $item)
+                        @if ($item->title == 'Contact')  
+                        @else
+                        <li class="col-xs-6">
+                        <a href="{{ url($item->url) }}">{{$item->title}}</a>
+                        </li>
+                        @endif
+                        @endforeach
+                            <li class="col-xs-6"><a href="#">Blog Posts</a></li>
+                            <li class="col-xs-6"><a href="#">Policies</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-5">
+                        <h2>Travel News</h2>
+                        <ul class="travel-news">
+                            @foreach (\Botble\Blog\Models\Post::where('status', 'published')->take(2)->get() as $item)
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img src="{{asset('storage/'.$item->image)}}" alt="" width="73" height="63" />
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <h5 class="s-title"><a href="#">{{\Illuminate\Support\Str::limit($item->name, 20, $end='...')}}</a></h5>
+                                    <p>{{\Illuminate\Support\Str::limit($item->description, 50, $end='...')}}</p>
+                                    <span class="date">{{ \Carbon\Carbon::parse($item->updated_at)->diffForHumans() }}</span>
+                                </div>
+                            </li>
+                            @endforeach
+                            
+                            
                         </ul>
                     </div>
                 </div>
