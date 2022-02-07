@@ -27,24 +27,24 @@
             <div class="search-box-wrapper">
                 <div class="search-box container">
                     <ul class="search-tabs clearfix text-custom-size">
-                        <li class="active"><a href="#flight-status-tab" data-toggle="tab">FLIGHT STATUS</a></li>
-                        <li><a href="#e-visa" data-toggle="tab">E-VISA</a></li>
+                        <li class="active"><a href="#visit-istanbul-tab" data-toggle="tab">VISIT ISTANBUL</a></li>
                         <li><a href="#airport-service-tab" data-toggle="tab">AIRPORT ACCESS</a></li>
+                        <li ><a href="#flight-status-tab" data-toggle="tab">FLIGHT STATUS</a></li>
                         <li><a href="#premium-service-tab" data-toggle="tab">PREMIUM SERVICES</a></li>
-                        <li><a href="#visit-istanbul-tab" data-toggle="tab">VISIT ISTANBUL</a></li>
+                        <li><a href="#e-visa" data-toggle="tab">E-VISA</a></li>
+                        <li><a href="#covid-tab" data-toggle="tab">COVID-19</a></li>   
                         {{-- <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li> --}}
-                        <li><a href="#covid-tab" data-toggle="tab">COVID-19</a></li>
-                        
-                       
-                        
                     </ul>
                     <div class="visible-mobile">
                         <ul id="mobile-search-tabs" class="search-tabs clearfix">
-                            <li class="active"><a href="#flight-status-tab">FLIGHT STATUS</a></li>
-                            <li><a href="#e-visa">E-VISA</a></li>
+                            <li class="active"><a href="#visit-istanbul-tab">VISIT ISTANBUL</a></li>
                             <li><a href="#airport-service-tab">AIRPORT ACCESS</a></li>
+                            <li ><a href="#flight-status-tab">FLIGHT STATUS</a></li>
                             <li><a href="#premium-service-tab">PREMIUM SERVICES</a></li>
-                            <li><a href="#visit-istanbul-tab">VISIT ISTANBUL</a></li>
+                            <li><a href="#e-visa">E-VISA</a></li>
+                            
+                            
+                            
                             {{-- <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li> --}}
                             <li><a href="#covid-tab">COVID-19</a></li>
                             
@@ -52,7 +52,7 @@
                     </div>
                     
                     <div class="search-tab-content">
-                        <div class="tab-pane fade active in" id="flight-status-tab">
+                        <div class="tab-pane fade  " id="flight-status-tab">
                             <form action="{{route('flight.status')}}" method="get">
                                 
                                 <div class="row">
@@ -157,7 +157,7 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="e-visa">
+                        <div class="tab-pane fade " id="e-visa">
                             <form>
                                 <div class="row flight-table-wrapper">
                                     
@@ -340,106 +340,127 @@
                             </form>
                         </div>
                         
-                        <div class="tab-pane fade" id="visit-istanbul-tab">
+                        <div class="tab-pane fade active in" id="visit-istanbul-tab">
                             <form action="flight-list-view.html" method="post">
-                                {{-- <div class="row">
-                                    <div class="col-md-4">
-                                        <h4 class="title">Where</h4>
-                                        <div class="form-group">
-                                            <label>Leaving From</label>
-                                            <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Going To</label>
-                                            <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h1 style="text-align:center">Plan a Visit To Turkey</h1>
+                                        <div style="background: #adadad05; padding-top:10px;" class="row">
+                                            <div  class="row image-box style5">
+                                                <div class="col-sm-4">
+                                                    <article class="box">
+                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                                            <a style="max-height:160px;" title="" href="{{route('tourist-pass-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/ww.jpg')}}"></a>
+                                                            <figcaption class="entry-date">
+                                                                <h3 class="caption-title">Get Yours</h3>
+                                                                {{-- <span>3 activities</span> --}}
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="details">
+                                                            <div class="detail">
+                                                                {{-- <span class="price"><small>Read</small>More</span> --}}
+                                                                <h3 class="box-title"><a href="{{route('tourist-pass-booking')}}"><strong>Istanbuls Tourist Pass</strong> </a></h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </article>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <article class="box">
+                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                                            <a style="max-height:160px;" title="" href="{{route('museum-pass-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/mu.png')}}"></a>
+                                                            <figcaption class="entry-date">
+                                                                <h3 class="caption-title">Book Now</h3>
+                                                                {{-- <span>3 activities</span> --}}
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="details">
+                                                            <div class="detail">
+                                                                {{-- <span class="price"><small>Fee</small>€140</span> --}}
+                                                                <h3 class="box-title"><a href="{{route('museum-pass-booking')}}"><strong>Istanbul Museum Pass</strong> </a></h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </article>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <article class="box">
+                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                                            <a style="max-height:160px;" title="" href="{{route('istanbul-tour-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/tours.jpg')}}"></a>
+                                                            <figcaption class="entry-date">
+                                                                <h3 class="caption-title">Explore</h3>
+                                                                {{-- <span>3 activities</span> --}}
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="details">
+                                                            <div class="detail">
+                                                                {{-- <span class="price"><small>Fee</small>€140</span> --}}
+                                                                <h3 class="box-title"><a href="{{route('istanbul-tour-booking')}}"><strong>Istanbul Tours</strong> </a></h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </article>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <article class="box">
+                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                                            <a style="max-height:160px;" title="" href="{{route('covid-pcr-test-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/covid2.jpg')}}"></a>
+                                                            <figcaption class="entry-date">
+                                                                <h3 class="caption-title">Read More</h3>
+                                                                {{-- <span>3 activities</span> --}}
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="details">
+                                                            <div class="detail">
+                                                                {{-- <span class="price"><small>Fee</small>€140</span> --}}
+                                                                <h3 class="box-title"><a href="#"><strong>Covid-19 PCR Test</strong> </a></h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </article>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <article class="box">
+                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                                            <a style="max-height:160px;" title="" href="#"><img width="370" height="160" alt="" src="{{asset('images/assets/others/2.jpg')}}"></a>
+                                                            <figcaption class="entry-date">
+                                                                <h3 class="caption-title">BOOK NOW</h3>
+                                                                {{-- <span>3 activities</span> --}}
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="details">
+                                                            <div class="detail">
+                                                                {{-- <span class="price"><small>Fee</small>€155</span> --}}
+                                                                <h3 class="box-title"><a href="#"><strong>Istanbu Shuttle Service</strong> </a></h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </article>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <article class="box">
+                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                                            <a style="max-height:160px;" title="" href="#"><img width="370" height="160" alt="" src="{{asset('images/assets/others/ddd.jpg')}}"></a>
+                                                            <figcaption class="entry-date">
+                                                                <h3 class="caption-title">BOOK NOW</h3>
+                                                                {{-- <span>3 activities</span> --}}
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="details">
+                                                            <div class="detail">
+                                                                {{-- <span class="price"><small>Fee</small>€250</span> --}}
+                                                                <h3 class="box-title"><a href="#"><strong>Rent a Car In Turkey</strong> </a></h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </article>
+                                                </div>
+                                                <div style="text-align: center; font-size:20px; padding-bottom:20px;" class="col-sm-12"><a style="background: #e01514; padding:15px; color:#fff" href="{{url('premium-service')}}" class="" style="height:50px;">Browse More Services</a></div>
+                                            </div>
+                                            
                                         </div>
                                     </div>
-                                    
-                                    <div class="col-md-4">
-                                        <h4 class="title">When</h4>
-                                        <label>Departing On</label>
-                                        <div class="form-group row">
-                                            <div class="col-xs-6">
-                                                <div class="datepicker-wrap">
-                                                    <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="1">anytime</option>
-                                                        <option value="2">morning</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <label>Arriving On</label>
-                                        <div class="form-group row">
-                                            <div class="col-xs-6">
-                                                <div class="datepicker-wrap">
-                                                    <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="1">anytime</option>
-                                                        <option value="2">morning</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-4">
-                                        <h4 class="title">Who</h4>
-                                        <div class="form-group row">
-                                            <div class="col-xs-3">
-                                                <label>Adults</label>
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="1">01</option>
-                                                        <option value="2">02</option>
-                                                        <option value="3">03</option>
-                                                        <option value="4">04</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-3">
-                                                <label>Kids</label>
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="1">01</option>
-                                                        <option value="2">02</option>
-                                                        <option value="3">03</option>
-                                                        <option value="4">04</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <label>Promo Code</label>
-                                                <input type="text" class="input-text full-width" placeholder="type here" />
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-xs-3">
-                                                <label>Rooms</label>
-                                                <div class="selector">
-                                                    <select class="full-width">
-                                                        <option value="1">01</option>
-                                                        <option value="2">02</option>
-                                                        <option value="3">03</option>
-                                                        <option value="4">04</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 pull-right">
-                                                <label>&nbsp;</label>
-                                                <button class="full-width icon-check">SERACH NOW</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
+                                </div>
                             </form>
                         </div>
                         

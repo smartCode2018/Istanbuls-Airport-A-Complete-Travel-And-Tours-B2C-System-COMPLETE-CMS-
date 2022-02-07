@@ -14258,13 +14258,34 @@ body {
 }
 
 .f-input-custom-style {
-    height: 40px;
+    height: 50px !important;
     font-size: 16px;
 }
 
 .mga-type {
-    background: #0074ff0a;
+    background: #ff3b000a;
     padding: 12px;
     margin-bottom: 5px;
     font-size: 20px !important;
+}
+
+.museum-type {
+    background: #eeeeee26;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+.museum-type h2 {
+    text-align: center;
+    margin-bottom: 20px !important;
+}
+
+.museum-type ul {
+    padding: 20px;
+}
+
+.museum-price {
+    float: right;
+    font-size: 18px;
 }
