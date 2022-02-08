@@ -39,6 +39,12 @@ class MuseumPassController extends Controller
     {
         //
     }
+    
+    //admin finance functions
+
+    public function getPassBookings(){
+        return view('admin.museum_pass_table');
+    }
 
     /**
      * Display the specified resource.

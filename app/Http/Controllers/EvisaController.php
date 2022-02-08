@@ -65,6 +65,15 @@ class EvisaController extends Controller
         return view('evisa_success', $request->all());
     }
 
+    //admin finance functions
+
+    public function getTaxiBookings(){
+        return view('admin.evisa_table');
+    }
+
+
+
+
     /**
      * Display the specified resource.
      *

@@ -134,7 +134,9 @@
                                             <label>Adult</label>
                                             <div class="selector">
                                                 <select required name="code" class="full-width">
+                                                    @isset($form['num_adult'])  
                                                     <option value="{{$form['num_adult']}}" selected>{{$form['num_adult']}}</option>
+                                                    @endisset
                                                     <option>+1</option>
                                                 </select>
                                             </div>
@@ -143,7 +145,9 @@
                                             <label>Children</label>
                                             <div class="selector">
                                                 <select required name="code" class="full-width">
-                                                    <option value="{{$form['num_kids']}}" selected>{{$form['num_kids']}}</option>
+                                                    @isset($form['num_kids'])
+                                                    <option value="{{isset($form['num_kids']) ? $form['num_kids'] : ''}}" selected>{{$form['num_kids']}}</option>
+                                                    @endisset
                                                     <option>+1</option>
                                                 </select>
                                             </div>
@@ -151,7 +155,9 @@
                                         <div class="col-md-6">
                                             <label>SELECT TYPE</label>
                                             <div>
-                                                @if ($form['taxi_type'] == 'frpm')
+                                                @if (isset($form['taxi_type']))
+                                               
+                                                @if ($form['taxi_type'] == 'from')
                                                 <label class="radio radio-inline radio-square">
                                                     <input required name="gender" type="radio" name="gender" checked="checked">FROM ISTANBUL'S AIRPORT
                                                 </label>
@@ -166,7 +172,17 @@
                                                     <input required type="radio" name="gender" checked="checked">TO ISTANBUL'S AIRPORT
                                                 </label>
                                                 @endif
+                                              
+                                                @else
+                                                <label class="radio radio-inline radio-square">
+                                                    <input required name="gender" type="radio" name="gender" checked="checked">FROM ISTANBUL'S AIRPORT
+                                                </label>
+                                                <label class="radio radio-inline radio-square">
+                                                    <input required type="radio" name="gender">TO ISTANBUL'S AIRPORT
+                                                </label>
+                                                @endif
                                                 
+
                                                 
                                             </div>
                                         </div>
@@ -174,7 +190,11 @@
                                      <div class="row">
                                         <div class="form-group col-sm-12 col-md-12">
                                             <label>Search for location</label>
+                                            @if (isset($form['location']))
                                             <input value="{{$form['location']}}" style="height:40px;" name="location" required id="pac-input" type="text" class="input-text full-width" placeholder="Search For Location" />
+                                            @else
+                                            <input style="height:40px;" name="location" required id="pac-input" type="text" class="input-text full-width" placeholder="Search For Location" />
+                                            @endif
                                         </div>
                                         <div style="display:flex; justify-content:center; align-items:center" class="form-group col-md-12">
                                             <div style="height: 350px !important; width:100%;" id="map"></div>

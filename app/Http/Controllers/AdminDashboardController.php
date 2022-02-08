@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Country;
-use App\Models\Traveldocument;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class AirportServicesController extends Controller
+class AdminDashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +13,7 @@ class AirportServicesController extends Controller
      */
     public function index()
     {
-        
+        return view('admin.index');
     }
 
     /**
@@ -24,13 +21,9 @@ class AirportServicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request, $type = 'personal_taxi')
+    public function create()
     {
-        $countries = Country::all();
-        $travel_docs = Traveldocument::all();
-        $form = $request->all();
-        $taxi_type = $type;
-        return view('airport_taxi_booking', compact('countries','travel_docs','form', 'taxi_type'));
+        //
     }
 
     /**
@@ -41,21 +34,8 @@ class AirportServicesController extends Controller
      */
     public function store(Request $request)
     {
-        // save to db
-        dd($request->all());
+        //
     }
-
-
-
-    //admin finance functions
-
-    public function getTaxiBookings(){
-        return view('admin.taxi_booking_table');
-    }
-
-
-
-
 
     /**
      * Display the specified resource.

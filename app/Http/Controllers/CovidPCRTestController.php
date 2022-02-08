@@ -40,6 +40,15 @@ class CovidPCRTestController extends Controller
         //
     }
 
+    //admin finance functions
+
+    public function getTestBookings(){
+        return view('admin.covid_pcr_table');
+    }
+
+
+
+
     /**
      * Display the specified resource.
      *

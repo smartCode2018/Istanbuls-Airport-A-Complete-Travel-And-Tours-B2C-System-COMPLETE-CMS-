@@ -197,7 +197,7 @@
                         </div>
 
                         <div class="tab-pane fade" id="airport-service-tab">
-                            <form action="{{route('airport-taxi-booking', ['type' => 'personal_taxi'])}}" method="post">
+                            <form action="{{route('airport-taxi-booking', ['type' => 'personal_taxi'])}}" method="get">
                                @csrf
                                 <div class="row">
                                     <div class="col-md-12">
@@ -344,13 +344,13 @@
                             <form action="flight-list-view.html" method="post">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <h1 style="text-align:center">Plan a Visit To Turkey</h1>
+                                        <h1 style="text-align:center"><strong>Plan a Vist To Turkey</strong></h1>
                                         <div style="background: #adadad05; padding-top:10px;" class="row">
                                             <div  class="row image-box style5">
                                                 <div class="col-sm-4">
                                                     <article class="box">
                                                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                                            <a style="max-height:160px;" title="" href="{{route('tourist-pass-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/ww.jpg')}}"></a>
+                                                            <a style="max-height:160px;" title="" href="{{route('tourist-pass-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/tpass.png')}}"></a>
                                                             <figcaption class="entry-date">
                                                                 <h3 class="caption-title">Get Yours</h3>
                                                                 {{-- <span>3 activities</span> --}}
@@ -359,7 +359,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Read</small>More</span> --}}
-                                                                <h3 class="box-title"><a href="{{route('tourist-pass-booking')}}"><strong>Istanbuls Tourist Pass</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('tourist-pass-booking')}}"><strong >ISTANBUL TOURIST PASS</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -377,7 +377,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Fee</small>€140</span> --}}
-                                                                <h3 class="box-title"><a href="{{route('museum-pass-booking')}}"><strong>Istanbul Museum Pass</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('museum-pass-booking')}}"><strong>ISTANBUL MUSEUM PASS</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -395,7 +395,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Fee</small>€140</span> --}}
-                                                                <h3 class="box-title"><a href="{{route('istanbul-tour-booking')}}"><strong>Istanbul Tours</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('istanbul-tour-booking')}}"><strong>ISTANBUL TOURS</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -413,7 +413,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Fee</small>€140</span> --}}
-                                                                <h3 class="box-title"><a href="#"><strong>Covid-19 PCR Test</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('covid-pcr-test-booking')}}"><strong>COVID-19 PCR TEST</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -422,16 +422,16 @@
                                                 <div class="col-sm-4">
                                                     <article class="box">
                                                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                                            <a style="max-height:160px;" title="" href="#"><img width="370" height="160" alt="" src="{{asset('images/assets/others/2.jpg')}}"></a>
+                                                            <a style="max-height:160px;" title="" href="{{route('airport-taxi-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/aps.jpg')}}"></a>
                                                             <figcaption class="entry-date">
-                                                                <h3 class="caption-title">BOOK NOW</h3>
+                                                                <h3 class="caption-title">Book Now</h3>
                                                                 {{-- <span>3 activities</span> --}}
                                                             </figcaption>
                                                         </figure>
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Fee</small>€155</span> --}}
-                                                                <h3 class="box-title"><a href="#"><strong>Istanbu Shuttle Service</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('airport-taxi-booking')}}"><strong>ISTANBUL SHUTTLE SERVICE</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -440,16 +440,16 @@
                                                 <div class="col-sm-4">
                                                     <article class="box">
                                                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                                            <a style="max-height:160px;" title="" href="#"><img width="370" height="160" alt="" src="{{asset('images/assets/others/ddd.jpg')}}"></a>
+                                                            <a style="max-height:160px;" title="" href="airport-taxi-booking"><img width="370" height="160" alt="" src="{{asset('images/assets/others/2.jpg')}}"></a>
                                                             <figcaption class="entry-date">
-                                                                <h3 class="caption-title">BOOK NOW</h3>
+                                                                <h3 class="caption-title">Book Now</h3>
                                                                 {{-- <span>3 activities</span> --}}
                                                             </figcaption>
                                                         </figure>
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Fee</small>€250</span> --}}
-                                                                <h3 class="box-title"><a href="#"><strong>Rent a Car In Turkey</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="airport-taxi-booking"><strong>RENT A CAR IN TURKEY</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         

@@ -40,6 +40,12 @@ class MeetAndGreetController extends Controller
         //
     }
 
+    //admin finance functions
+
+    public function getMGABookings(){
+        return view('admin.mga_table');
+    }
+
     /**
      * Display the specified resource.
      *

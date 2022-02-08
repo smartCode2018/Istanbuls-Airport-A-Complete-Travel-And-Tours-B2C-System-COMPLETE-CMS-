@@ -45,6 +45,16 @@ class TouristPassController extends Controller
         //
     }
 
+
+    //admin finance functions
+
+    public function getPassBookings(){
+        return view('admin.tourist_pass_table');
+    }
+    public function getToursBookings(){
+        return view('admin.tour_booking_table');
+    }
+
     /**
      * Display the specified resource.
      *
