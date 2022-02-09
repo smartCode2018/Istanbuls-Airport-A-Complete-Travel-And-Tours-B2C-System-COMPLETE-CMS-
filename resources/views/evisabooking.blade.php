@@ -20,6 +20,15 @@
         <div class="row">
             <div id="main" class="col-sm-8 col-md-9">
                 <div class="booking-section travelo-box">
+                    @if ($errors->any())
+                        <div style="background-color:#e01514; color:#ff; font-size:16px;" class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{route('evisa.submit')}}" method="POST" class="cruise-booking-form">
                         @csrf
                         <div>
@@ -70,7 +79,7 @@
                                     <div class="form-group col-sm-6 col-md-6">
                                         <label>Contry | Region</label>
                                         <div class="selector">
-                                            <select required name="" class="full-width">
+                                            <select required name="country" class="full-width">
                                                 @foreach ($countries as $country)
                                                     <option value="{{$country->id}}">{{$country->name}}</option>
                                                 @endforeach
@@ -80,7 +89,7 @@
                                     <div class="form-group col-sm-6 col-md-6">
                                         <label>Travel Document</label>
                                         <div class="selector">
-                                            <select required name="" class="full-width">
+                                            <select required name="travel_doc" class="full-width">
                                                 @foreach ($travel_docs as $traveldoc)
                                                     <option value="{{$traveldoc->id}}">{{$traveldoc->name}}</option>
                                                 @endforeach
@@ -103,7 +112,7 @@
                                     <div class="form-group col-sm-6 col-md-5">
                                         <label>Arrival Date</label>
                                         <div class="datepicker-wrap">
-                                            <input required id="adate" type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                                            <input required name="arrival_date" id="adate" type="text" class="input-text full-width" placeholder="mm/dd/yy" />
                                         </div>
                                         <div style="text-align: center; padding-top:20px; display:none" class="t-spinner col-xs-12">
                                             <img height="80" width="90" src="{{asset('images/spina.gif')}}" alt="">
@@ -198,7 +207,7 @@
                                                    <div class="col-xs-6">
                                                        <label>Date of Birth</label>
                                                        <div class="">
-                                                           <input required name="dob" type="date" class="input-text full-width">
+                                                           <input required name="dob" type="date" class=" full-width">
                                                        </div>
                                                    </div>
                                                    <div class="col-xs-6">
@@ -275,7 +284,7 @@
                                        <div class="form-group">
                                            <div class="checkbox">
                                                <label>
-                                                   <input required type="checkbox" /> I can prove that I hold a return ticket, hotel reservation and at least 50 $ per each day of my stay.
+                                                   <input type="checkbox" /> I can prove that I hold a return ticket, hotel reservation and at least 50 $ per each day of my stay.
                                                </label>
                                            </div>
                                        </div>
