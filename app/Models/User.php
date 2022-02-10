@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Auth;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -32,6 +33,13 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    // public function isSuperAdmin(){
+    //     if(Auth::user()->manage_supers == 1){
+    //         return true;
+    //     }
+    //     return false;
+    // }
 
     /**
      * The attributes that should be cast.

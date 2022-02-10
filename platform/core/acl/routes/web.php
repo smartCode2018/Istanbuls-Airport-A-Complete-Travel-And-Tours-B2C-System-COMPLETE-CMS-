@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use Botble\ACL\Http\Controllers\Auth\ForgotPasswordController;
 use Botble\ACL\Http\Controllers\Auth\LoginController;
 use Botble\ACL\Http\Controllers\Auth\ResetPasswordController;
@@ -28,7 +29,8 @@ Route::group(['namespace' => 'Botble\ACL\Http\Controllers', 'middleware' => ['we
                 'as'         => 'access.logout',
                 'uses'       => 'Auth\LoginController@logout',
                 'permission' => false,
-            ]);
+            ]);  
+
         });
     });
 
@@ -38,8 +40,8 @@ Route::group(['namespace' => 'Botble\ACL\Http\Controllers', 'middleware' => ['we
 
             Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
 
-                Route::resource('', 'UserController')->except(['edit', 'update'])->parameters(['' => 'users']);
-
+                Route::resource('', 'UserController')->except(['edit', 'update'])->parameters(['' => 'users']);     
+                
                 Route::delete('items/destroy', [
                     'as'         => 'deletes',
                     'uses'       => 'UserController@deletes',

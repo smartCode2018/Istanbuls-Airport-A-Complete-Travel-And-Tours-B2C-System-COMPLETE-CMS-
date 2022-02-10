@@ -52,12 +52,15 @@ Route::put('/covid19-pcr-booking', [CovidPCRTestController::class, 'store'])->na
  
 
 // Admin Routes
-Route::get('/super-admin/dashboard', [AdminDashboardController::class, 'index'])->name('super-admin-dashboard');
-Route::get('/super-admin/tourist-pass', [TouristPassController::class, 'getPassBookings'])->name('super-admin-tourist-pass');
-Route::get('/super-admin/museum-pass', [MuseumPassController::class, 'getPassBookings'])->name('super-admin-museum-pass');
-Route::get('/super-admin/istanbul-tours', [TouristPassController::class, 'getToursBookings'])->name('super-admin-istanbul-tours');
-Route::get('/super-admin/covidpcr-test', [CovidPCRTestController::class, 'getTestBookings'])->name('super-admin-covidpcr-test');
-Route::get('/super-admin/istanbul-taxi', [AirportServicesController::class, 'getTaxiBookings'])->name('super-admin-istanbul-taxi');
-Route::get('/super-admin/evisa', [EvisaController::class, 'getEvisaBookings'])->name('super-admin-evisa');
-Route::get('/super-admin/meet-and-greet', [MeetAndGreetController::class, 'getMGABookings'])->name('super-admin-mga');
+Route::middleware(['adminfinance'])->group(function(){
+    Route::get('/super-admin/dashboard', [AdminDashboardController::class, 'index'])->name('super-admin-dashboard');
+    Route::get('/super-admin/tourist-pass', [TouristPassController::class, 'getPassBookings'])->name('super-admin-tourist-pass');
+    Route::get('/super-admin/museum-pass', [MuseumPassController::class, 'getPassBookings'])->name('super-admin-museum-pass');
+    Route::get('/super-admin/istanbul-tours', [TouristPassController::class, 'getToursBookings'])->name('super-admin-istanbul-tours');
+    Route::get('/super-admin/covidpcr-test', [CovidPCRTestController::class, 'getTestBookings'])->name('super-admin-covidpcr-test');
+    Route::get('/super-admin/istanbul-taxi', [AirportServicesController::class, 'getTaxiBookings'])->name('super-admin-istanbul-taxi');
+    Route::get('/super-admin/evisa', [EvisaController::class, 'getEvisaBookings'])->name('super-admin-evisa');
+    Route::get('/super-admin/meet-and-greet', [MeetAndGreetController::class, 'getMGABookings'])->name('super-admin-mga');
+});
+
 // Route::get('/super-admin/dashboard', [AdminDashboardController::class, 'index'])->name('super-admin-dashboard');
