@@ -46,8 +46,10 @@ class EvisaController extends Controller
         $this->validate($request, [
             'firstname' => 'required',
             'lastname' => 'required',
+            'country' => 'required',
             'country_of_birth' => 'required',
             'place_of_birth' => 'required',
+            'arrival_date' => 'required',
             'dob' => 'required',
             'gender' => 'required',
             'mother_name' => 'required',
@@ -67,7 +69,7 @@ class EvisaController extends Controller
 
     //admin finance functions
 
-    public function getTaxiBookings(){
+    public function getEvisaBookings(){
         return view('admin.evisa_table');
     }
 

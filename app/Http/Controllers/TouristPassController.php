@@ -23,13 +23,13 @@ class TouristPassController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createPass()
     {
         $countries = Country::all();
         return view('tourist_pass_booking', compact('countries'));
     }
 
-    public function istanbulTour(){
+    public function createTour(){
         $countries = Country::all();
         return view('istanbul_tour_booking', compact('countries'));
     }
@@ -40,9 +40,40 @@ class TouristPassController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+
+    // store tourist pass 
+    public function storePass(Request $request)
     {
-        //
+        $this->validate($request, [
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'country' => 'required|max:255',
+            'pass_type' => 'required|max:255',
+            'request_date' => 'required|max:255',
+            'code' => 'required|max:255',
+            'phone' => 'required|max:255',
+            'email' => 'required'
+        ]);
+        // save to db here
+        dd($request->all());
+    }
+
+    // store tours 
+    public function storeTour(Request $request)
+    {
+        $this->validate($request, [
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'tour_type' => 'required|max:255',
+            'start_type' => 'required|max:255',
+            'country' => 'required|max:255',
+            'request_date' => 'required|max:255',
+            'code' => 'required|max:255',
+            'phone' => 'required|max:255',
+            'email' => 'required'
+        ]);
+        // save to db here
+        dd($request->all());
     }
 
 
@@ -51,6 +82,7 @@ class TouristPassController extends Controller
     public function getPassBookings(){
         return view('admin.tourist_pass_table');
     }
+
     public function getToursBookings(){
         return view('admin.tour_booking_table');
     }
@@ -63,7 +95,7 @@ class TouristPassController extends Controller
      */
     public function show(TouristPass $touristPass)
     {
-        //
+    
     }
 
     /**

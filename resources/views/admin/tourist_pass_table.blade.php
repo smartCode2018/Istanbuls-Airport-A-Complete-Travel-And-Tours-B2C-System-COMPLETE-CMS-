@@ -20,11 +20,11 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Admin Finance</h1>
+            <h1 class="m-0">Tourist Pass Transaction Record</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{route('super-admin-dashboard')}}">Home</a></li>
               <li class="breadcrumb-item active">Admin Finance</li>
             </ol>
           </div><!-- /.col -->
@@ -39,27 +39,27 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
           <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="info-box mb-3">
-                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+                    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-shopping-cart"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Sales</span>
+                        <span class="info-box-text">Total Bookings</span>
                         <span class="info-box-number">760</span>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="info-box mb-3">
-                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-coins"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Sales</span>
+                        <span class="info-box-text">Total Amount</span>
                         <span class="info-box-number">760</span>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="info-box mb-3">
-                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-check"></i></span>
                     <div class="info-box-content">
-                        <span class="info-box-text">Sales</span>
+                        <span class="info-box-text">Total Completed</span>
                         <span class="info-box-number">760</span>
                     </div>
                 </div>
@@ -70,25 +70,33 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">DataTable with default features</h3>
+                        <h3 class="card-title">Torist Pass Transaction Table</h3>
                     </div>
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
-                                    <th>CSS grade</th>
+                                    <th>Booking ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Country</th>
+                                    <th>Pass Type</th>
+                                    <th>Phone</th>
+                                    <th>Request date</th>
+                                    <th>status</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Trident</td>
+                                    <td>001</td>
                                     <td>Internet Explorer 4.0</td>
                                     <td>Win 95+</td>
+                                    <td> Trident</td>
+                                    <td> 4</td>
+                                    <td> 4</td>
+                                    <td> 4</td>
                                     <td> 4</td>
                                     <td>X</td>
                                     <td>
@@ -107,12 +115,16 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                                 </tr>
                             <tfoot>
                                 <tr>
-                                    <th>Rendering engine</th>
-                                    <th>Browser</th>
-                                    <th>Platform(s)</th>
-                                    <th>Engine version</th>
-                                    <th>CSS grade</th>
-                                    <th>CSS grade</th>
+                                  <th>BID</th>
+                                  <th>First Name</th>
+                                  <th>Last Name</th>
+                                  <th>Email</th>
+                                  <th>Country</th>
+                                  <th>Pass Type</th>
+                                  <th>Phone</th>
+                                  <th>Request date</th>
+                                  <th>status</th>
+                                  <th>Actions</th>
                                 </tr>
                             </tfoot>
                         </table>

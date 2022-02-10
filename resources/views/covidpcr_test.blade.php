@@ -20,8 +20,18 @@
         <div class="row">
             <div id="main" class="col-sm-12 col-md-9">
                 <div class="booking-section travelo-box">
-                    <form action="{{route('evisa.submit')}}" method="POST" class="cruise-booking-form">
+                    @if ($errors->any())
+                        <div style="background-color:#e01514; color:#ff; font-size:16px;" class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form action="{{route('covid-pcr-test-booking-store')}}" method="POST" class="cruise-booking-form">
                         @csrf
+                        @method('PUT')
                         <div>
                             {{-- <h2 style="margin-bottom: 30px; font-weight:bold; color:#e01514">APPLY FOR E-VISA</h2> --}}
                             <div style="border-style: solid; border-width:1px; padding:20px 0px 20px 0px;" class="row">
@@ -55,34 +65,35 @@
                             <div>
                                 <div class="row">
                                     <div class="form-group col-sm-6 col-md-6">
-                                        <label class="control-label">Given/First Name</label>
-                                        <input required type="text" name="firstname" class="input-text full-width" value="" placeholder="" />
+                                        <label class="control-label text-custom-size">Given/First Name</label>
+                                        <input required type="text" name="firstname" class="f-input-custom-style input-text full-width" value="" placeholder="" />
                                     </div>
                                     <div class="form-group col-sm-6 col-md-6">
-                                        <label class="control-label">Given/last name</label>
-                                        <input required type="text" name="lastname" class="input-text full-width" value="" placeholder="" />
+                                        <label class="control-label text-custom-size">Given/last name</label>
+                                        <input required type="text" name="lastname" class="f-input-custom-style input-text full-width" value="" placeholder="" />
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-sm-12 col-md-6">
-                                     <label>Email Address</label>
-                                        <input required name="email" type="email" class="input-text full-width" value="" placeholder="" />
+                                     <label class="control-label text-custom-size">Email Address</label>
+                                        <input required name="email" type="text" class="f-input-custom-style input-text full-width" value="" placeholder="" />
                                     </div>
                                     
                                     <div class="form-group col-sm-12 col-md-6">
                                         <div class="row">
                                             <div class="col-xs-6">
                                              <div class="form-group">
-                                                 <label>Request DATE</label>
+                                                 <label class="control-label text-custom-size">Request DATE</label>
                                                  <div class="datepicker-wrap">
-                                                     <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                                                     <input required type="text" name="request_date" class="f-input-custom-style input-text full-width" placeholder="mm/dd/yy" />
                                                  </div>
                                              </div>
                                             </div>
                                             <div class="col-xs-6">
-                                             <label>Persons(s)*</label>
+                                             <label class="control-label text-custom-size">Persons(s)*</label>
                                              <div class="selector">
-                                                 <select required name="" class="full-width">
+                                                 <select  name="persons" class="full-width f-input-custom-style">
+                                                    <option value="1">+44</option>
                                                      @foreach ($countries as $country)
                                                          <option value="{{$country->id}}">{{$country->name}}</option>
                                                      @endforeach
@@ -95,26 +106,27 @@
                                 <div class="row">
                                     
                                     <div class="form-group col-sm-1 col-md-1">
-                                     <label>code</label>
+                                     <label class="control-label text-custom-size">code</label>
                                      <div class="selector">
-                                         <select required name="code" class="full-width">
-                                             <option>+44</option>
+                                         <select  name="code" class="full-width">
+                                             <option value="1">+44</option>
                                              <option>+1</option>
                                          </select>
                                          </div>
                                      </div>
                                  <div class="form-group col-sm-5 col-md-5">
-                                     <label>Phone number</label>
-                                     <input required name="phone" type="text" class="input-text full-width" value="" placeholder="" />
+                                     <label class="control-label text-custom-size">Phone number</label>
+                                     <input required name="phone" type="text" class="f-input-custom-style input-text full-width" value="" placeholder="" />
                                  </div>
                                     <div class="form-group col-sm-12 col-md-3">
-                                         <label>Passort Number</label>
-                                         <input required name="passport_number" type="text" class="input-text full-width" value="" placeholder="" />
+                                         <label class="control-label text-custom-size">Passort Number</label>
+                                         <input required name="passport_number" type="text" class="f-input-custom-style input-text full-width" value="" placeholder="" />
                                      </div>
                                      <div class="form-group col-sm-6 col-md-3">
-                                         <label>Nationality</label>
+                                         <label class="control-label text-custom-size">Nationality</label>
                                          <div class="selector">
-                                             <select required name="" class="full-width">
+                                             <select  name="nationality" class="full-width">
+                                                <option value="1">+44</option>
                                                  @foreach ($countries as $country)
                                                      <option value="{{$country->id}}">{{$country->name}}</option>
                                                  @endforeach
@@ -125,10 +137,10 @@
  
                               <div class="row">
                                  <div class="form-group col-sm-12 col-md-12">
-                                     <label>Address (Hotel,Apartment Name) *</label>
-                                     <input value="" style="height:40px;" name="location" required id="pac-input" type="text" class="input-text full-width" placeholder="Search For Location" />
+                                     <label class="control-label text-custom-size">Address (Hotel,Apartment Name) *</label>
+                                     <input value="" style="height:40px;" name="location" required id="pac-input" type="text" class="input-text full-width f-input-custom-style" placeholder="Search For Location" />
                                  </div>
-                                 <div style="display:flex; justify-content:center; align-items:center" class="form-group col-md-12">
+                                 <div style="display:flex; justify-content:center; align-items:center" class="form-group col-md-12 ">
                                      <div style="height: 350px !important; width:100%;" id="map"></div>
                                      <div id="infowindow-content">
                                          <span id="place-name" class="title"></span><br />
@@ -139,12 +151,12 @@
 
                              <div class="form-group">
                                  <div class="checkbox">
-                                     <label>
-                                         <input required type="checkbox">  confirm that I meet each and every one of the conditions listed above.
+                                     <label text-custom-size>
+                                         <input type="checkbox" checked disabled>  confirm that I meet each and every one of the conditions listed above.
                                      </label>
                                  </div>
                              </div>
-                                <button class="banner-action-bt nextBtn pull-right" type="button">Next</button>
+                                <button class="banner-action-bt nextBtn pull-right " type="button">Next</button>
                             </div>
                             
                         </div>
@@ -180,7 +192,7 @@
                                         <h2 style="color:#e01514"><strong>$ 86.00</strong></h2>
                                     </div>
                                 </div>
-                                <button class="banner-action-bt nextBtn pull-right" type="submit">Next</button>
+                                <button name="submit" class="banner-action-bt nextBtn pull-right" type="submit">Next</button>
                             </div>
                             
                         </div>

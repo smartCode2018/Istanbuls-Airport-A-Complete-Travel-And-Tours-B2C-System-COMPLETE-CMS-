@@ -15,6 +15,18 @@ class CreateMeetAndGreetsTable extends Migration
     {
         Schema::create('meet_and_greets', function (Blueprint $table) {
             $table->id();
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('email');
+            $table->string('dept_flight_number');
+            $table->string('gender');
+            $table->string('driver_name');
+            $table->string('driver_phone');
+            $table->string('adult');
+            $table->string('kids');
+            $table->string('phone');
+            $table->string('country');
+            $table->string('request_date');
             $table->timestamps();
         });
     }

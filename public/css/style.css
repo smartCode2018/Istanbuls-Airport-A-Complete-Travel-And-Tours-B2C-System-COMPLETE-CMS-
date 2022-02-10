@@ -14289,3 +14289,14 @@ body {
     float: right;
     font-size: 18px;
 }
+
+.imgmenu{
+    border-radius: 10px;
+}
+
+.btn-x-img{
+    text-align: center; font-size:20px; padding-bottom:20px;
+}
+.btn-x-img a{
+    background: #e01514; padding:15px; color:#fff; height:50px;
+}

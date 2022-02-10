@@ -15,6 +15,13 @@ class CreateMuseumPassesTable extends Migration
     {
         Schema::create('museum_passes', function (Blueprint $table) {
             $table->id();
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('country');
+            $table->string('gender');
+            $table->string('request_date');
             $table->timestamps();
         });
     }

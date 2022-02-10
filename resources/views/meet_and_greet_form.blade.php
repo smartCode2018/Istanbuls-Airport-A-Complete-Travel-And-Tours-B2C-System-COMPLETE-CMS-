@@ -20,8 +20,18 @@
         <div class="row">
             <div id="main" class="col-sm-12 col-md-9">
                 <div class="booking-section travelo-box">
-                    <form action="{{route('evisa.submit')}}" method="POST" class="cruise-booking-form">
+                    @if ($errors->any())
+                        <div style="background-color:#e01514; color:#ff; font-size:16px;" class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form action="{{route('mga-booking-store')}}" method="POST" class="cruise-booking-form">
                         @csrf
+                        @method('PUT')
                         <div>
                             {{-- <h2 style="margin-bottom: 30px; font-weight:bold; color:#e01514">APPLY FOR E-VISA</h2> --}}
                             <div style="border-style: solid; border-width:1px; padding:20px 0px 20px 0px;" class="row">
@@ -52,22 +62,22 @@
                                 <div class="col-xs-12 col-md-4">
                                     <div class="mga-type right-shadow">
                                         <label  class="radio radio-inline radio-square ftype">
-                                            <input style="margin-left: 5px;"  id="arival" type="radio" name="mgatype" {{$type == 'arrival' ? 'checked' : ''}}/>
+                                            <input value="arrival_140"  id="arival" type="radio" name="mgatype" {{$type == 'arrival' ? 'checked' : ''}}/>
                                             MEET & GREET ARIVAL - €140 
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-md-4">
-                                    <div class="mga-type right-shadow">
+                                    <div class="mga-type right-shadow"> 
                                         <label style="" class="radio radio-inline radio-square ftype ">
-                                            <input id="departure" type="radio" name="mgatype" {{$type == 'departure' ? 'checked' : ''}}/> MEET & GREET DEPATURE - €140 
+                                            <input value="departure_167" id="departure" type="radio" name="mgatype" {{$type == 'departure' ? 'checked' : ''}}/> MEET & GREET DEPATURE - €140 
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-md-4">
                                     <div class="mga-type right-shadow">
                                         <label style="" class="radio radio-inline radio-square ftype">
-                                            <input id="domestic" type="radio" name="mgatype" {{$type == 'transfer' ? 'checked' : ''}}/>MEET & GREET TRANSFER - €140 
+                                            <input value="transfer_150" id="domestic" type="radio" name="mgatype" {{$type == 'transfer' ? 'checked' : ''}}/>MEET & GREET TRANSFER - €140 
                                         </label>
 
                                     </div>
@@ -94,7 +104,8 @@
                                            <div class="form-group col-sm-6 col-md-3">
                                             <label class="text-custom-size">Contry | Region</label>
                                             <div class="selector">
-                                                <select required name="country_of_birth f-input-custom-style" class="full-width">
+                                                <select name="country" class="full-width">
+                                                    <option value="1">option 1</option>
                                                     {{-- @foreach ($countries as $country)
                                                         <option value="{{$country->id}}">{{$country->name}}</option>
                                                     @endforeach --}}
@@ -102,25 +113,25 @@
                                             </div>
                                            </div>
                                            <div class="form-group col-sm-6 col-md-3">
-                                               <label class="text-custom-size">Departure Flight NO</label>
-                                               <input required name="place_of_birth" type="text" class="input-text full-width f-input-custom-style" value="" placeholder="" />
+                                               <label class="text-custom-size control-label">Departure Flight NO</label>
+                                               <input required name="dept_flight_number" type="text" class="input-text full-width f-input-custom-style" value="" placeholder="" />
                                            </div>
                                            <div class="form-group col-sm-6 col-md-6">
                                                <div class="row">
                                                    <div class="col-xs-6">
-                                                       <label class="text-custom-size">Request Date</label>
-                                                       <div class="">
-                                                           <input required name="dob" type="date" class="input-text full-width f-input-custom-style">
+                                                       <label class="text-custom-size control-label">Request Date</label>
+                                                       <div class="datepicker-wrap">
+                                                           <input required name="request_date" type="text" class="input-text full-width f-input-custom-style">
                                                        </div>
                                                    </div>
                                                    <div class="col-xs-6">
                                                        <label class="text-custom-size">Gender</label>
                                                        <div>
                                                            <label class="radio radio-inline radio-square">
-                                                               <input class="f-input-custom-style" required type="radio" name="gender" checked="checked">Male
+                                                               <input value="male" class="f-input-custom-style" type="radio" name="gender" checked="checked">Male
                                                            </label>
                                                            <label class="radio radio-inline radio-square text-custom-size">
-                                                               <input class="f-input-custom-style" required type="radio" name="gender">Female
+                                                               <input value="female" class="f-input-custom-style" type="radio" name="gender">Female
                                                            </label>
                                                        </div>
                                                    </div>
@@ -132,44 +143,44 @@
                                            <div class="form-group col-sm-1 col-md-1">
                                                <label class="text-custom-size">code</label>
                                                <div class="selector">
-                                                   <select required name="code" class="full-width f-input-custom-style">
-                                                       <option>+44</option>
+                                                   <select name="code" class="full-width f-input-custom-style">
+                                                       <option value="1">+44</option>
                                                        <option>+1</option>
                                                    </select>
                                                </div>
                                            </div>
                                            <div class="form-group col-sm-5 col-md-5">
-                                               <label class="text-custom-size">Phone number</label>
+                                               <label class="text-custom-size control-label">Phone number</label>
                                                <input required name="phone" type="text" class="input-text full-width f-input-custom-style" value="" placeholder="" />
                                            </div>
                                            <div class="form-group col-sm-6 col-md-6">
-                                               <label class="text-custom-size">Email Address</label>
-                                               <input required name="email" type="email" class="input-text full-width f-input-custom-style" value="" placeholder="" />
+                                               <label class="text-custom-size control-label">Email Address</label>
+                                               <input required name="email" type="text" class="input-text full-width f-input-custom-style" value="" placeholder="" />
                                            </div>
                                        </div>
                                        <div class="row">
                                            <div class="form-group col-sm-6 col-md-3">
-                                               <label class="text-custom-size">Driver Phone</label>
-                                               <input required name="address" type="text" class="input-text full-width f-input-custom-style" value="" placeholder="" />
+                                               <label class="text-custom-size control-label">Driver Phone</label>
+                                               <input required name="driver_phone" type="text" class="input-text full-width f-input-custom-style" value="" placeholder="" />
                                            </div>
                                            <div class="form-group col-sm-6 col-md-3">
-                                               <label class="text-custom-size">Driver Name</label>
-                                                   <input required name="zipcode" type="text" class="input-text full-width f-input-custom-style">
+                                               <label class="text-custom-size control-label">Driver Name</label>
+                                                   <input required name="driver_name" type="text" class="input-text full-width f-input-custom-style">
                                            </div>
                                            <div class="form-group col-sm-6 col-md-3">
                                                 <label class="text-custom-size">Adult(s)</label>
                                                 <div class="selector">
-                                                    <select required name="code" class="full-width f-input-custom-style">
+                                                    <select name="adult" class="full-width f-input-custom-style">
                                                         <option>+44</option>
                                                         <option>+1</option>
                                                     </select>
                                                 </div>
                                            </div>
                                            <div class="form-group col-sm-6 col-md-3">
-                                                <label class="text-custom-size">Kid(s)</label>
+                                                <label  class="text-custom-size">Kid(s)</label>
                                                 <div class="selector">
-                                                    <select required name="code" class="full-width f-input-custom-style">
-                                                        <option>+44</option>
+                                                    <select required name="kids" class="full-width f-input-custom-style">
+                                                        <option value="1">4</option>
                                                         <option>+1</option>
                                                     </select>
                                                 </div>
@@ -178,15 +189,13 @@
                                        <div class="form-group">
                                            <div class="checkbox">
                                                <label class="text-custom-size">
-                                                   <input required type="checkbox" /> I can prove that I hold a return ticket, hotel reservation and at least 50 $ per each day of my stay.
+                                                   <input type="checkbox" checked/> I can prove that I hold a return ticket, hotel reservation and at least 50 $ per each day of my stay.
                                                </label>
                                            </div>
                                        </div>
-                                       <button class="banner-action-bt nextBtn pull-right f-input-custom-style" type="button">Next</button>
+                                       <button class="banner-action-bt nextBtn pull-right " type="button">Next</button>
                                    </div>
-                               
                             </div>
-                            
                         </div>
                         
                         <div class="panel setup-content"id="step-2">

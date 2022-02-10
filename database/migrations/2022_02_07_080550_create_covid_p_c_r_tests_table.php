@@ -15,6 +15,15 @@ class CreateCovidPCRTestsTable extends Migration
     {
         Schema::create('covid_p_c_r_tests', function (Blueprint $table) {
             $table->id();
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('email');
+            $table->string('persons');
+            $table->string('phone');
+            $table->string('nationality');
+            $table->string('passport_no');
+            $table->string('location');
+            $table->string('request_date');
             $table->timestamps();
         });
     }

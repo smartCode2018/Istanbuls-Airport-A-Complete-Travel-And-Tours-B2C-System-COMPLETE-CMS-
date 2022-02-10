@@ -202,7 +202,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('super-admin-tourist-pass')}}" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
+                            <i class="nav-icon fas fa-arrow-alt-circle-right"></i>
                             <p>
                                 Istanbul Tourist Pass
                             </p>
@@ -210,7 +210,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('super-admin-museum-pass')}}" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
+                            <i class="nav-icon fas fa-barcode"></i>
                             <p>
                                 Museum Pass
                             </p>
@@ -226,7 +226,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('super-admin-covidpcr-test')}}" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
+                            <i class="nav-icon fas fa-ambulance"></i>
                             <p>
                                 Covidd PCR Test
                             </p>
@@ -234,7 +234,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('super-admin-istanbul-taxi')}}" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
+                            <i class="nav-icon fas fa-car"></i>
                             <p>
                                 Taxi Booking
                             </p>
@@ -242,13 +242,13 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('super-admin-evisa')}}" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
+                            <i class="nav-icon fas fa-globe"></i>
                             <p>Evisa</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('super-admin-mga')}}" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
+                            <i class="nav-icon fas fa-handshake"></i>
                             <p>Meet and Greet</p>
                             </a>
                         </li>
@@ -262,7 +262,7 @@
 
             @yield('content')
             <footer class="main-footer">
-                <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+                <strong>Copyright &copy; 2022 <a href="{{route('home')}}">Istanbul Airport</a>.</strong>
                 All rights reserved.
                 <div class="float-right d-none d-sm-inline-block">
                   <b>Version</b> 3.1.0

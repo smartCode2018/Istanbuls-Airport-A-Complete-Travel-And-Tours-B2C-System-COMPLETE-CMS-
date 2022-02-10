@@ -37,7 +37,19 @@ class CovidPCRTestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'email' => 'required',
+            'request_date' => 'required|max:255',
+            'persons' => 'required|max:255',
+            'code' => 'required|max:255',
+            'phone' => 'required|max:255',
+            'nationality' => 'required|max:255',
+            'passport_number' => 'required|max:255',
+            'location' => 'required|max:255'
+        ]);
+        dd($request->all());
     }
 
     //admin finance functions

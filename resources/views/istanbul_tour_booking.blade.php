@@ -20,8 +20,18 @@
         <div class="row">
             <div id="main" class="col-sm-12 col-md-9">
                 <div class="booking-section travelo-box">
-                    <form action="{{route('evisa.submit')}}" method="POST" class="cruise-booking-form">
+                    @if ($errors->any())
+                        <div style="background-color:#e01514; color:#ff; font-size:16px;" class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form action="{{route('istanbul-tour-booking-store')}}" method="POST" class="cruise-booking-form">
                         @csrf
+                        @method('PUT')
                         <div>
                             {{-- <h2 style="margin-bottom: 30px; font-weight:bold; color:#e01514">APPLY FOR E-VISA</h2> --}}
                             <div style="border-style: solid; border-width:1px; padding:20px 0px 20px 0px;" class="row">
@@ -67,9 +77,10 @@
                                        </div>
                                        <div class="row">
                                             <div class="form-group col-sm-6 col-md-6">
-                                                <label class="text-custom-size">TOUR I WANT TO JOIN</label>
+                                                <label class="text-custom-size control-label">TOUR I WANT TO JOIN</label>
                                                 <div class="selector">
-                                                    <select required name="country_of_birth f-input-custom-style" class="full-width">
+                                                    <select name="tour_type" class="full-width f-input-custom-style">
+                                                        <option value="tour1">Tour type 1</option>
                                                         {{-- @foreach ($countries as $country)
                                                             <option value="{{$country->id}}">{{$country->name}}</option>
                                                         @endforeach --}}
@@ -78,9 +89,10 @@
                                             </div>
                                         
                                             <div class="form-group col-sm-6 col-md-6">
-                                                <label class="text-custom-size">I WANT TO START FROM</label>
+                                                <label class="text-custom-size control-label">I WANT TO START FROM</label>
                                                 <div class="selector">
-                                                    <select required name="country_of_birth f-input-custom-style" class="full-width">
+                                                    <select name="start_type" class="full-width f-input-custom-style">
+                                                        <option value="start1">start type 1</option>
                                                         {{-- @foreach ($countries as $country)
                                                             <option value="{{$country->id}}">{{$country->name}}</option>
                                                         @endforeach --}}
@@ -92,7 +104,8 @@
                                            <div class="form-group col-sm-6 col-md-6">
                                             <label class="text-custom-size">Contry | Region</label>
                                             <div class="selector">
-                                                <select required name="country_of_birth f-input-custom-style" class="full-width">
+                                                <select name="country" class="full-width f-input-custom-style">
+                                                    <option value="start1">USA</option>
                                                     {{-- @foreach ($countries as $country)
                                                         <option value="{{$country->id}}">{{$country->name}}</option>
                                                     @endforeach --}}
@@ -102,9 +115,9 @@
                                            
                                            <div class="form-group col-sm-6 col-md-6">
                                                
-                                                <label class="text-custom-size">Request Date</label>
-                                                <div class="">
-                                                    <input required name="dob" type="date" class="input-text full-width f-input-custom-style">
+                                                <label class="text-custom-size control-label">Request Date</label>
+                                                <div class="datepicker-wrap">
+                                                    <input required name="request_date" type="text" class="input-text full-width f-input-custom-style">
                                                 </div>
                                                    
                                            </div>
@@ -112,29 +125,31 @@
                     
                                        <div class="row">
                                            <div class="form-group col-sm-1 col-md-1">
-                                               <label class="text-custom-size">code</label>
+                                               <label class="text-custom-size control-label">code</label>
                                                <div class="selector">
                                                    <select required name="code" class="full-width f-input-custom-style">
-                                                       <option>+44</option>
-                                                       <option>+1</option>
+                                                       <option value="+44">+44</option>
+                                                       <option value="+1">+1</option>
                                                    </select>
                                                </div>
                                            </div>
                                            <div class="form-group col-sm-5 col-md-5">
-                                               <label class="text-custom-size">Phone number</label>
+                                               <label class="control-label text-custom-size">Phone number</label>
                                                <input required name="phone" type="text" class="input-text full-width f-input-custom-style" value="" placeholder="" />
                                            </div>
                                            <div class="form-group col-sm-6 col-md-6">
-                                               <label class="text-custom-size">Email Address</label>
-                                               <input required name="email" type="email" class="input-text full-width f-input-custom-style" value="" placeholder="" />
+                                               <label class="text-custom-size control-label">Email Address</label>
+                                               <input required name="email" type="text" class="input-text full-width f-input-custom-style" value="" placeholder="" />
                                            </div>
                                        </div>
 
                                        <div class="row">
                                         <div class="form-group col-sm-6 col-md-6">
-                                            <label class="text-custom-size">Adult</label>
+                                            <label class="text-custom-size control-label">Adult</label>
                                             <div class="selector">
-                                                <select required name="country_of_birth f-input-custom-style" class="full-width">
+                                                <select required name="adult" class="full-width f-input-custom-style">
+                                                    <option value="1" default>1</option>
+                                                    <option value="1">2</option>
                                                     {{-- @foreach ($countries as $country)
                                                         <option value="{{$country->id}}">{{$country->name}}</option>
                                                     @endforeach --}}
@@ -143,9 +158,11 @@
                                         </div>
                                     
                                         <div class="form-group col-sm-6 col-md-6">
-                                            <label class="text-custom-size">Children</label>
+                                            <label class="text-custom-size control-label">Children</label>
                                             <div class="selector">
-                                                <select required name="country_of_birth f-input-custom-style" class="full-width">
+                                                <select required name="children" class="full-width f-input-custom-style">
+                                                    <option value="1">1</option>
+                                                    <option value="1">2</option>
                                                     {{-- @foreach ($countries as $country)
                                                         <option value="{{$country->id}}">{{$country->name}}</option>
                                                     @endforeach --}}
@@ -156,12 +173,12 @@
                                        
                                        <div class="form-group">
                                            <div class="checkbox">
-                                               <label class="text-custom-size">
-                                                   <input required type="checkbox" /> By submitting this form, you agree to our terms and conditions.
-                                               </label>
+                                               <label class="text-custom-size control-label">By submitting this form, you agree to our terms and conditions.
+                                                   <input required name="policy" required type="checkbox" checked disabled/> 
+                                                </label>
                                            </div>
                                        </div>
-                                       <button class="banner-action-bt nextBtn pull-right f-input-custom-style" type="button">Next</button>
+                                       <button name="next" class="banner-action-bt nextBtn pull-right" type="button">Next</button>
                                    </div>
                                
                             </div>
@@ -199,7 +216,7 @@
                                         <h2 style="color:#e01514"><strong>$ 86.00</strong></h2>
                                     </div>
                                 </div>
-                                <button class="banner-action-bt nextBtn pull-right" type="submit">Next</button>
+                                <button name="submit" class="banner-action-bt nextBtn pull-right" type="submit">Submit</button>
                             </div>
                             
                         </div>

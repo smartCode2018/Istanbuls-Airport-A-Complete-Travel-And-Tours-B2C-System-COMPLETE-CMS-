@@ -37,14 +37,29 @@ class MeetAndGreetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'country' => 'required|max:255',
+            'dept_flight_number' => 'required|max:255',
+            'request_date' => 'required|max:255',
+            'gender' => 'required|max:255',
+            'code' => 'required|max:255',
+            'phone' => 'required|max:255',
+            'email' => 'required',
+            'driver_name' => 'required|max:255',
+            'driver_phone' => 'required|max:255',
+            'adult' => 'required|max:255',
+            'kids' => 'required|max:255',
+        ]);
+        dd($request->all());
     }
 
     //admin finance functions
 
     public function getMGABookings(){
         return view('admin.mga_table');
-    }
+    } 
 
     /**
      * Display the specified resource.

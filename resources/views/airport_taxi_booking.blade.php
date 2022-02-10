@@ -20,6 +20,15 @@
         <div class="row">
             <div id="main" class="col-sm-8 col-md-9">
                 <div class="booking-section travelo-box">
+                    @if ($errors->any())
+                        <div style="background-color:#e01514; color:#ff; font-size:16px;" class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form action="{{route('airport-taxi-booking-store')}}" method="POST" class="cruise-booking-form">
                         @csrf
                         @method('PUT')
@@ -55,34 +64,35 @@
                                    <div>
                                        <div class="row">
                                            <div class="form-group col-sm-6 col-md-6">
-                                               <label class="control-label">Given/First Name</label>
-                                               <input required type="text" name="firstname" class="input-text full-width" value="" placeholder="" />
+                                               <label class="control-label text-custom-size">Given/First Name</label>
+                                               <input required type="text" name="firstname" class="input-text full-width f-input-custom-style" value="{{ old('firstname') }}" placeholder="" />
                                            </div>
                                            <div class="form-group col-sm-6 col-md-6">
-                                               <label class="control-label">Given/last name</label>
-                                               <input required type="text" name="lastname" class="input-text full-width" value="" placeholder="" />
+                                               <label class="control-label text-custom-size">Given/last name</label>
+                                               <input required type="text" name="lastname" class="input-text full-width f-input-custom-style" value="{{ old('lastname') }}" placeholder="" />
                                            </div>
                                        </div>
                                        <div class="row">
                                            <div class="form-group col-sm-12 col-md-6">
-                                            <label>Email Address</label>
-                                               <input required name="email" type="email" class="input-text full-width" value="" placeholder="" />
+                                            <label class="control-label text-custom-size">Email Address</label>
+                                               <input required name="email" type="text" class="input-text full-width f-input-custom-style" value="{{ old('email') }}" placeholder="" />
                                            </div>
                                            
                                            <div class="form-group col-sm-12 col-md-6">
                                                <div class="row">
                                                    <div class="col-xs-6">
                                                     <div class="form-group">
-                                                        <label>Arrival DATE</label>
+                                                        <label class="control-label text-custom-size">Arrival DATE</label>
                                                         <div class="datepicker-wrap">
-                                                            <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
+                                                            <input type="text" name="arival_date" required class="input-text full-width f-input-custom-style" placeholder="mm/dd/yy" value="{{ old('arival_date') }}" />
                                                         </div>
                                                     </div>
                                                    </div>
                                                    <div class="col-xs-6">
-                                                    <label>Flight Company</label>
+                                                    <label class="control-label text-custom-size">Flight Company</label>
                                                     <div class="selector">
-                                                        <select required name="" class="full-width">
+                                                        <select  name="flight_company" class="full-width">
+                                                            <option value="1">TURK</option>
                                                             @foreach ($countries as $country)
                                                                 <option value="{{$country->id}}">{{$country->name}}</option>
                                                             @endforeach
@@ -94,30 +104,31 @@
                                        </div>
                                        <div class="row">
                                            <div class="form-group col-sm-12 col-md-2">
-                                               <label>Flight Number</label>
-                                               <input required name="" type="text" class="input-text full-width" value="" placeholder="" />
+                                               <label class="control-label text-custom-size">Flight No</label>
+                                               <input required name="flight_number" type="text" class="input-text full-width f-input-custom-style" value="{{ old('flight_number') }}" placeholder="" />
                                            </div>
                                            <div class="form-group col-sm-1 col-md-1">
-                                            <label>code</label>
+                                            <label class="control-labe text-custom-size">code</label>
                                             <div class="selector">
-                                                <select required name="code" class="full-width">
+                                                <select  name="code" class="full-width">
                                                     <option>+44</option>
                                                     <option>+1</option>
                                                 </select>
                                                 </div>
                                             </div>
                                         <div class="form-group col-sm-5 col-md-3">
-                                            <label>Phone number</label>
-                                            <input required name="phone" type="text" class="input-text full-width" value="" placeholder="" />
+                                            <label class="control-label text-custom-size">Phone number</label>
+                                            <input required name="phone" type="text" class="input-text full-width f-input-custom-style" value="{{ old('phone') }}" placeholder="" />
                                         </div>
                                            <div class="form-group col-sm-12 col-md-3">
-                                                <label>Passort Number</label>
-                                                <input required name="passport_number" type="text" class="input-text full-width" value="" placeholder="" />
+                                                <label class="control-label text-custom-size">Passort Number</label>
+                                                <input required name="passport_number" type="text" class="input-text full-width f-input-custom-style" value="{{ old('passport_number') }}" placeholder="" />
                                             </div>
                                             <div class="form-group col-sm-6 col-md-3">
-                                                <label>Arrival Country</label>
+                                                <label class="text-custom-size">Arrival Country</label>
                                                 <div class="selector">
-                                                    <select required name="" class="full-width">
+                                                    <select  name="arival_country" class="full-width">
+                                                        <option value="usa">USA</option>
                                                         @foreach ($countries as $country)
                                                             <option value="{{$country->id}}">{{$country->name}}</option>
                                                         @endforeach
@@ -131,9 +142,9 @@
                                             <h3>Passengers</h3>
                                         </div>
                                         <div class="form-group col-sm-1 col-md-3">
-                                            <label>Adult</label>
+                                            <label class="text-custom-size">Adult</label>
                                             <div class="selector">
-                                                <select required name="code" class="full-width">
+                                                <select name="adult" class="full-width">
                                                     @isset($form['num_adult'])  
                                                     <option value="{{$form['num_adult']}}" selected>{{$form['num_adult']}}</option>
                                                     @endisset
@@ -142,9 +153,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group col-sm-1 col-md-3">
-                                            <label>Children</label>
+                                            <label class="text-custom-size">No Kids</label>
                                             <div class="selector">
-                                                <select required name="code" class="full-width">
+                                                <select name="kids" class="full-width">
                                                     @isset($form['num_kids'])
                                                     <option value="{{isset($form['num_kids']) ? $form['num_kids'] : ''}}" selected>{{$form['num_kids']}}</option>
                                                     @endisset
@@ -153,47 +164,44 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label>SELECT TYPE</label>
+                                            <label class="text-custom-size">SELECT TYPE</label>
                                             <div>
                                                 @if (isset($form['taxi_type']))
                                                
                                                 @if ($form['taxi_type'] == 'from')
                                                 <label class="radio radio-inline radio-square">
-                                                    <input required name="gender" type="radio" name="gender" checked="checked">FROM ISTANBUL'S AIRPORT
+                                                    <input name="pickup_type" type="radio" checked="checked">FROM ISTANBUL'S AIRPORT
                                                 </label>
                                                 <label class="radio radio-inline radio-square">
-                                                    <input required type="radio" name="gender">TO ISTANBUL'S AIRPORT
+                                                    <input type="radio" name="pickup_type">TO ISTANBUL'S AIRPORT
                                                 </label>
                                                 @else
                                                 <label class="radio radio-inline radio-square">
-                                                    <input required name="gender" type="radio" name="gender" >FROM ISTANBUL'S AIRPORT
+                                                    <input name="pickup_type" type="radio" >FROM ISTANBUL'S AIRPORT
                                                 </label>
                                                 <label class="radio radio-inline radio-square">
-                                                    <input required type="radio" name="gender" checked="checked">TO ISTANBUL'S AIRPORT
+                                                    <input type="radio" name="pickup_type" checked="checked">TO ISTANBUL'S AIRPORT
                                                 </label>
                                                 @endif
                                               
                                                 @else
                                                 <label class="radio radio-inline radio-square">
-                                                    <input required name="gender" type="radio" name="gender" checked="checked">FROM ISTANBUL'S AIRPORT
+                                                    <input type="radio" name="pickup_type" checked="checked">FROM ISTANBUL'S AIRPORT
                                                 </label>
                                                 <label class="radio radio-inline radio-square">
-                                                    <input required type="radio" name="gender">TO ISTANBUL'S AIRPORT
+                                                    <input type="radio" name="pickup_type">TO ISTANBUL'S AIRPORT
                                                 </label>
                                                 @endif
-                                                
-
-                                                
                                             </div>
                                         </div>
                                      </div> 
                                      <div class="row">
                                         <div class="form-group col-sm-12 col-md-12">
-                                            <label>Search for location</label>
+                                            <label class="text-custom-size">Search for location</label>
                                             @if (isset($form['location']))
-                                            <input value="{{$form['location']}}" style="height:40px;" name="location" required id="pac-input" type="text" class="input-text full-width" placeholder="Search For Location" />
+                                            <input value="{{$form['location']}}" style="height:40px;" name="location" required id="pac-input" type="text" class="input-text full-width f-input-custom-style" placeholder="Search For Location" />
                                             @else
-                                            <input style="height:40px;" name="location" required id="pac-input" type="text" class="input-text full-width" placeholder="Search For Location" />
+                                            <input value="{{ old('location') }}" style="height:40px;" name="location" required id="pac-input" type="text" class="input-text full-width f-input-custom-style" placeholder="Search For Location" />
                                             @endif
                                         </div>
                                         <div style="display:flex; justify-content:center; align-items:center" class="form-group col-md-12">
@@ -208,7 +216,7 @@
                                     <div class="form-group">
                                         <div class="checkbox">
                                             <label>
-                                                <input required type="checkbox">  confirm that I meet each and every one of the conditions listed above.
+                                                <input required type="checkbox" checked disabled/> confirm that I meet each and every one of the conditions listed above.
                                             </label>
                                         </div>
                                     </div>
@@ -250,7 +258,7 @@
                                         <h2 style="color:#e01514"><strong>$ 86.00</strong></h2>
                                     </div>
                                 </div>
-                                <button class="banner-action-bt nextBtn pull-right" type="submit">Next</button>
+                                <button name="submit" class="banner-action-bt nextBtn pull-right" type="submit">submit</button>
                             </div>
                             
                         </div>
@@ -316,8 +324,5 @@
             </div>
         </div>
     </div>
-
-
-
-</section
+</section>
 @endsection

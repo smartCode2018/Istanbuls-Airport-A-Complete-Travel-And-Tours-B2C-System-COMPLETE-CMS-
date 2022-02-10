@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class MuseumPass extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'firstname',
+            'lastname',
+            'country',
+            'pass_type',
+            'request_date',
+            'gender',
+            'phone',
+            'email'
+    ];
 }

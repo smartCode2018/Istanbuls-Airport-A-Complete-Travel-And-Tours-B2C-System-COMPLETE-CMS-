@@ -41,6 +41,22 @@ class AirportServicesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'email' => 'required',
+            'arival_date' => 'required|max:255',
+            'flight_company' => 'required|max:255',
+            'flight_no' => 'required|max:255',
+            'code' => 'required|max:255',
+            'phone' => 'required',
+            'passport_number' => 'required|max:255',
+            'arival_country' => 'required|max:255',
+            'adult' => 'required|max:255',
+            'kids' => 'required|max:255',
+            'taxi_type' => 'required|max:255',
+            'location' => 'required|max:255'
+        ]);
         // save to db
         dd($request->all());
     }
@@ -52,10 +68,6 @@ class AirportServicesController extends Controller
     public function getTaxiBookings(){
         return view('admin.taxi_booking_table');
     }
-
-
-
-
 
     /**
      * Display the specified resource.

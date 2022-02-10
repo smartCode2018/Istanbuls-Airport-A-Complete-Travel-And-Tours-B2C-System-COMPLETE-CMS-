@@ -143,7 +143,7 @@
           <div class="col-md-8">
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Latest Orders</h3>
+                <h3 class="card-title">Latest Tour Bookings</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -160,10 +160,12 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>Order ID</th>
-                      <th>Item</th>
+                      <th>ID</th>
+                      <th>Name</th>
                       <th>Status</th>
-                      <th>Popularity</th>
+                      <th>Amount</th>
+                      <th>Tour Type</th>
+                      <th>Date</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -174,6 +176,8 @@
                       <td>
                         <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
                       </td>
+                      <td>Call of Duty IV</td>
+                      <td>Call of Duty IV</td>
                     </tr>
                     <tr>
                       <td><a href="pages/examples/invoice.html">OR1848</a></td>
@@ -182,6 +186,8 @@
                       <td>
                         <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
                       </td>
+                      <td>Call of Duty IV</td>
+                      <td>Call of Duty IV</td>
                     </tr>
                     <tr>
                       <td><a href="pages/examples/invoice.html">OR7429</a></td>
@@ -190,6 +196,8 @@
                       <td>
                         <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
                       </td>
+                      <td>Call of Duty IV</td>
+                      <td>Call of Duty IV</td>
                     </tr>
                     <tr>
                       <td><a href="pages/examples/invoice.html">OR7429</a></td>
@@ -198,6 +206,8 @@
                       <td>
                         <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
                       </td>
+                      <td>Call of Duty IV</td>
+                      <td>Call of Duty IV</td>
                     </tr>
                     <tr>
                       <td><a href="pages/examples/invoice.html">OR1848</a></td>
@@ -206,23 +216,10 @@
                       <td>
                         <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
                       </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>iPhone 6 Plus</td>
-                      <td><span class="badge badge-danger">Delivered</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
                       <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                      </td>
+                      <td>Call of Duty IV</td>
                     </tr>
+                    
                     </tbody>
                   </table>
                 </div>
@@ -230,8 +227,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+                {{-- <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a> --}}
+                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Tpurs</a>
               </div>
               <!-- /.card-footer -->
             </div>
@@ -239,7 +236,7 @@
           <div class="col-md-4">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Recently Added Products</h3>
+                <h3 class="card-title">Museum Pass Booking</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -255,64 +252,53 @@
                 <ul class="products-list product-list-in-card pl-2 pr-2">
                   <li class="item">
                     <div class="product-img">
-                      <img src="../dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                      <img src="{{asset('images/assets/others/mu.png')}}" alt="Product Image" class="img-size-50">
                     </div>
                     <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">Samsung TV
+                      <a href="javascript:void(0)" class="product-title">Istanbul Museum
                         <span class="badge badge-warning float-right">$1800</span></a>
                       <span class="product-description">
-                        Samsung 32" 1080p 60Hz LED Smart HDTV.
+                        Justice Kelechi
                       </span>
                     </div>
                   </li>
                   <!-- /.item -->
                   <li class="item">
                     <div class="product-img">
-                      <img src="../dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                      <img src="{{asset('images/assets/others/mu.png')}}" alt="Product Image" class="img-size-50">
                     </div>
                     <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">Bicycle
+                      <a href="javascript:void(0)" class="product-title">Istanbul Museum
                         <span class="badge badge-info float-right">$700</span></a>
                       <span class="product-description">
-                        26" Mongoose Dolomite Men's 7-speed, Navy Blue.
+                        Justice kelechi
                       </span>
                     </div>
                   </li>
                   <!-- /.item -->
                   <li class="item">
                     <div class="product-img">
-                      <img src="../dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                      <img src="{{asset('images/assets/others/mu.png')}}" alt="Product Image" class="img-size-50">
                     </div>
                     <div class="product-info">
                       <a href="javascript:void(0)" class="product-title">
-                        Xbox One <span class="badge badge-danger float-right">
+                        Turkey Museum <span class="badge badge-danger float-right">
                         $350
                       </span>
                       </a>
                       <span class="product-description">
-                        Xbox One Console Bundle with Halo Master Chief Collection.
+                        Justice Kelechi
                       </span>
                     </div>
                   </li>
                   <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="../dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">PlayStation 4
-                        <span class="badge badge-success float-right">$399</span></a>
-                      <span class="product-description">
-                        PlayStation 4 500GB Console (PS4)
-                      </span>
-                    </div>
-                  </li>
+                  
                   <!-- /.item -->
                 </ul>
               </div>
               <!-- /.card-body -->
               <div class="card-footer text-center">
-                <a href="javascript:void(0)" class="uppercase">View All Products</a>
+                <a href="javascript:void(0)" class="uppercase">View All Tourist Pass</a>
               </div>
               <!-- /.card-footer -->
             </div>
