@@ -9,12 +9,12 @@
             <div class="fullwidthbanner-container">
                 <div style="padding-top: 160px; padding-bottom: 150px;" class="container">
                 	<div class="row" >
-								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									<div  class="bg-dark" >
-										<h1 style=" margin-bottom: 10px; font-size: 50px; font-weight: bold; color:#000;" >AIRPORT SERVICES</h1>
-										<h2 style="margin-bottom: 40px; font-weight:bold; font-size: 25px; font-family: 'Mulish', sans-serif; color: rgb(46, 46, 46);;">All in one place</h2>
-										<div style="text-align: left !important;">
-											<a style="font-size: 18px;"  href="#" class="banner-action-btn fw-bold">EXPLORE SERVICES</a>
+										<h1 style=" margin-bottom: 10px; font-size: 50px; font-weight: bold; color:#000;" >{{__('frontpage.bannerTitle')}}</h1>
+										<h2 style="margin-bottom: 40px; font-weight:bold; font-size: 25px; font-family: 'Mulish', sans-serif; color: rgb(46, 46, 46);;">{{__('frontpage.bannerSubtitle')}}</h2>
+										<div style=" !important;">
+											<a style="font-size: 18px;"  href="#" class="banner-action-btn fw-bold">{{__('frontpage.bannerBtn')}}</a>
 										</div>
 									</div>
 									
@@ -27,26 +27,26 @@
             <div class="search-box-wrapper">
                 <div class="search-box container">
                     <ul class="search-tabs clearfix text-custom-size">
-                        <li class="active"><a href="#visit-istanbul-tab" data-toggle="tab">VISIT ISTANBUL</a></li>
-                        <li><a href="#airport-service-tab" data-toggle="tab">AIRPORT ACCESS</a></li>
-                        <li ><a href="#flight-status-tab" data-toggle="tab">FLIGHT STATUS</a></li>
-                        <li><a href="#premium-service-tab" data-toggle="tab">PREMIUM SERVICES</a></li>
-                        <li><a href="#e-visa" data-toggle="tab">E-VISA</a></li>
-                        <li><a href="#covid-tab" data-toggle="tab">COVID-19</a></li>   
+                        <li class="active"><a href="#visit-istanbul-tab" data-toggle="tab">{{__('frontpage.vistIstanbul')}}</a></li>
+                        <li><a href="#airport-service-tab" data-toggle="tab">{{__('frontpage.airportAccess')}}</a></li>
+                        <li ><a href="#flight-status-tab" data-toggle="tab">{{__('frontpage.flightStatus')}}</a></li>
+                        <li><a href="#premium-service-tab" data-toggle="tab">{{__('frontpage.premiumService')}}</a></li>
+                        <li><a href="#e-visa" data-toggle="tab">{{__('frontpage.e-visa')}}</a></li>
+                        <li><a href="#covid-tab" data-toggle="tab">{{__('frontpage.vistIstanbul')}}</a></li>   
                         {{-- <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li> --}}
                     </ul>
                     <div class="visible-mobile">
                         <ul id="mobile-search-tabs" class="search-tabs clearfix">
-                            <li class="active"><a href="#visit-istanbul-tab">VISIT ISTANBUL</a></li>
-                            <li><a href="#airport-service-tab">AIRPORT ACCESS</a></li>
-                            <li ><a href="#flight-status-tab">FLIGHT STATUS</a></li>
-                            <li><a href="#premium-service-tab">PREMIUM SERVICES</a></li>
-                            <li><a href="#e-visa">E-VISA</a></li>
+                            <li class="active"><a href="#visit-istanbul-tab">{{__('frontpage.vistIstanbul')}}</a></li>
+                            <li><a href="#airport-service-tab">{{__('frontpage.airportAccess')}}</a></li>
+                            <li ><a href="#flight-status-tab">{{__('frontpage.flightStatus')}}</a></li>
+                            <li><a href="#premium-service-tab">{{__('frontpage.premiumService')}}</a></li>
+                            <li><a href="#e-visa">{{__('frontpage.e-visa')}}</a></li>
+                            <li><a href="#covid-tab">{{__('frontpage.e-visa')}}</a></li>
                             
                             
                             
                             {{-- <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li> --}}
-                            <li><a href="#covid-tab">COVID-19</a></li>
                             
                         </ul>
                     </div>
@@ -344,7 +344,7 @@
                             <form action="flight-list-view.html" method="post">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <h1 style="text-align:center"><strong>Plan a Vist To Turkey</strong></h1>
+                                        <h1 style="text-align:center"><strong>{{__('frontpage.vistIstanbulHeader')}}</strong></h1>
                                         <div style="background: #adadad05; padding-top:10px;" class="row">
                                             <div  class="row image-box style5">
                                                 <div class="col-sm-4">
@@ -359,7 +359,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Read</small>More</span> --}}
-                                                                <h3 class="box-title"><a href="{{route('tourist-pass-booking')}}"><strong >ISTANBUL TOURIST PASS</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('tourist-pass-booking')}}"><strong >{{__('frontpage.tourPass')}}</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -377,7 +377,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Fee</small>€140</span> --}}
-                                                                <h3 class="box-title"><a href="{{route('museum-pass-booking')}}"><strong>ISTANBUL MUSEUM PASS</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('museum-pass-booking')}}"><strong>{{__('frontpage.museumPass')}}</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -395,7 +395,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Fee</small>€140</span> --}}
-                                                                <h3 class="box-title"><a href="{{route('istanbul-tour-booking')}}"><strong>ISTANBUL TOURS</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('istanbul-tour-booking')}}"><strong>{{__('frontpage.isTours')}}</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -413,7 +413,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Fee</small>€140</span> --}}
-                                                                <h3 class="box-title"><a href="{{route('covid-pcr-test-booking')}}"><strong>COVID-19 PCR TEST</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('covid-pcr-test-booking')}}"><strong>{{__('frontpage.covidTest')}}</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -431,7 +431,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Fee</small>€155</span> --}}
-                                                                <h3 class="box-title"><a href="{{route('airport-taxi-booking')}}"><strong>ISTANBUL SHUTTLE SERVICE</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('airport-taxi-booking')}}"><strong>{{__('frontpage.shuttleService')}}</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -449,13 +449,13 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Fee</small>€250</span> --}}
-                                                                <h3 class="box-title"><a href="airport-taxi-booking"><strong>RENT A CAR IN TURKEY</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="airport-taxi-booking"><strong>{{__('frontpage.rentCar')}}</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
                                                     </article>
                                                 </div>
-                                                <div class="btn-x-img col-sm-12"><a href="{{url('premium-service')}}" class="btn-x-img">Browse More Services</a></div>
+                                                <div class="btn-x-img col-sm-12"><a href="{{url('premium-service')}}" class="btn-x-img">{{__('frontpage.premiumService')}}</a></div>
                                             </div>
                                             
                                         </div>

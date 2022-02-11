@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if IE 8]>          <html class="ie ie8"> <![endif]-->
 <!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->  <html> <!--<![endif]-->
+<!--[if gt IE 9]><!--><html dir="{{__('frontpage.page-dir')}}" lang="page-lang"> <!--<![endif]-->
     <head>
         <!-- Page Title -->
         <title>@yield('title')</title>
@@ -40,16 +40,22 @@
         <!-- Updated Styles -->
         <link rel="stylesheet" href="{{asset('css/updates.css')}}">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
 
         <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">
 
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/css/flag-icons.min.css" integrity="sha512-UwbBNAFoECXUPeDhlKR3zzWU3j8ddKIQQsDOsKhXQGdiB5i3IHEXr9kXx82+gaHigbNKbTDp3VY/G6gZqva6ZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
         <!-- Responsive Styles -->
         <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
         <script src="{{asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
+        
         <!-- CSS for IE -->
         <!--[if lte IE 9]>
             <link rel="stylesheet" type="text/css" href="css/ie.css" />
@@ -133,36 +139,28 @@
 
         {{-- @livewireStyles --}}
     </head>
-<body>
-    {{-- {{$me = \Botble\Menu\Models\MenuNode::select('title')->where('position', '!=0')->get()}} --}}
+<body style="{{__('frontpage.font-family')}}">
+    
+   {{-- {{$me = \Botble\Menu\Models\MenuNode::select('title')->where('position', '!=0')->get()}} --}}
   <div id="page-wrapper">
     <header id="header" class="navbar-static-top">
         <div class="topnav hidden-xs">
             <div class="container">
                 <ul class="quick-menu pull-left">
-                   
                     <li class="ribbon">
-                        <a href="#">English</a>
+                        <a style="font-size: 16px;" href="#"><span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"> </span><strong> {{ Config::get('languages')[App::getLocale()]['display'] }}</strong></a>
                         <ul class="menu mini">
-                            <li><a href="#" title="Dansk">Dansk</a></li>
-                            <li><a href="#" title="Deutsch">Deutsch</a></li>
-                            <li class="active"><a href="#" title="English">English</a></li>
-                            <li><a href="#" title="Español">Español</a></li>
-                            <li><a href="#" title="Français">Français</a></li>
-                            <li><a href="#" title="Italiano">Italiano</a></li>
-                            <li><a href="#" title="Magyar">Magyar</a></li>
-                            <li><a href="#" title="Nederlands">Nederlands</a></li>
-                            <li><a href="#" title="Norsk">Norsk</a></li>
-                            <li><a href="#" title="Polski">Polski</a></li>
-                            <li><a href="#" title="Português">Português</a></li>
-                            <li><a href="#" title="Suomi">Suomi</a></li>
-                            <li><a href="#" title="Svenska">Svenska</a></li>
+                            @foreach (Config::get('languages') as $lang => $language)
+                                @if ($lang != App::getLocale())
+                                       <li> <a style="font-size: 16px;" class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a></li>
+                                @endif
+                            @endforeach
                         </ul>
-                    </li>
+                    </li> 
                 </ul>
                 <ul class="quick-menu pull-right">
                    
-                    <li class="ribbon currency">
+                    {{-- <li class="ribbon currency">
                         <a href="#" title="">USD</a>
                         <ul class="menu mini">
                             <li><a href="#" title="AUD">AUD</a></li>
@@ -179,7 +177,7 @@
                             <li><a href="#" title="HUF">HUF</a></li>
                             <li><a href="#" title="IDR">IDR</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
@@ -230,8 +228,17 @@
                 </ul>
                 
                 <ul class="mobile-topnav container">
-                    
                     <li class="ribbon language menu-color-skin">
+                        <a style="font-size: 16px;" data-toggle="collapse" href="#"><span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"> </span><strong> {{ Config::get('languages')[App::getLocale()]['display'] }}</strong></a>
+                        <ul class="menu mini">
+                            @foreach (Config::get('languages') as $lang => $language)
+                                @if ($lang != App::getLocale())
+                                       <li> <a style="font-size: 16px;" class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a></li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </li> 
+                    {{-- <li class="ribbon language menu-color-skin">
                         <a href="#" data-toggle="collapse">ENGLISH</a>
                         <ul class="menu mini">
                             <li><a href="#" title="Dansk">Dansk</a></li>
@@ -267,7 +274,7 @@
                             <li><a href="#" title="HUF">HUF</a></li>
                             <li><a href="#" title="IDR">IDR</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
         </div> 
@@ -352,120 +359,111 @@
         </div>
     </footer>
   </div>
-  <!-- Javascript -->
-
-  {{-- imported using laravel mix --}}
-  {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> --}}
-  <script type="text/javascript" src="{{asset('js/jquery.noconflict.js')}}"></script>
-  <script type="text/javascript" src="{{asset('js/modernizr.2.7.1.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('js/jquery-migrate-1.2.1.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('js/jquery.placeholder.js')}}"></script>
-  <script type="text/javascript" src="{{asset('js/jquery-ui.1.10.4.min.js')}}"></script>
-
-
-
-  
-  <script src="{{asset('js/jquery-scrolltofixed.js')}}"></script>
-  <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-  <script src="{{asset('js/scrollbar.min.js')}}"></script>
-  {{-- <script src="{{asset('js/main.js')}}"></script> --}}
-
-  
+    
+    <!-- Javascript -->
+    <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.noconflict.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/modernizr.2.7.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-migrate-1.2.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.placeholder.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-ui.1.10.4.min.js')}}"></script>
+    
   <!-- Twitter Bootstrap -->
   <script type="text/javascript" src="{{asset('js/bootstrap.js')}}"></script>
-  
+    
   <!-- load revolution slider scripts -->
   <script type="text/javascript" src="{{asset('components/revolution_slider/js/jquery.themepunch.plugins.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('components/revolution_slider/js/jquery.themepunch.revolution.min.js')}}"></script>
-  
+    
   <!-- load BXSlider scripts -->
   <script type="text/javascript" src="{{asset('components/jquery.bxslider/jquery.bxslider.min.js')}}"></script>
 
   <!-- Flex Slider -->
   <script type="text/javascript" src="{{asset('components/flexslider/jquery.flexslider-min.js')}}"></script>
-
-  <!-- Google Map Api -->
-  <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIU0A3mNHA1Y90-dmcx2xZQPV_G6Hi-9E&callback=initMap&libraries=places&v=weekly"
-      async
-    ></script>
   
-  <!-- parallax -->
-  <script type="text/javascript" src="{{asset('js/jquery.stellar.min.js')}}"></script>
-  
-  <!-- waypoint -->
-  <script type="text/javascript" src="{{asset('js/waypoints.min.js')}}"></script>
+    <!-- Google Map Api -->
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIU0A3mNHA1Y90-dmcx2xZQPV_G6Hi-9E&callback=initMap&libraries=places&v=weekly"
+    async
+  ></script>
 
-  <!-- load page Javascript -->
-  <script type="text/javascript" src="{{asset('js/theme-scripts.js')}}"></script>
-  <script type="text/javascript" src="{{asset('js/theme-scripts.js')}}"></script>
-  
-  <script type="text/javascript">
-      tjq(document).ready(function() {
-          tjq('.revolution-slider').revolution(
-          {
-              dottedOverlay:"none",
-              delay:9000,
-              startwidth:1170,
-              startheight:646,
-              onHoverStop:"on",
-              hideThumbs:10,
-              fullWidth:"on",
-              forceFullWidth:"on",
-              navigationType:"none",
-              shadow:0,
-              spinner:"spinner4",
-              hideTimerBar:"on",
-          });
-      });
-  </script>
-  
-  <script>
-       (function($) {
-    $(document).ready(function () {
+    <!-- parallax -->
+    <script type="text/javascript" src="{{asset('js/jquery.stellar.min.js')}}"></script>
+    
+    <!-- waypoint -->
+    <script type="text/javascript" src="{{asset('js/waypoints.min.js')}}"></script>
 
-        var navListItems = $('div.setup-panel div a'),
-            allWells = $('.setup-content'),
-            allNextBtn = $('.nextBtn');
-
-        allWells.hide();
-
-        navListItems.click(function (e) {
-            e.preventDefault();
-            var $target = $($(this).attr('href')),
-                $item = $(this);
-
-            if (!$item.hasClass('disabled')) {
-                navListItems.removeClass('btn-success').addClass('btn-default');
-                $item.addClass('btn-success');
-                allWells.hide();
-                $target.show();
-                $target.find('input:eq(0)').focus();
-            }
+    <!-- load page Javascript -->
+    <script type="text/javascript" src="{{asset('js/theme-scripts.js')}}"></script>
+    {{-- <script type="text/javascript" src="{{asset('js/theme-scripts.js')}}"></script> --}}
+    
+    <script type="text/javascript">
+        tjq(document).ready(function() {
+            tjq('.revolution-slider').revolution(
+            {
+                dottedOverlay:"none",
+                delay:9000,
+                startwidth:1200,
+                startheight:646,
+                touchenabled:"on",
+                onHoverStop:"on",
+                hideThumbs:200,
+                fullWidth:"on",
+                forceFullWidth:"on",
+                navigationType:"none",
+                shadow:0,
+                spinner:"spinner4",
+                hideTimerBar:"on",
+            });
         });
+    </script>
 
-        allNextBtn.click(function () {
-            var curStep = $(this).closest(".setup-content"),
-                curStepBtn = curStep.attr("id"),
-                nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-                curInputs = curStep.find("input[type='text'],input[type='url']"),
-                isValid = true;
+<script>
+    (function($) {
+ $(document).ready(function () {
 
-            $(".form-group").removeClass("has-error");
-            for (var i = 0; i < curInputs.length; i++) {
-                if (!curInputs[i].validity.valid) {
-                    isValid = false;
-                    $(curInputs[i]).closest(".form-group").addClass("has-error");
-                }
-            }
+     var navListItems = $('div.setup-panel div a'),
+         allWells = $('.setup-content'),
+         allNextBtn = $('.nextBtn');
 
-            if (isValid) nextStepWizard.removeAttr('disabled').trigger('click');
-        });
+     allWells.hide();
 
-        $('div.setup-panel div a.btn-success').trigger('click');
-    });
+     navListItems.click(function (e) {
+         e.preventDefault();
+         var $target = $($(this).attr('href')),
+             $item = $(this);
+
+         if (!$item.hasClass('disabled')) {
+             navListItems.removeClass('btn-success').addClass('btn-default');
+             $item.addClass('btn-success');
+             allWells.hide();
+             $target.show();
+             $target.find('input:eq(0)').focus();
+         }
+     });
+
+     allNextBtn.click(function () {
+         var curStep = $(this).closest(".setup-content"),
+             curStepBtn = curStep.attr("id"),
+             nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+             curInputs = curStep.find("input[type='text'],input[type='url']"),
+             isValid = true;
+
+         $(".form-group").removeClass("has-error");
+         for (var i = 0; i < curInputs.length; i++) {
+             if (!curInputs[i].validity.valid) {
+                 isValid = false;
+                 $(curInputs[i]).closest(".form-group").addClass("has-error");
+             }
+         }
+
+         if (isValid) nextStepWizard.removeAttr('disabled').trigger('click');
+     });
+
+     $('div.setup-panel div a.btn-success').trigger('click');
+ });
 })(jQuery);
 </script>
-{{-- @livewireScripts --}}
 </body>
 </html>
+

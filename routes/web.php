@@ -63,4 +63,8 @@ Route::middleware(['adminfinance'])->group(function(){
     Route::get('/super-admin/meet-and-greet', [MeetAndGreetController::class, 'getMGABookings'])->name('super-admin-mga');
 });
 
+
+//language helper
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+
 // Route::get('/super-admin/dashboard', [AdminDashboardController::class, 'index'])->name('super-admin-dashboard');
