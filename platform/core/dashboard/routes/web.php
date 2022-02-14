@@ -3,7 +3,7 @@
 Route::group(['namespace' => 'Botble\Dashboard\Http\Controllers', 'middleware' => ['web', 'core']], function () {
     Route::group(['prefix' => BaseHelper::getAdminPrefix(), 'middleware' => 'auth'], function () {
         Route::get('', [
-            'as'         => 'dashboard.index',
+            'as'         => 'dashboard.index', 
             'uses'       => 'DashboardController@getDashboard',
             'permission' => false,
         ]);

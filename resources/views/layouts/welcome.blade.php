@@ -19,7 +19,8 @@
         <!-- Theme Styles -->
         @yield('bootstrap')
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {{-- <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}"> --}}
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
         
@@ -136,6 +137,9 @@
 }
 
         </script>
+        <!-- Javascript Page Loader -->
+    <script type="text/javascript" src="js/pace.min.js" data-pace-options='{ "ajax": true }'></script>
+    <script type="text/javascript" src="js/page-loading.js"></script>
 
         {{-- @livewireStyles --}}
     </head>
@@ -152,7 +156,7 @@
                         <ul class="menu mini">
                             @foreach (Config::get('languages') as $lang => $language)
                                 @if ($lang != App::getLocale())
-                                       <li> <a style="font-size: 16px;" class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a></li>
+                                       <li><a style="font-size: 16px;" class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a></li>
                                 @endif
                             @endforeach
                         </ul>
@@ -198,13 +202,28 @@
                 <nav id="main-menu" role="navigation">
                     <ul class="menu">
                         <li class="f-title text-custom-size">
-                            <a href="{{ route('home') }}"><b>Home</b></a>
+                            <a href="{{ route('home') }}"><b>{{__('frontpage.home')}}</b></a>
                         </li>
                         @foreach (\Botble\Menu\Models\MenuNode::where('position', '>', 0)->get() as $item)
                         @if ($item->title == 'Contact')  
                         @else
                         <li  class="text-custom-size">
-                        <a href="{{ url($item->url) }}">{{$item->title}}</a>
+                        {{-- <a href="{{ url($item->url) }}">{{$item->title}}</a> --}}
+                        <a href="{{ url($item->url) }}">
+                        @php
+                            if($item->title == 'Airport Access'){
+                               echo  __('frontpage.airportAccess');
+                            }elseif ($item->title == 'Premium Services') {
+                              echo  __('frontpage.premiumService');
+                            }elseif ($item->title == 'Visit Istanbul') {
+                              echo  __('frontpage.vistIstanbul');
+                            }elseif ($item->title == 'Covid-19') {
+                              echo  __('frontpage.covid-19');
+                            }elseif ($item->title == 'Evisa') {
+                              echo  __('frontpage.e-visa');
+                            }
+                        @endphp
+                        </a>
                         </li>
                         @endif
                         @endforeach
@@ -285,8 +304,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-md-4">
-                        <h2>About Istanbul Airport</h2>
-                        <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massaidp nequetiam lore elerisque.</p>
+                        <h2>{{__('frontpage.about-ist-airport')}}</h2>
+                        <p>{{__('frontpage.about-ist-des')}}</p>
                         <br />
                         <address class="contact-details">
                             <span class="contact-phone"><i class="soap-icon-phone"></i> 0-000-000-HELLO</span>

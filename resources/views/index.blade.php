@@ -32,7 +32,7 @@
                         <li ><a href="#flight-status-tab" data-toggle="tab">{{__('frontpage.flightStatus')}}</a></li>
                         <li><a href="#premium-service-tab" data-toggle="tab">{{__('frontpage.premiumService')}}</a></li>
                         <li><a href="#e-visa" data-toggle="tab">{{__('frontpage.e-visa')}}</a></li>
-                        <li><a href="#covid-tab" data-toggle="tab">{{__('frontpage.vistIstanbul')}}</a></li>   
+                        <li><a href="#covid-tab" data-toggle="tab">{{__('frontpage.covid-19')}}</a></li>   
                         {{-- <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li> --}}
                     </ul>
                     <div class="visible-mobile">
@@ -42,12 +42,8 @@
                             <li ><a href="#flight-status-tab">{{__('frontpage.flightStatus')}}</a></li>
                             <li><a href="#premium-service-tab">{{__('frontpage.premiumService')}}</a></li>
                             <li><a href="#e-visa">{{__('frontpage.e-visa')}}</a></li>
-                            <li><a href="#covid-tab">{{__('frontpage.e-visa')}}</a></li>
-                            
-                            
-                            
-                            {{-- <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li> --}}
-                            
+                            <li><a href="#covid-tab">{{__('frontpage.covid-19')}}</a></li>  
+                            {{-- <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li> --}}                            
                         </ul>
                     </div>
                     
@@ -56,27 +52,27 @@
                             <form action="{{route('flight.status')}}" method="get">
                                 
                                 <div class="row">
-                                    <h2 style="text-align-last: center" class="f-title"><strong>Search Flight Details</strong></h2>
+                                    <h2 style="text-align-last: center" class="f-title"><strong>{{__('frontpage.flightStatus')}}</strong></h2>
                                     <div class="col-lg-12 ftype-wrapper">
                                         <div class="row">
                                             <div class="col-xs-6 col-md-3">
                                                 <label class="radio radio-inline radio-square ftype">
-                                                    <input st id="arival" type="radio" name="ftype" checked="checked">ARIVAL
+                                                    <input st id="arival" type="radio" name="ftype" checked="checked">{{__('frontpage.arrival')}}
                                                 </label>
                                             </div>
                                             <div class="col-xs-6 col-md-3">
                                                 <label style="" class="radio radio-inline radio-square ftype">
-                                                    <input id="departure" type="radio" name="ftype">DEPATURE
+                                                    <input id="departure" type="radio" name="ftype">{{__('frontpage.departure')}}
                                                 </label>
                                             </div>
                                             <div class="col-xs-6 col-md-3">
                                                 <label style="" class="radio radio-inline radio-square ftype">
-                                                    <input id="domestic" type="radio" name="fterminal" checked="checked">DOMESTIC
+                                                    <input id="domestic" type="radio" name="fterminal" checked="checked">{{__('frontpage.domestic')}}
                                                 </label>
                                             </div>
                                             <div class="col-xs-6 col-md-3">
                                                 <label style="" class="radio radio-inline radio-square ftype">
-                                                    <input id="international" type="radio" name="fterminal" >INTERNATIONAL
+                                                    <input id="international" type="radio" name="fterminal" >{{__('frontpage.international')}}
                                                 </label>
                                             </div>
                                         </div>
@@ -86,11 +82,11 @@
                                         <div class="form-group row">
                                             
                                             <div class="col-xs-6">
-                                                <label class="f-title text-custom-size">FLIGHT NUMBER</label>
+                                                <label class="f-title text-custom-size">{{__('frontpage.flight')}} {{__('frontpage.number')}}</label>
                                                 <input id="flight-num" type="text" class="input-text full-width f-input-custom-style" placeholder="Enter flight No (TK 2522)" />
                                             </div>
                                             <div class="col-xs-6">
-                                                <label class="f-title">CITY</label>
+                                                <label class="f-title">{{__('frontpage.city')}}</label>
                                                 <input id="flight-city" type="text" class="input-text full-width f-input-custom-style" placeholder="enter a city or place name " />
                                             </div>
                                         </div>
@@ -99,7 +95,7 @@
                                     <div class="col-xs-6 col-md-2">
                                         {{-- <h4 class="title">When</h4> --}}
                                         <div class="form-group">
-                                            <label class="f-title text-custom-size">FLIGHT DATE</label>
+                                            <label class="f-title text-custom-size">{{__('frontpage.flight')}} {{__('frontpage.date')}}</label>
                                             <div class="datepicker-wrap">
                                                 <input type="text" class="input-text full-width f-input-custom-style" placeholder="mm/dd/yy" />
                                             </div>
@@ -109,13 +105,13 @@
                                     <div class="col-xs-6 col-md-2">
                                         {{-- <h4 class="title">Who</h4> --}}
                                         <div class="form-group">
-                                            <label class="f-title text-custom-size">AIRLINE</label>
+                                            <label class="f-title text-custom-size">{{__('frontpage.arline')}}</label>
                                             <input type="text" class="input-text full-width f-input-custom-style" placeholder="Airline" />
                                         </div>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label class="hidden-xs">&nbsp;</label>
-                                        <button class="icon-check btn-block full-width f-input-custom-style">SEARCH NOW</button>
+                                        <button class="icon-check btn-block full-width f-input-custom-style">{{__('frontpage.search')}} {{__('frontpage.now')}}</button>
                                     </div>
                                 </div>
                             </form>
@@ -123,30 +119,33 @@
                                 <div style="text-align: center; display:none" class="t-spinner col-xs-12">
                                     <img height="100" width="150" src="images/spina.gif" alt="">
                                 </div>
-                                <div style="display:none; border-raidus:5px; " class="autocom-box col-xs-12 table-responsive">
+                                <div style="display:block; border-raidus:5px; " class="autocom-box col-xs-12 table-responsive">
 
                                     <table style="" class="flight-table-wrapper table table-striped ">
                                         <thead class="flight-table-head">
                                           <tr>
-                                            <th>AIRLINE</th>
-                                            <th>FLIGHT NO</th>
-                                            <th>SCHEDULE</th>
-                                            <th>ESTIMATED</th>
-                                            <th>GATE</th>
-                                            <th>DEPATURE</th>
-                                            <th>STATUS</th>
+                                            <th style="text-transform: uppercase">{{__('frontpage.arline')}}</th>
+                                            <th>{{__('frontpage.flightNo')}}</th> 
+                                            <th>{{__('frontpage.schedule')}}</th>
+                                            <th>{{__('frontpage.estimated')}}</th>
+                                            <th>{{__('frontpage.gate')}}</th>
+                                            <th style="text-transform: uppercase">{{__('frontpage.departure')}}</th>
+                                            <th style="text-transform: uppercase">{{__('frontpage.status')}}</th>
                                           </tr>
                                         </thead>
                                         <tbody style="font-size: 14px; font-weight:bold">
                                             @foreach ($flight_status as $item)
+                                            @php
+                                                $image = explode('"',$item[0]);
+                                            @endphp
                                             <tr>
-                                                <td style="padding: 12px;"><img height="25" width="100" src="images/airline_logo/{{$item['airline']}}.png" alt=""></td>
-                                                <td>{{$item['flight_no']}}</td>
-                                                <td>{{$item['schedule']}}</td>
-                                                <td>{{$item['estimated']}}</td>
-                                                <td>{{$item['gate']}}</td>
-                                                <td>{{$item['departure']}}</td>
-                                                <td>{{$item['status']}}</td>
+                                                <td style="padding: 12px;"><img height="25" width="100" src="{{$image[1]}}" alt=""></td>
+                                                <td>{{$item[1]}}</td>
+                                                <td>{{$item[2]}}</td>
+                                                <td>{{$item[3]}}</td>
+                                                <td>{{$item[4]}}</td>
+                                                <td>{{$item[5]}}</td>
+                                                <td>{{$item[6]}}</td>
                                               </tr>
                                             @endforeach
                                           
@@ -162,14 +161,11 @@
                                 <div class="row flight-table-wrapper">
                                     
                                     <div style=" padding:10px;" class="col-md-6">
-                                        <h3 style="font-weight:bold; background:#80808014; padding:13px;" class="title f-title">Turkey E-Visa Application</h3>
+                                        <h3 style="font-weight:bold; background:#80808014; padding:13px;" class="title f-title">{{__('frontpage.turkey-evisa-application')}}</h3>
                                        <div style="font-size: 14px; text-align:justify; padding:13px 13px 0px 13px;">
                                         <p>
-                                            The Turkish Government has launched an online visa service, which is electronic permission valid for 180 days that grants its holder entry to the Republic of Turkey and a stay of up to 3 months in the Turkish land. 
+                                            {{__('frontpage.e-visa-writeup')}}
                                         </p>
-                                        <p>You can apply for Electronic Visa in Turkey quickly, smoothly from anywhere in the World. Easy and simple steps are all you need to follow in order to get your visa to enter Turkey :
-
-                                            Click the button below to start</p>
                                        </div>
                                         <div style="width: 50%; margin-left:13px;" class="form-group">
                                             <label class="hidden-xs">&nbsp;</label>
@@ -201,10 +197,10 @@
                                @csrf
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h2 class="f-title"><strong>Book Qick Taxi</strong> </h2>
+                                        <h2 class="f-title"><strong>{{__('frontpage.BookTaxi')}}</strong> </h2>
                                     </div>
                                     <div class="form-group col-sm-6 col-md-3">
-                                        <label class="f-title text-custom-size">SELECT TYPE</label>
+                                        <label class="f-title text-custom-size">{{__('frontpage.selectType')}}</label>
                                         <div class="selector">
                                             <select name="taxi_type" id="access-type" onchange="showForm()" class="f-input-custom-style full-width f-title">
                                                 <option value="from">FROM ISTANBUL AIRPORT (IST)</option>
@@ -214,8 +210,8 @@
                                     </div>
                                     
                                     <div   class="form-group col-sm-6 col-md-3">
-                                        <label id="dropoff" class="f-title text-custom-size">DROP OFF LOCATION</label>
-                                        <label style="display: none" id="pickup">PICK UP LOCATION</label>
+                                        <label id="dropoff" class="f-title text-custom-size">{{__('frontpage.DropOfLocation')}}</label>
+                                        <label style="display: none" id="pickup">{{__('frontpage.PickUpLocation')}}</label>
                                         <input name="location" required id="pac-input" type="text" class="f-input-custom-style input-text full-width f-title" placeholder="Search For Location" />
                                         
                                     </div>
@@ -223,7 +219,7 @@
                                     <div class="form-group col-sm-6 col-md-3">
                                         <div class="row">
                                             <div class="col-xs-6">
-                                                <label class="f-title text-custom-size">Adults</label>
+                                                <label class="f-title text-custom-size">{{__('frontpage.adults')}}</label>
                                                 <div class="selector">
                                                     <select  name="num_adult" id="adults" required class="full-width f-input-custom-style">
                                                         <option value="1">01</option>
@@ -236,7 +232,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-xs-6">
-                                                <label class="f-title text-custom-size">Kids</label>
+                                                <label class="f-title text-custom-size">{{__('frontpage.kids')}}</label>
                                                 <div class="selector">
                                                     <select  name="num_kids" id="kids" required class="full-width f-input-custom-style">
                                                         <option value="1">01</option>
@@ -252,7 +248,7 @@
                                     
                                     <div style="margin-top: 22px;" class="form-group col-sm-6 col-md-3">
                                         {{-- <label class="hidden-xs">&nbsp;</label> --}}
-                                        <button type="submit" class="full-width icon-check animated f-input-custom-style" data-animation-type="bounce" data-animation-duration="1">CONTINUE</button>
+                                        <button type="submit" class="full-width icon-check animated f-input-custom-style" data-animation-type="bounce" data-animation-duration="1">{{__('frontpage.continue')}}</button>
                                     </div>
                                 </div>
                             </form>
@@ -274,7 +270,7 @@
                             <form action="flight-list-view.html" method="post">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <h1 style="text-align:center">Meet, Greet & Assist Service</h1>
+                                        <h1 style="text-align:center">{{__('frontpage.meet-and-greet')}}</h1>
                                         <div style="background: #adadad05; padding-top:10px;" class="row">
                                             <div  class="row image-box style5">
                                                 <div class="col-sm-4">
@@ -289,7 +285,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 <span class="price"><small>Fee</small>€140</span>
-                                                                <h3 class="box-title"><a href="#"><strong>MEET & GREET ARIVAL</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="#"><strong style="text-transform: uppercase">{{__('frontpage.meetGreet')}} {{__('frontpage.arrival')}}</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -307,7 +303,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 <span class="price"><small>Fee</small>€155</span>
-                                                                <h3 class="box-title"><a href="{{route('mga-booking', 'departure')}}"><strong>MEET & GREET DEPARTURE</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('mga-booking', 'departure')}}"><strong style="text-transform: uppercase">{{__('frontpage.meetGreet')}} {{__('frontpage.departure')}}</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -325,7 +321,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 <span class="price"><small>Fee</small>€250</span>
-                                                                <h3 class="box-title"><a href="{{route('mga-booking', 'transfer')}}"><strong>MEET & GREET TRANSFER</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('mga-booking', 'transfer')}}"><strong style="text-transform: uppercase">{{__('frontpage.meetGreet')}} {{__('frontpage.transfer')}}</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -575,9 +571,9 @@
 
             <div style="background: #e9e9e91f;">
                 <div style="padding-top: 30px !important"  class="container section">
-                    <h2 style="font-size: 30px; text-align:center">Things <span style="color: #E01514;" class="">To Do</span></h2>
+                    <h2 style="font-size: 30px; text-align:center">{{__('frontpage.things')}} <span style="color: #E01514;" class="">{{__('frontpage.to')}} {{__('frontpage.do')}}</span></h2>
                     <div  class="tg-description text-center">
-                        <p>Explore All Conners Of Istanbul With Us</p>
+                        <p>{{__('frontpage.thingsToDoSubtitle')}}</p>
                     </div>
                     
                     <div class="row image-box style3">
@@ -598,7 +594,7 @@
                                             <span style="width: 80%;" class="five-stars"></span>
                                         </div> --}}
                                         {{-- <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p> --}}
-                                        <a class="tour-btn" href="{{url(\Illuminate\Support\Str::slug(strtolower($category->name), '-'))}}">Explore Culture</a>
+                                        <a class="tour-btn" href="{{url(\Illuminate\Support\Str::slug(strtolower($category->name), '-'))}}">{{__('frontpage.explore')}} {{$category->name}}</a>
                                     </div>
                                 </article>
                             </div>
@@ -699,7 +695,7 @@
 			  </section> --}}
 
 			  <div class="section container tg-sectionspace">
-                <h2 style="font-size: 30px;">Explore Our <span style="color: #E01514;" class="fw-bold">Top Destinations</span></h2>
+                <h2 style="font-size: 30px;">{{__('frontpage.explore')}} {{__('frontpage.our')}} <span style="color: #E01514;" class="fw-bold">{{__('frontpage.top')}} {{__('frontpage.destination')}}</span></h2>
                 <div class="row image-box hotel listing-style1">
                     @foreach ($featured as $item)
                         <div class="col-sms-6 col-sm-6 col-md-3">
@@ -719,7 +715,7 @@
                                     </div>
                                     <p class="description">{{ \Illuminate\Support\Str::limit($item->description, 50, $end='...') }}</p>
                                     <div class="action">
-                                        <a href="{{url(\Illuminate\Support\Str::slug(strtolower($item->name), '-'))}}" class="button btn-small red">READ MORE</a>
+                                        <a href="{{url(\Illuminate\Support\Str::slug(strtolower($item->name), '-'))}}" class="button btn-small red">{{__('frontpage.read')}} {{__('frontpage.more')}}</a>
                                         {{-- <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a> --}}
                                     </div>
                                 </div>
@@ -733,7 +729,7 @@
     <div class="global-map-area section parallax" data-stellar-background-ratio="0.5">
 
         <div class="container">
-            <h2 style="font-size: 30px; color:#fff">Recent <span style="color: #E01514;" class="">News</span></h2>
+            <h2 style="font-size: 30px; color:#fff">{{__('frontpage.recent')}} <span style="color: #E01514;" class="">{{__('frontpage.news')}}</span></h2>
             <div class="image-carousel style2" data-animation="slide" data-item-width="370" data-item-margin="30">
                 <ul class="slides image-box style10">
                     @foreach ($recent_news as $item)

@@ -3,10 +3,10 @@
     {{-- <div id="dashboard-alerts">
         <verify-license-component verify-url="{{ route('settings.license.verify') }}" setting-url="{{ route('settings.options') }}"></verify-license-component>
     </div> --}}
-    {!! apply_filters(DASHBOARD_FILTER_ADMIN_NOTIFICATIONS, null) !!}
+    {{-- {!! apply_filters(DASHBOARD_FILTER_ADMIN_NOTIFICATIONS, null) !!}
     <div class="row">
         {!! apply_filters(DASHBOARD_FILTER_TOP_BLOCKS, null) !!}
-    </div>
+    </div> --}}
     <div class="clearfix"></div>
     <div id="list_widgets" class="row">
         @foreach ($userWidgets as $widget)

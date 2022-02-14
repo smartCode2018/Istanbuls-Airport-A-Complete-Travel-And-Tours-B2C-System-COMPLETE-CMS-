@@ -13255,36 +13255,36 @@ button.ui-button::-moz-focus-inner {
     float: none;
 }
 .loading-page.style1 {
-    background-color: #1a232f;
+    background-color: #fff;
     background-image: -moz-radial-gradient(
         center center,
         circle cover,
-        #273648,
-        #0d1218 100%
+        #fff,
+        #fff 100%
     );
     background-image: -webkit-radial-gradient(
         center center,
         circle cover,
-        #273648,
-        #0d1218 100%
+        #fff,
+        #fff 100%
     );
     background-image: -o-radial-gradient(
         center center,
         circle cover,
-        #273648,
-        #0d1218 100%
+        #fff,
+        #fff 100%
     );
     background-image: -ms-radial-gradient(
         center center,
         circle cover,
-        #273648,
-        #0d1218 100%
+        #fff,
+        #fff 100%
     );
     background-image: radial-gradient(
         center center,
         circle cover,
-        #273648,
-        #0d1218 100%
+        #fff,
+        #fff 100%
     );
 }
 .loading-page.style1 .loading-text {
@@ -14290,13 +14290,18 @@ body {
     font-size: 18px;
 }
 
-.imgmenu{
+.imgmenu {
     border-radius: 10px;
 }
 
-.btn-x-img{
-    text-align: center; font-size:20px; padding-bottom:20px;
+.btn-x-img {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 20px;
 }
-.btn-x-img a{
-    background: #e01514; padding:15px; color:#fff; height:50px;
+.btn-x-img a {
+    background: #e01514;
+    padding: 15px;
+    color: #fff;
+    height: 50px;
 }

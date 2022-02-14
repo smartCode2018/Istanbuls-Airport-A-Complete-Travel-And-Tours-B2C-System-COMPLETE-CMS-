@@ -9,6 +9,7 @@ use App\Models\Home;
 // use Botble\Menu\Models\MenuNode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -20,22 +21,15 @@ class HomeController extends Controller
     public function index()
     {
         // Call function to fetch flight details from API endpoint.
-
-        // Dummy flight data
-        $flight_status = [
-             ['airline'=>"TK", 'flight_no'=>"TK 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"],
-             ['airline'=>"SK", 'flight_no'=>"SK 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"],
-             ['airline'=>"JU", 'flight_no'=>"JU 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"],
-             ['airline'=>"SQ", 'flight_no'=>"SQ 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"],
-             ['airline'=>"TK", 'flight_no'=>"TK 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"],
-             ['airline'=>"SK", 'flight_no'=>"SK 211", 'schedule'=>"08:15", 'estimated'=>"08:10", 'gate'=>"H", 'departure'=>"ANKARA", 'status'=>"Last Bag Unloaded"]
-        ];
+        $response = Http::get('https://www.istanbulsairport.com'.__('frontpage.ajax-lang').'/json/flystatistics_api/homepage?username=istanbulsairport&token=e10adc3949ba59abbe56e057f20f883e');
+        $data = (json_decode($response->body()));
+        $flight_status = $data->data;
         
 
         $recent_news = DB::select('select * from posts where status = "published" ORDER BY updated_at ASC LIMIT 6');
         $categories = DB::select("select categories.id, categories.name, meta_boxes.meta_value from categories join meta_boxes ON categories.id = meta_boxes.reference_id where categories.status = 'published' limit 8");
         $featured = DB::select("select posts.*, post_categories.*, categories.name as cat_name from posts join post_categories ON posts.id = post_categories.post_id join categories ON post_categories.category_id = categories.id Where categories.name = 'tours' limit 4");
-        // dd($menus);
+        
         return view('index', [
             'flight_status' => $flight_status,
             'recent_news' => $recent_news,
