@@ -28,7 +28,7 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>150</h3>
-                <h4>Tourist Pass Bookings</h4>
+                <h6>Tourist Pass Bookings</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
@@ -42,7 +42,7 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>5038</h3>
-                <h4>Museum Pass bookings </h4>
+                <h6>Museum Pass bookings </h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
@@ -56,7 +56,7 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>150</h3>
-                <h4>Istanbul Tours</h4>
+                <h6>Istanbul Tours</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
@@ -70,7 +70,7 @@
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3>150</h3>
-                <h4>Taxi Booking</h4>
+                <h6>Taxi Booking</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
@@ -84,7 +84,7 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>150</h3>
-                <h4>Covid PCR Test</h4>
+                <h6>Covid PCR Test</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
@@ -98,7 +98,7 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>150</h3>
-                <h4>Evisa Appointments</h4>
+                <h6>Evisa Appointments</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
@@ -112,7 +112,7 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>150</h3>
-                <h4>Meet and Greet</h4>
+                <h6>Meet and Greet</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
@@ -126,7 +126,7 @@
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3>150</h3>
-                <h4>Lounge Reservation</h4>
+                <h6>Lounge Reservation</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>

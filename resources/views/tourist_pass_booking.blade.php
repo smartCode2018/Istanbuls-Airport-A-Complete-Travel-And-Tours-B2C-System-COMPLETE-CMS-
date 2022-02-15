@@ -27,7 +27,7 @@
                                     <li>{{ $error }}</li>
                                 @endforeach
                             </ul>
-                        </div>
+                        </div> 
                     @endif
                     <form action="{{route('tourist-pass-booking-store')}}" method="POST" class="cruise-booking-form">
                         @csrf
@@ -232,4 +232,5 @@
         </div>
     </div>   
 </section>
+
 @endsection

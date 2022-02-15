@@ -76,7 +76,7 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Booking ID</th>
+                                    <th>BID</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Email</th>
@@ -91,14 +91,14 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                             <tbody>
                                 <tr>
                                     <td>001</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td> Trident</td>
+                                    <td>Justice</td>
+                                    <td>Kelechi</td>
+                                    <td>smartcode.kc@gmail.com</td>
+                                    <td>Turkey</td>
                                     <td> 4</td>
                                     <td> 4</td>
                                     <td> 4</td>
-                                    <td> 4</td>
-                                    <td>X</td>
+                                    <td><span class="badge badge-warning">Pending</span></td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-default"><i class="fas fa-table"></i></button>
@@ -113,6 +113,80 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                                         </div>
                                     </td>
                                 </tr>
+                                <tr>
+                                  <td>001</td>
+                                  <td>Justice</td>
+                                  <td>Kelechi</td>
+                                  <td>smartcode.kc@gmail.com</td>
+                                  <td>Turkey</td>
+                                  <td> 4</td>
+                                  <td> 4</td>
+                                  <td> 4</td>
+                                  <td><span class="badge badge-danger">Canceled</span></td>
+                                  <td>
+                                      <div class="btn-group ">
+                                          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg"><i class="fas fa-table"></i></button>
+                                          <div class="btn-group">
+                                          <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                          </button>
+                                          <div class="dropdown-menu" style="">
+                                          <button class="dropdown-item btn-info mb-1" href="#" onclick="sAlert()">Active</button>
+                                          <button class="dropdown-item btn-danger mb-1" href="#">Canceled</button>
+                                          <button class="dropdown-item btn-success mb-1" href="#">Completed</button>
+                                          <button class="dropdown-item btn-warning" href="#">Pending</button>
+                                          </div>
+                                          </div>
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                <td>001</td>
+                                <td>Justice</td>
+                                <td>Kelechi</td>
+                                <td>smartcode.kc@gmail.com</td>
+                                <td>Turkey</td>
+                                <td> 4</td>
+                                <td> 4</td>
+                                <td> 4</td>
+                                <td><span class="badge badge-success">Completed</span></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default"><i class="fas fa-table"></i></button>
+                                        <div class="btn-group">
+                                        <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                        </button>
+                                        <div class="dropdown-menu" style="">
+                                        <a class="dropdown-item" href="#" onclick="sAlert()">Dropdown link</a>
+                                        <a class="dropdown-item" href="#">Dropdown link</a>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td>001</td>
+                              <td>Justice</td>
+                              <td>Kelechi</td>
+                              <td>smartcode.kc@gmail.com</td>
+                              <td>Turkey</td>
+                              <td> 4</td>
+                              <td> 4</td>
+                              <td> 4</td>
+                              <td><span class="badge badge-info">Active</span></td>
+                              <td>
+                                  <div class="btn-group">
+                                      <button type="button" class="btn btn-default"><i class="fas fa-table"></i></button>
+                                      <div class="btn-group">
+                                      <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                      </button>
+                                      <div class="dropdown-menu" style="">
+                                      <a class="dropdown-item" href="#" onclick="sAlert()">Dropdown link</a>
+                                      <a class="dropdown-item" href="#">Dropdown link</a>
+                                      </div>
+                                      </div>
+                                  </div>
+                              </td>
+                          </tr>
                             <tfoot>
                                 <tr>
                                   <th>BID</th>
@@ -126,7 +200,7 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                                   <th>status</th>
                                   <th>Actions</th>
                                 </tr>
-                            </tfoot>
+                                </tfoot>
                         </table>
                     </div>
                 </div>
@@ -144,6 +218,64 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
+
+  
+{{-- modal --}}
+<div class="modal fade" id="modal-lg">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title">Client Details - Booking ID : </h4>
+              
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <tr>
+                <th style="width:50%">Client Name:</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th style="width:50%">Email:</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Country:</th>
+                <td>$10.34</td>
+              </tr>
+              <tr>
+                <th>Pass Type:</th>
+                <td>$5.80</td>
+              </tr>
+              <tr>
+                <th>Phone:</th>
+                <td>$265.24</td>
+              </tr>
+              <tr>
+                <th>request date:</th>
+                <td>$265.24</td>
+              </tr>
+              <tr>
+                <th>Amount:</th>
+                <td>$265.24</td>
+              </tr>
+              <tr>
+                <th>Status:</th>
+                <td>$265.24</td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+          </div>
+      </div>
+  </div>
+</div>
+
+
 @endsection
 @section('footerscript')
 <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
@@ -200,4 +332,6 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
             });
     }
 </script>
+
+
 @endsection
