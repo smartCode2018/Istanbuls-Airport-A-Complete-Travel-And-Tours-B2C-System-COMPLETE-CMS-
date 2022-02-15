@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\MeetAndGreet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +18,19 @@ class MeetAndGreetController extends Controller
     {
         $type = $type;
         return view('meet_and_greet_form', compact('type'));
+    }
+
+    public function vipPassBooking(){
+        $countries = Country::all();
+        return view('vip_pass', compact('countries'));
+    }
+
+    public function loungeBooking(){
+        return view('cip_lounges_booking');
+    }
+
+    public function rentCarBooking(){
+        return view('rent_car');
     }
 
     /**
@@ -60,6 +74,8 @@ class MeetAndGreetController extends Controller
     public function getMGABookings(){
         return view('admin.mga_table');
     } 
+
+    
 
     /**
      * Display the specified resource.

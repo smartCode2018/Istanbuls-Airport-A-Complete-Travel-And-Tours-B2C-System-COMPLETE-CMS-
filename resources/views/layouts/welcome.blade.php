@@ -55,6 +55,25 @@
         <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
         <script src="{{asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
 
+        {{-- website snnippet --}}
+        <script type="application/ld+json">{
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "Istanbul Airport | Travel to the Future",
+            "url": "https://www.istanbulsairport.com/"
+            }
+        </script>
+        <script type="application/ld+json">{
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "url": "https://www.istanbulsairport.com/",
+            "name": "Istanbul Airport | Travel to the Future",
+            "description": "We provide information about Istanbul Airport. You can apply for an electronic visa, hotel and flight reservations, daily tours, transfers, and other airport services to enhance your travel experience.",
+            "sameAs":["https:\/\/www.facebook.com\/istanbulsairport"],
+            "logo": "https://www.istanbulsairport.com/ADPInternetTheme/images/biz/logo.png"
+            }
+        </script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         
         <!-- CSS for IE -->

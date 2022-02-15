@@ -38,6 +38,12 @@ Route::put('/airport_services/airport_taxi/', [AirportServicesController::class,
 
 Route::get('/premium_services/meet_and_greet_booking_form/{type}',[MeetAndGreetController::class, 'index'])->name('mga-booking');
 Route::put('/premium_services/meet_and_greet_booking_form',[MeetAndGreetController::class, 'store'])->name('mga-booking-store');
+Route::get('/premium_services/vip_pass_form',[MeetAndGreetController::class, 'vipPassBooking'])->name('vip-pass-booking');
+Route::put('/premium_services/vip_pass_form',[MeetAndGreetController::class, 'vipPassBookingStore'])->name('vip-pass-booking-store');
+Route::get('/premium_services/lounge-form',[MeetAndGreetController::class, 'loungeBooking'])->name('lounge-booking');
+Route::put('/premium_services/lounge-form',[MeetAndGreetController::class, 'loungeBookingStore'])->name('lounge-booking-store');
+Route::get('/premium_services/rent-car-booking',[MeetAndGreetController::class, 'rentCarBooking'])->name('rent-car-booking');
+Route::get('/premium_services/rent-car-booking-store',[MeetAndGreetController::class, 'rentCarStore'])->name('rent-car-store');
 
 Route::get('/istanbul-tourist-pass', [TouristPassController::class, 'createPass'])->name('tourist-pass-booking');
 Route::put('/istanbul-tourist-pass', [TouristPassController::class, 'storePass'])->name('tourist-pass-booking-store');

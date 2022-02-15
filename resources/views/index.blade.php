@@ -284,8 +284,27 @@
                                                         </figure>
                                                         <div class="details">
                                                             <div class="detail">
-                                                                <span class="price"><small>Fee</small>€140</span>
-                                                                <h3 class="box-title"><a href="#"><strong style="text-transform: uppercase">{{__('frontpage.meetGreet')}} {{__('frontpage.arrival')}}</strong> </a></h3>
+                                                                {{-- <span class="price"><small>Fee</small>€140</span> --}}
+                                                                <h3 class="box-title"><a href="#"><strong style="text-transform: uppercase">{{__('frontpage.meetGreet')}} {{__('frontpage.services')}}</strong> </a></h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </article>
+                                                </div>
+                                                
+                                                <div class="col-sm-4">
+                                                    <article class="box">
+                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                                            <a style="max-height:160px;" title="" href="{{route('vip-pass-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/3.jpg')}}"></a>
+                                                            <figcaption class="entry-date">
+                                                                <h3 class="caption-title">BOOK NOW</h3>
+                                                                {{-- <span>3 activities</span> --}}
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="details">
+                                                            <div class="detail">
+                                                                {{-- <span class="price"><small>Fee</small>€250</span> --}}
+                                                                <h3 class="box-title"><a href="{{route('mga-booking', 'transfer')}}"><strong style="text-transform: uppercase">VIP PASS PACKAGE</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -294,7 +313,7 @@
                                                 <div class="col-sm-4">
                                                     <article class="box">
                                                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                                            <a style="max-height:160px;" title="" href="{{route('mga-booking', 'departure')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/2.jpg')}}"></a>
+                                                            <a style="max-height:160px;" title="" href="{{route('lounge-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/3.jpg')}}"></a>
                                                             <figcaption class="entry-date">
                                                                 <h3 class="caption-title">BOOK NOW</h3>
                                                                 {{-- <span>3 activities</span> --}}
@@ -302,8 +321,8 @@
                                                         </figure>
                                                         <div class="details">
                                                             <div class="detail">
-                                                                <span class="price"><small>Fee</small>€155</span>
-                                                                <h3 class="box-title"><a href="{{route('mga-booking', 'departure')}}"><strong style="text-transform: uppercase">{{__('frontpage.meetGreet')}} {{__('frontpage.departure')}}</strong> </a></h3>
+                                                                {{-- <span class="price"><small>Fee</small>€250</span> --}}
+                                                                <h3 class="box-title"><a href="{{route('mga-booking', 'transfer')}}"><strong style="text-transform: uppercase">CIP LOUNGES</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -312,7 +331,7 @@
                                                 <div class="col-sm-4">
                                                     <article class="box">
                                                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                                            <a style="max-height:160px;" title="" href="{{route('mga-booking', 'transfer')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/3.jpg')}}"></a>
+                                                            <a style="max-height:160px;" title="" href="{{route('covid-pcr-test-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/3.jpg')}}"></a>
                                                             <figcaption class="entry-date">
                                                                 <h3 class="caption-title">BOOK NOW</h3>
                                                                 {{-- <span>3 activities</span> --}}
@@ -320,13 +339,14 @@
                                                         </figure>
                                                         <div class="details">
                                                             <div class="detail">
-                                                                <span class="price"><small>Fee</small>€250</span>
-                                                                <h3 class="box-title"><a href="{{route('mga-booking', 'transfer')}}"><strong style="text-transform: uppercase">{{__('frontpage.meetGreet')}} {{__('frontpage.transfer')}}</strong> </a></h3>
+                                                                {{-- <span class="price"><small>Fee</small>€250</span> --}}
+                                                                <h3 class="box-title"><a href="{{route('mga-booking', 'transfer')}}"><strong style="text-transform: uppercase">COVID-19 PCR TEXT IN YOUR HOTEL</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
                                                     </article>
                                                 </div>
+                                                
                                                 <div style="text-align: center; font-size:20px; padding-bottom:20px;" class="col-sm-12"><a style="background: #e01514; padding:15px; color:#fff" href="{{url('premium-service')}}" class="" style="height:50px;">Brows More Services</a></div>
                                             </div>
                                             
@@ -436,7 +456,7 @@
                                                 <div class="col-sm-4">
                                                     <article class="box">
                                                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                                            <a style="max-height:160px;" title="" href="airport-taxi-booking"><img class="imgmenu" width="370" height="160" alt="" src="{{asset('images/assets/others/2.jpg')}}"></a>
+                                                            <a style="max-height:160px;" title="" href="{{route('rent-car-booking')}}"><img class="imgmenu" width="370" height="160" alt="" src="{{asset('images/assets/others/2.jpg')}}"></a>
                                                             <figcaption class="entry-date">
                                                                 <h3 class="caption-title">Book Now</h3>
                                                                 {{-- <span>3 activities</span> --}}
@@ -445,7 +465,7 @@
                                                         <div class="details">
                                                             <div class="detail">
                                                                 {{-- <span class="price"><small>Fee</small>€250</span> --}}
-                                                                <h3 class="box-title"><a href="airport-taxi-booking"><strong>{{__('frontpage.rentCar')}}</strong> </a></h3>
+                                                                <h3 class="box-title"><a href="{{route('rent-car-booking')}}"><strong>{{__('frontpage.rentCar')}}</strong> </a></h3>
                                                             </div>
                                                         </div>
                                                         
@@ -582,18 +602,18 @@
                           $image = explode("/",$category->meta_value);
                           $image = explode('"',$image[1])[0];
                         ?>
-                            <div class="col-sms-6 col-sm-6 col-md-3">
+                            <div itemscope itemtype="http://schema.org/Product" class="col-sms-6 col-sm-6 col-md-3">
                                 <article class="box">
                                     <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                        <a href="" class=""><img width="270" height="160" alt="" src="{{asset('/storage/categories/'.$image)}}"></a>
+                                        <a href="" class=""><img itemprop="image" width="270" height="160" alt="" src="{{asset('/storage/categories/'.$image)}}"></a>
                                     </figure>
                                     <div style="text-align: start !important" class="details text-center">
-                                        <h4 style="margin-bottom: 20px;" class="box-title"><strong>{{$category->name}}</strong></h4>
+                                        <h4 itemprop="name" style="margin-bottom: 20px;" class="box-title"><strong>{{$category->name}}</strong></h4>
                                         {{-- <p class="offers-content">(15 deal offers)</p> --}}
                                         {{-- <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
                                             <span style="width: 80%;" class="five-stars"></span>
                                         </div> --}}
-                                        {{-- <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p> --}}
+                                        <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
                                         <a class="tour-btn" href="{{url(\Illuminate\Support\Str::slug(strtolower($category->name), '-'))}}">{{__('frontpage.explore')}} {{$category->name}}</a>
                                     </div>
                                 </article>
