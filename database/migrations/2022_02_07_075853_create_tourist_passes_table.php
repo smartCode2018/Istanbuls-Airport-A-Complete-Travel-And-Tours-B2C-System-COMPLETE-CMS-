@@ -15,12 +15,12 @@ class CreateTouristPassesTable extends Migration
     {
         Schema::create('tourist_passes', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
+            $table->string('firstname'); 
             $table->string('lastname');
             $table->string('email');
             $table->string('pass_type');
             $table->string('phone');
-            $table->string('country');
+            $table->string('nationality');
             $table->string('request_date');
             $table->timestamps();
         });

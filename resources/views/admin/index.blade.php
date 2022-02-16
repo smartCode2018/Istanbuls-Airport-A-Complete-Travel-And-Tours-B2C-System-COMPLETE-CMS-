@@ -27,13 +27,13 @@
           <div class="col-lg-3 col-sm-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{$totalTouristPass}}</h3>
                 <h6>Tourist Pass Bookings</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
                 </div>
-              <a href="#" class="small-box-footer">
+              <a href="{route('super-admin-tourist-pass')}}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -41,13 +41,13 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>5038</h3>
+                <h3>{{$totalMuseumPass}}</h3>
                 <h6>Museum Pass bookings </h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
                 </div>
-              <a href="#" class="small-box-footer">
+              <a href="{{route('super-admin-museum-pass')}}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -55,13 +55,13 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{$totalTours}}</h3>
                 <h6>Istanbul Tours</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
                 </div>
-              <a href="#" class="small-box-footer">
+              <a href="{{route('super-admin-istanbul-tours')}}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -69,13 +69,13 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{$totalTaxi}}</h3>
                 <h6>Taxi Booking</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
                 </div>
-              <a href="#" class="small-box-footer">
+              <a href="{{route('super-admin-istanbul-taxi')}}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -83,13 +83,13 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{$totalPcrText}}</h3>
                 <h6>Covid PCR Test</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
                 </div>
-              <a href="#" class="small-box-footer">
+              <a href="{{route('super-admin-covidpcr-test')}}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -97,13 +97,13 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{$totalEvisa}}</h3>
                 <h6>Evisa Appointments</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
                 </div>
-              <a href="#" class="small-box-footer">
+              <a href="{{route('super-admin-evisa')}}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -111,13 +111,13 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{$totalMGA}}</h3>
                 <h6>Meet and Greet</h6>
               </div>
                 <div class="icon">
                   <i class="fas fa-shopping-cart"></i>
                 </div>
-              <a href="#" class="small-box-footer">
+              <a href="{{route('super-admin-mga')}}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -125,7 +125,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{$totalLounge}}</h3>
                 <h6>Lounge Reservation</h6>
               </div>
                 <div class="icon">
@@ -137,7 +137,6 @@
             </div>
           </div>
         </div>
-        
         
         <div class="row">
           <div class="col-md-8">
@@ -169,57 +168,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                      </td>
-                      <td>Call of Duty IV</td>
-                      <td>Call of Duty IV</td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                      <td>Samsung Smart TV</td>
-                      <td><span class="badge badge-warning">Pending</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                      </td>
-                      <td>Call of Duty IV</td>
-                      <td>Call of Duty IV</td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>iPhone 6 Plus</td>
-                      <td><span class="badge badge-danger">Delivered</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                      </td>
-                      <td>Call of Duty IV</td>
-                      <td>Call of Duty IV</td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>Samsung Smart TV</td>
-                      <td><span class="badge badge-info">Processing</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
-                      </td>
-                      <td>Call of Duty IV</td>
-                      <td>Call of Duty IV</td>
-                    </tr>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
-                      <td>Samsung Smart TV</td>
-                      <td><span class="badge badge-warning">Pending</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                      </td>
-                      <td>Call of Duty IV</td>
-                      <td>Call of Duty IV</td>
-                    </tr>
-                    
+                      @foreach ($tours as $tour)
+                        <tr>
+                          <td><a href="pages/examples/invoice.html">{{$tour->id}}</a></td>
+                          <td>{{$tour->firstname }} {{$tour->lastname}}</td>
+                          <td><span class="badge <?php($tour->status == 'pending')?'badge-warning':($tour->status == 'paid')?'badge-success':($tour->status == 'cancelled')? 'badge-danger' : '' ?>">{{$tour->status}}</span></td>
+                          <td>
+                            <div class="sparkbar" data-color="#00a65a" data-height="20">{{$tour->price}}</div>
+                          </td>
+                          <td>{{$tour->tour_type}}</td>
+                          <td>{{$tour->request_date}}</td>
+                        </tr>
+                      @endforeach
+                      
                     </tbody>
                   </table>
                 </div>
@@ -228,7 +189,7 @@
               <!-- /.card-body -->
               <div class="card-footer clearfix">
                 {{-- <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a> --}}
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Tpurs</a>
+                <a href="{{route('super-admin-istanbul-tours')}}" class="btn btn-sm btn-secondary float-right">View All Tours</a>
               </div>
               <!-- /.card-footer -->
             </div>
@@ -250,55 +211,27 @@
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <ul class="products-list product-list-in-card pl-2 pr-2">
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="{{asset('images/assets/others/mu.png')}}" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">Istanbul Museum
-                        <span class="badge badge-warning float-right">$1800</span></a>
-                      <span class="product-description">
-                        Justice Kelechi
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="{{asset('images/assets/others/mu.png')}}" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">Istanbul Museum
-                        <span class="badge badge-info float-right">$700</span></a>
-                      <span class="product-description">
-                        Justice kelechi
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  <li class="item">
-                    <div class="product-img">
-                      <img src="{{asset('images/assets/others/mu.png')}}" alt="Product Image" class="img-size-50">
-                    </div>
-                    <div class="product-info">
-                      <a href="javascript:void(0)" class="product-title">
-                        Turkey Museum <span class="badge badge-danger float-right">
-                        $350
-                      </span>
-                      </a>
-                      <span class="product-description">
-                        Justice Kelechi
-                      </span>
-                    </div>
-                  </li>
-                  <!-- /.item -->
-                  
+                  @foreach ($museumPass as $pass)
+                    <li class="item">
+                      <div class="product-img">
+                        <img src="{{asset('images/assets/others/mu.png')}}" alt="Product Image" class="img-size-50">
+                      </div>
+                      <div class="product-info">
+                        <a href="javascript:void(0)" class="product-title">{{$pass->passtype}}
+                          <span class="badge badge-warning float-right">{{$pass->price}}</span></a>
+                        <span class="product-description">
+                          {{$pass->firstname}} {{$pass->lastname}}
+                        </span>
+                      </div>
+                    </li>
+                      
+                  @endforeach
                   <!-- /.item -->
                 </ul>
               </div>
               <!-- /.card-body -->
               <div class="card-footer text-center">
-                <a href="javascript:void(0)" class="uppercase">View All Tourist Pass</a>
+                <a href="{{route('super-admin-museum-pass')}}" class="uppercase">View All Tourist Pass</a>
               </div>
               <!-- /.card-footer -->
             </div>

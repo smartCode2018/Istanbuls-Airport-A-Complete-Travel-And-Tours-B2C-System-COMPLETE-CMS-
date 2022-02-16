@@ -18,6 +18,7 @@ class CreateMeetAndGreetsTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email');
+            $table->string('mga_type');
             $table->string('dept_flight_number');
             $table->string('gender');
             $table->string('driver_name');

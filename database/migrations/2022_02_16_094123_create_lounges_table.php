@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMuseumPassesTable extends Migration
+class CreateLoungesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateMuseumPassesTable extends Migration
      */
     public function up()
     {
-        Schema::create('museum_passes', function (Blueprint $table) {
+        Schema::create('lounges', function (Blueprint $table) {
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('passtype');
             $table->string('email');
-            $table->string('phone'); 
-            $table->string('country');
-            $table->string('gender');
+            $table->string('flight_no');
+            $table->string('adult');
+            $table->string('kids');
+            $table->string('phone');
             $table->string('request_date');
             $table->timestamps();
         });
@@ -34,6 +34,6 @@ class CreateMuseumPassesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('museum_passes');
+        Schema::dropIfExists('lounges');
     }
 }
