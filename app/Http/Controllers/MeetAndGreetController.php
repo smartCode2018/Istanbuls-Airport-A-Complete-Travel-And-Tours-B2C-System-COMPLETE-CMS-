@@ -72,7 +72,16 @@ class MeetAndGreetController extends Controller
     //admin finance functions
 
     public function getMGABookings(){
-        return view('admin.mga_table');
+        $mga = DB::select("select orders.*, meet_and_greets.* from orders join meet_and_greets ON orders.product_id = meet_and_greets.id ORDER BY orders.updated_at ASC");
+        return view('admin.mga_table', compact('mga'));
+    } 
+    public function getLoungeBookings(){
+        $lounge = DB::select("select orders.*, lounges.* from orders join lounges ON orders.product_id = lounges.id ORDER BY orders.updated_at ASC");
+        return view('admin.lounge_table', compact('lounge')); 
+    } 
+    public function getRentCarBookings(){
+        $rentCar = DB::select("select orders.*, rent_cars.* from orders join rent_cars ON orders.product_id = rent_cars.id ORDER BY orders.updated_at ASC");
+        return view('admin.rent_car_table', compact('rentCar'));
     } 
 
     

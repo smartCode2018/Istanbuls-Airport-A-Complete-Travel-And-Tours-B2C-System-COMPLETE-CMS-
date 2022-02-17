@@ -70,7 +70,8 @@ class EvisaController extends Controller
     //admin finance functions
 
     public function getEvisaBookings(){
-        return view('admin.evisa_table');
+        $evisa = DB::select("select orders.*, evisas.* from orders join evisas ON orders.product_id = evisas.id ORDER BY orders.updated_at ASC");
+        return view('admin.evisa_table', compact('evisa'));
     }
 
 

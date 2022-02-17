@@ -25,11 +25,11 @@ class AdminDashboardController extends Controller
      */
     public function index()
     {
-        $totalTouristPass = TouristPass::all()->count();
+        $totalTouristPass = TouristPass::all()->count(); 
         // $museumPass = Order::orderByRaw('updated_at - created_at DESC')->join('contacts', 'users.id', '=', 'contacts.user_id')->get()->chunk(100, function(){});
-        $museumPass = DB::select("select orders.*, museum_passes.* from orders join museum_passes ON orders.product_id = museum_passes.id limit 8");
+        $museumPass = DB::select("select orders.*, museum_passes.* from orders join museum_passes ON orders.product_id = museum_passes.id ORDER BY orders.updated_at limit 8");
         $totalMuseumPass = count($museumPass);
-        $tours = DB::select("select orders.*, tours.* from orders join tours ON orders.product_id = tours.id limit 8");;
+        $tours = DB::select("select orders.*, tours.* from orders join tours ON orders.product_id = tours.id ORDER BY orders.updated_at limit 8");
         $totalTours = count($tours);
         $totalTaxi = AirportServices::all()->count();
         $totalPcrText = CovidPCRTest::all()->count();

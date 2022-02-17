@@ -67,6 +67,8 @@ Route::middleware(['adminfinance'])->group(function(){
     Route::get('/super-admin/istanbul-taxi', [AirportServicesController::class, 'getTaxiBookings'])->name('super-admin-istanbul-taxi');
     Route::get('/super-admin/evisa', [EvisaController::class, 'getEvisaBookings'])->name('super-admin-evisa');
     Route::get('/super-admin/meet-and-greet', [MeetAndGreetController::class, 'getMGABookings'])->name('super-admin-mga');
+    Route::get('/super-admin/rent-car', [MeetAndGreetController::class, 'getRentCarBookings'])->name('super-admin-rent-car');
+    Route::get('/super-admin/lounge', [MeetAndGreetController::class, 'getLoungeBookings'])->name('super-admin-lounge');
 });
 
 

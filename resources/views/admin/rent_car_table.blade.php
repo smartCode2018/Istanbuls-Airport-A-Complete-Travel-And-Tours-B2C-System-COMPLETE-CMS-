@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-  Covid 19 PCR Bookings
+  Rent a Car Bookings
 @endsection
 @section('script')
 <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
@@ -20,12 +20,12 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Covid-19 PCR Transaction Record</h1>
+            <h1 class="m-0">Rean a Car Bookings Transaction Record</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{route('super-admin-dashboard')}}">Home</a></li>
-              <li class="breadcrumb-item active">Covid-19 PCR Test Table</li>
+              <li class="breadcrumb-item active">Rent a Car Bookings Table</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -70,7 +70,7 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Covid PCR Test Transaction Table</h3>
+                        <h3 class="card-title">Rent a Car Bookings Transaction Table</h3>
                     </div>
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
@@ -80,56 +80,65 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Email</th>
-                                    <th>Passport No</th>
-                                    <th>Location</th>
-                                    <th>Nationality</th>
+                                    <th>Pick Up date</th>
+                                    <th>Drop Off Date</th>
+                                    <th>Pick Up Location</th>
+                                    <th>Drop Off LocatioCn</th>
+                                    <th>Pick Up Time</th>
+                                    <th>Drop Off Time</th>
+                                    <th>Request Date</th>
                                     <th>Phone</th>
-                                    <th>Request date</th>
                                     <th>status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($covids as $item)
-                                <tr>
-                                  <td>{{$item->product_id}}</td>
-                                  <td>{{$item->firstname}}</td>
-                                  <td>{{$item->lastname}}</td>
-                                  <td> {{$item->email}}</td>
-                                  <td> {{$item->passport_no}}</td>
-                                  <td> {{$item->location}}</td>
-                                  <td> {{$item->nationality}}</td>
-                                  <td> {{$item->phone}}</td>
-                                  <td> {{$item->request_date}}</td>
-                                  <td>{{$item->status}}</td>
-                                  <td>
-                                    <div class="btn-group ">
-                                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg"><i class="fas fa-table"></i></button>
-                                      <div class="btn-group">
-                                      <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-                                      </button>
-                                      <div class="dropdown-menu" style="">
-                                      <button class="dropdown-item btn-info mb-1" href="#" onclick="sAlert()">Active</button>
-                                      <button class="dropdown-item btn-danger mb-1" href="#">Canceled</button>
-                                      <button class="dropdown-item btn-success mb-1" href="#">Completed</button>
-                                      <button class="dropdown-item btn-warning" href="#">Pending</button>
-                                      </div>
-                                      </div>
+                              @foreach ($rentCar as $item)
+                              <tr>
+                                <td>{{$item->product_id}}</td>
+                                <td>{{$item->firstname}}</td>
+                                <td>{{$item->lastname}}</td>
+                                <td>{{$item->email}}</td>
+                                <td> {{$item->pick_up_date}}</td>
+                                <td> {{$item->drop_off_date}}</td>
+                                <td> {{$item->pick_up_location}}</td>
+                                <td> {{$item->drop_off_location}}</td>
+                                <td> {{$item->pick_up_time}}</td>
+                                <td> {{$item->drop_off_time}}</td>
+                                <td> {{$item->phone}}</td>
+                                <td> {{$item->status}}</td>
+                                <td>
+                                  <div class="btn-group ">
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg"><i class="fas fa-table"></i></button>
+                                    <div class="btn-group">
+                                    <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                    </button>
+                                    <div class="dropdown-menu" style="">
+                                    <button class="dropdown-item btn-info mb-1" href="#" onclick="sAlert()">Active</button>
+                                    <button class="dropdown-item btn-danger mb-1" href="#">Canceled</button>
+                                    <button class="dropdown-item btn-success mb-1" href="#">Completed</button>
+                                    <button class="dropdown-item btn-warning" href="#">Pending</button>
                                     </div>
-                                  </td>
-                                </tr>
-                                @endforeach
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              @endforeach
+                            </tbody>
                             <tfoot>
                                 <tr>
                                     <th>BID</th>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Email</th>
-                                    <th>Passport No</th>
-                                    <th>Location</th>
-                                    <th>Nationality</th>
+                                    <th>Pick Up date</th>
+                                    <th>Drop Off Date</th>
+                                    <th>Pick Up Location</th>
+                                    <th>Drop Off LocatioCn</th>
+                                    <th>Pick Up Time</th>
+                                    <th>Drop Off Time</th>
+                                    <th>Request Date</th>
                                     <th>Phone</th>
-                                    <th>Request date</th>
                                     <th>status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -152,66 +161,80 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
   </aside>
   <!-- /.control-sidebar -->
 
-  {{-- modal --}}
-  <div class="modal fade" id="modal-lg">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Client Details - Booking ID : </h4>
-                
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body"> 
-              <table class="table">
-                <tr>
-                  <th style="width:50%">Client Name:</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th style="width:50%">Email:</th>
-                  <td></td>
-                </tr>
-               
-                <tr>
-                  <th>Passport Number:</th>
-                  <td>$265.24</td>
-                </tr>
-                <tr>
-                  <th>Phone Number:</th>
-                  <td>$265.24</td>
-                </tr>
-                <tr>
-                  <th>Persons:</th>
-                  <td>$265.24</td>
-                </tr>
-                <tr>
-                  <th>Nationality:</th>
-                  <td>$265.24</td>
-                </tr>
-                
-                <tr>
-                  <th>Location:</th>
-                  <td>$265.24</td>
-                </tr>
-                <tr>
-                  <th>Amount:</th>
-                  <td>$265.24</td>
-                </tr>
-                <tr>
-                  <th>Status:</th>
-                  <td>$265.24</td>
-                </tr>
-              </table>
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
-            </div>
-        </div>
-    </div>
+ {{-- modal --}}
+ <div class="modal fade" id="modal-lg">
+  <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title">Client Details - Booking ID : </h4>
+              
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <tr>
+                <th style="width:50%">Client Name:</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th style="width:50%">Email:</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Country:</th>
+                <td>$10.34</td>
+              </tr>
+              <tr>
+                <th>Departing flight Number:</th>
+                <td>$5.80</td>
+              </tr>
+              <tr>
+                <th>Phone:</th>
+                <td>$265.24</td>
+              </tr>
+              <tr>
+                <th>Request Date:</th>
+                <td>$265.24</td>
+              </tr>
+              <tr>
+                <th>Number Of Adults:</th>
+                <td>$265.24</td>
+              </tr>
+              <tr>
+                <th>Number Of Kids:</th>
+                <td>$265.24</td>
+              </tr>
+              <tr>
+                <th>Gender:</th>
+                <td>$265.24</td>
+              </tr>
+              <tr>
+                <th>Driver name:</th>
+                <td>$265.24</td>
+              </tr>
+              <tr>
+                <th>Driver Phone:</th>
+                <td>$265.24</td>
+              </tr>
+              <tr>
+                <th>Amount:</th>
+                <td>$265.24</td>
+              </tr>
+              <tr>
+                <th>Status:</th>
+                <td>$265.24</td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+          </div>
+      </div>
   </div>
+</div>
 
 @endsection
 @section('footerscript')

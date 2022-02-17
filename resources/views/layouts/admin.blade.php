@@ -235,7 +235,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('super-admin-istanbul-taxi')}}" class="nav-link">
-                            <i class="nav-icon fas fa-car"></i>
+                            <i class="nav-icon fas fa-taxi"></i>
                             <p>
                                 Taxi Booking
                             </p>
@@ -253,7 +253,19 @@
                             <p>Meet and Greet</p>
                             </a>
                         </li>
-                
+                        <li class="nav-item">
+                            <a href="{{route('super-admin-rent-car')}}" class="nav-link">
+                            <i class="nav-icon fas fa-car"></i>
+                            <p>Rent A Car</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('super-admin-lounge')}}" class="nav-link">
+                            <i class="nav-icon fas fa-home"></i>
+                            <p>Lounge</p>
+                            </a>
+                        </li>
+                        
                     </ul>
                     </nav>
                     <!-- /.sidebar-menu -->

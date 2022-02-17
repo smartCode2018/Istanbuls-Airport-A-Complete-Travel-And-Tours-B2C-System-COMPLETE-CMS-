@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use App\Models\CovidPCRTest;
+use DB;
 use Illuminate\Http\Request;
 
 class CovidPCRTestController extends Controller
@@ -55,7 +56,8 @@ class CovidPCRTestController extends Controller
     //admin finance functions
 
     public function getTestBookings(){
-        return view('admin.covid_pcr_table');
+        $covids = DB::select("select orders.*, covid_p_c_r_tests.* from orders join covid_p_c_r_tests ON orders.product_id = covid_p_c_r_tests.id ORDER BY orders.updated_at ASC");
+        return view('admin.covid_pcr_table', compact('covids'));
     }
 
 

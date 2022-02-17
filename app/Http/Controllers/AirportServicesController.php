@@ -66,7 +66,8 @@ class AirportServicesController extends Controller
     //admin finance functions
 
     public function getTaxiBookings(){
-        return view('admin.taxi_booking_table');
+        $taxi = DB::select("select orders.*, airport_services.* from orders join airport_services ON orders.product_id = airport_services.id ORDER BY orders.updated_at ASC");
+        return view('admin.taxi_booking_table', compact('taxi'));
     }
 
     /**

@@ -89,39 +89,16 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                                 </tr>
                             </thead>
                             <tbody>
+                              @foreach ($touristPass as $item)
                                 <tr>
-                                    <td>001</td>
-                                    <td>Justice</td>
-                                    <td>Kelechi</td>
-                                    <td>smartcode.kc@gmail.com</td>
-                                    <td>Turkey</td>
-                                    <td> 4</td>
-                                    <td> 4</td>
-                                    <td> 4</td>
-                                    <td><span class="badge badge-warning">Pending</span></td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-default"><i class="fas fa-table"></i></button>
-                                            <div class="btn-group">
-                                            <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-                                            </button>
-                                            <div class="dropdown-menu" style="">
-                                            <a class="dropdown-item" href="#" onclick="sAlert()">Dropdown link</a>
-                                            <a class="dropdown-item" href="#">Dropdown link</a>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                  <td>001</td>
-                                  <td>Justice</td>
-                                  <td>Kelechi</td>
-                                  <td>smartcode.kc@gmail.com</td>
-                                  <td>Turkey</td>
-                                  <td> 4</td>
-                                  <td> 4</td>
-                                  <td> 4</td>
+                                  <td>{{$item->id}}</td>
+                                  <td>{{$item->firstname}}</td>
+                                  <td>{{$item->lastname}}</td>
+                                  <td>{{$item->email}}</td>
+                                  <td>{{$item->nationality}}</td>
+                                  <td> {{$item->pass_type}}</td>
+                                  <td> {{$item->phone}}</td>
+                                  <td> {{$item->request_date}}</td>
                                   <td><span class="badge badge-danger">Canceled</span></td>
                                   <td>
                                       <div class="btn-group ">
@@ -138,70 +115,10 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                                           </div>
                                       </div>
                                   </td>
-                              </tr>
-                              <tr>
-                                <td>001</td>
-                                <td>Justice</td>
-                                <td>Kelechi</td>
-                                <td>smartcode.kc@gmail.com</td>
-                                <td>Turkey</td>
-                                <td> 4</td>
-                                <td> 4</td>
-                                <td> 4</td>
-                                <td><span class="badge badge-success">Completed</span></td>
-                                <td>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default"><i class="fas fa-table"></i></button>
-                                        <div class="btn-group">
-                                        <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-                                        </button>
-                                        <div class="dropdown-menu" style="">
-                                        <a class="dropdown-item" href="#" onclick="sAlert()">Dropdown link</a>
-                                        <a class="dropdown-item" href="#">Dropdown link</a>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                              <td>001</td>
-                              <td>Justice</td>
-                              <td>Kelechi</td>
-                              <td>smartcode.kc@gmail.com</td>
-                              <td>Turkey</td>
-                              <td> 4</td>
-                              <td> 4</td>
-                              <td> 4</td>
-                              <td><span class="badge badge-info">Active</span></td>
-                              <td>
-                                  <div class="btn-group">
-                                      <button type="button" class="btn btn-default"><i class="fas fa-table"></i></button>
-                                      <div class="btn-group">
-                                      <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-                                      </button>
-                                      <div class="dropdown-menu" style="">
-                                      <a class="dropdown-item" href="#" onclick="sAlert()">Dropdown link</a>
-                                      <a class="dropdown-item" href="#">Dropdown link</a>
-                                      </div>
-                                      </div>
-                                  </div>
-                              </td>
-                          </tr>
-                            <tfoot>
-                                <tr>
-                                  <th>BID</th>
-                                  <th>First Name</th>
-                                  <th>Last Name</th>
-                                  <th>Email</th>
-                                  <th>Country</th>
-                                  <th>Pass Type</th>
-                                  <th>Phone</th>
-                                  <th>Request date</th>
-                                  <th>status</th>
-                                  <th>Actions</th>
                                 </tr>
-                                </tfoot>
-                        </table>
+                              @endforeach
+                              
+                         </table>
                     </div>
                 </div>
             </div>
@@ -221,11 +138,11 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
 
   
 {{-- modal --}}
-<div class="modal fade" id="modal-lg">
+{{-- <div class="modal fade" id="modal-lg">
   <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
-              <h4 class="modal-title">Client Details - Booking ID : </h4>
+              <h4 class="modal-title">Client Details - Booking ID : {{$item->id}}</h4>
               
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -234,46 +151,45 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
           <div class="modal-body">
             <table class="table">
               <tr>
-                <th style="width:50%">Client Name:</th>
-                <td></td>
+                <th style="width:50%">Client Name: </th>
+                <td>{{$item->firstname}} {{$item->lastname}}</td>
               </tr>
               <tr>
                 <th style="width:50%">Email:</th>
-                <td></td>
+                <td>{{$item->email}}</td>
               </tr>
               <tr>
                 <th>Country:</th>
-                <td>$10.34</td>
+                <td>{{$item->nationality}}</td>
               </tr>
               <tr>
                 <th>Pass Type:</th>
-                <td>$5.80</td>
+                <td>{{$item->pass_type}}</td>
               </tr>
               <tr>
                 <th>Phone:</th>
-                <td>$265.24</td>
+                <td>{{$item->phone}}</td>
               </tr>
               <tr>
                 <th>request date:</th>
-                <td>$265.24</td>
+                <td>{{$item->request_date}}</td>
               </tr>
               <tr>
                 <th>Amount:</th>
-                <td>$265.24</td>
+                <td>{{$item->price}}</td>
               </tr>
               <tr>
                 <th>Status:</th>
-                <td>$265.24</td>
+                <td>{{$item->status}}</td>
               </tr>
             </table>
           </div>
           <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
           </div>
       </div>
   </div>
-</div>
+</div> --}}
 
 
 @endsection

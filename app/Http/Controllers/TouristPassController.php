@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use App\Models\TouristPass;
+use DB;
 use Illuminate\Http\Request;
 
 class TouristPassController extends Controller
@@ -79,11 +80,13 @@ class TouristPassController extends Controller
     //admin finance functions
 
     public function getPassBookings(){
-        return view('admin.tourist_pass_table');
+        $touristPass = DB::select("select orders.*, tourist_passes.* from orders join tourist_passes ON orders.product_id = tourist_passes.id ORDER BY orders.updated_at ASC");
+        return view('admin.tourist_pass_table', compact('touristPass'));
     }
 
     public function getToursBookings(){
-        return view('admin.tour_booking_table');
+        $tours = DB::select("select orders.*, tours.* from orders join tours ON orders.product_id = tours.id ORDER BY orders.updated_at ASC");
+        return view('admin.tour_booking_table', compact('tours'));
     }
 
     /**

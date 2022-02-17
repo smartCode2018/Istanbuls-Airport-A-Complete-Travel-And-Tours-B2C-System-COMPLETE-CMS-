@@ -81,7 +81,7 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                                     <th>Last Name</th>
                                     <th>Email</th>
                                     <th>Passport No</th>
-                                    <th>Country</th>
+                                    {{-- <th>Country</th> --}}
                                     <th>Country of Birth</th>
                                     <th>Place of Birth</th>
                                     <th>Gender</th>
@@ -90,33 +90,36 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>001</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td> Trident</td>
-                                    <td> Trident</td>
-                                    <td> 4</td>
-                                    <td> 4</td>
-                                    <td> 4</td>
-                                    <td> 4</td>
-                                    <td>X</td>
-                                    <td>
-                                      <div class="btn-group ">
-                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg"><i class="fas fa-table"></i></button>
-                                        <div class="btn-group">
-                                        <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-                                        </button>
-                                        <div class="dropdown-menu" style="">
-                                        <button class="dropdown-item btn-info mb-1" href="#" onclick="sAlert()">Active</button>
-                                        <button class="dropdown-item btn-danger mb-1" href="#">Canceled</button>
-                                        <button class="dropdown-item btn-success mb-1" href="#">Completed</button>
-                                        <button class="dropdown-item btn-warning" href="#">Pending</button>
-                                        </div>
-                                        </div>
-                                      </div>
-                                    </td>
-                                </tr>
+                              @foreach ($evisa as $item)
+                              <tr>
+                                <td>{{$item->product_id}}</td>
+                                <td>{{$item->firstname}}</td>
+                                <td>{{$item->lastname}}</td>
+                                <td>{{$item->email}}</td>
+                                <td>{{$item->passport_number}}</td>
+                                {{-- <td>{{$item->country}}</td> --}}
+                                <td> {{$item->country_of_birth}}</td>
+                                <td> {{$item->place_of_birth}}</td>
+                                <td> {{$item->gender}}</td>
+                                <td>{{$item->status}}</td>
+                                <td>
+                                  <div class="btn-group ">
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg"><i class="fas fa-table"></i></button>
+                                    <div class="btn-group">
+                                    <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                    </button>
+                                    <div class="dropdown-menu" style="">
+                                    <button class="dropdown-item btn-info mb-1" href="#" onclick="sAlert()">Active</button>
+                                    <button class="dropdown-item btn-danger mb-1" href="#">Canceled</button>
+                                    <button class="dropdown-item btn-success mb-1" href="#">Completed</button>
+                                    <button class="dropdown-item btn-warning" href="#">Pending</button>
+                                    </div>
+                                    </div>
+                                  </div>
+                                </td>
+                            </tr>
+                              @endforeach
+                            </tbody>
                             <tfoot>
                                 <tr>
                                   <th>BID</th>
@@ -124,7 +127,7 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                                   <th>Last Name</th>
                                   <th>Email</th>
                                   <th>Passport No</th>
-                                  <th>Country</th>
+                                  {{-- <th>Country</th> --}}
                                   <th>Country of Birth</th>
                                   <th>Place of Birth</th>
                                   <th>Gender</th>

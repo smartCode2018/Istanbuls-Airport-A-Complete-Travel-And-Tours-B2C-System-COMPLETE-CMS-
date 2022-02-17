@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use App\Models\MuseumPass;
+use DB;
 use Illuminate\Http\Request;
 
 class MuseumPassController extends Controller
@@ -54,7 +55,8 @@ class MuseumPassController extends Controller
     //admin finance functions
 
     public function getPassBookings(){
-        return view('admin.museum_pass_table');
+        $museum_pass = DB::select("select orders.*, museum_passes.* from orders join museum_passes ON orders.product_id = museum_passes.id ORDER BY orders.updated_at ASC");
+        return view('admin.museum_pass_table', compact('museum_pass'));
     }
 
     /**

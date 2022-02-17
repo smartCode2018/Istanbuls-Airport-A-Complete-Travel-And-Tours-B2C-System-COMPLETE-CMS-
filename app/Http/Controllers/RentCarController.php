@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\RentCar;
+use DB;
 use Illuminate\Http\Request;
 
 class RentCarController extends Controller
@@ -14,6 +15,7 @@ class RentCarController extends Controller
      */
     public function index()
     {
+        $rent_car = DB::select("select orders.*, rent_cars.* from orders join tours ON orders.product_id = rent_cars.id ORDER BY orders.updated_at ASC");
         //
     }
 

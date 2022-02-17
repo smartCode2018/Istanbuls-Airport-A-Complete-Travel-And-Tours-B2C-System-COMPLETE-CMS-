@@ -17,6 +17,7 @@ class CreateEvisasTable extends Migration
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
+            // $table->string('country');
             $table->string('country_of_birth');
             $table->string('place_of_birth');
             $table->date('dob');

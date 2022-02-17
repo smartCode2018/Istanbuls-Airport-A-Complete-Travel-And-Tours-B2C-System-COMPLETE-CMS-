@@ -23,8 +23,8 @@
                 </div>
             </div>
         </div>
-        <section id="content">
-            <div class="search-box-wrapper">
+        <section  id="content">
+            <div style="background-color:#fff5f6a6" class="search-box-wrapper">
                 <div class="search-box container">
                     <ul class="search-tabs clearfix text-custom-size">
                         <li class="active"><a href="#visit-istanbul-tab" data-toggle="tab">{{__('frontpage.vistIstanbul')}}</a></li>
@@ -589,7 +589,7 @@
                 </div>
             </div>
 
-            <div style="background: #e9e9e91f;">
+            <div style="background: #fff;">
                 <div style="padding-top: 30px !important"  class="container section">
                     <h2 style="font-size: 30px; text-align:center">{{__('frontpage.things')}} <span style="color: #E01514;" class="">{{__('frontpage.to')}} {{__('frontpage.do')}}</span></h2>
                     <div  class="tg-description text-center">
@@ -713,37 +713,39 @@
 						</div>
 					</div>
 			  </section> --}}
-
-			  <div class="section container tg-sectionspace">
-                <h2 style="font-size: 30px;">{{__('frontpage.explore')}} {{__('frontpage.our')}} <span style="color: #E01514;" class="fw-bold">{{__('frontpage.top')}} {{__('frontpage.destination')}}</span></h2>
-                <div class="row image-box hotel listing-style1">
-                    @foreach ($featured as $item)
-                        <div class="col-sms-6 col-sm-6 col-md-3">
-                            <article class="box">
-                                <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                    <a href="{{url(\Illuminate\Support\Str::slug(strtolower($item->name), '-'))}}" class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" style="max-height: 180px" src="{{asset('storage/'.$item->image)}}" alt=""></a>
-                                </figure>
-                                <div style="background: #ebebeb08;" class="details">
-                                    {{-- <span class="price">
-                                        <small>INTREST(S)</small>
-                                        {{$item->views}}
-                                    </span> --}}
-                                    <h4 class="box-title f-title">{{\Illuminate\Support\Str::limit($item->name, 20, $end='...')}}<small></small></h4>
-                                    <div style="padding-bottom: 10px !important;" class="feedback">
-                                        {{-- <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div> --}}
-                                        <span  class="review">{{$item->views}} Intrests</span>
+              <div class="row">
+                <div  class="section container tg-sectionspace">
+                    <h2 style="font-size: 30px;">{{__('frontpage.explore')}} {{__('frontpage.our')}} <span style="color: #E01514;" class="fw-bold">{{__('frontpage.top')}} {{__('frontpage.destination')}}</span></h2>
+                    <div class="row image-box hotel listing-style1">
+                        @foreach ($featured as $item)
+                            <div class="col-sms-6 col-sm-6 col-md-3">
+                                <article class="box">
+                                    <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                        <a href="{{url(\Illuminate\Support\Str::slug(strtolower($item->name), '-'))}}" class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" style="max-height: 180px" src="{{asset('storage/'.$item->image)}}" alt=""></a>
+                                    </figure>
+                                    <div style="background: #ebebeb08;" class="details">
+                                        {{-- <span class="price">
+                                            <small>INTREST(S)</small>
+                                            {{$item->views}}
+                                        </span> --}}
+                                        <h4 class="box-title f-title">{{\Illuminate\Support\Str::limit($item->name, 20, $end='...')}}<small></small></h4>
+                                        <div style="padding-bottom: 10px !important;" class="feedback">
+                                            {{-- <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div> --}}
+                                            <span  class="review">{{$item->views}} Intrests</span>
+                                        </div>
+                                        <p class="description">{{ \Illuminate\Support\Str::limit($item->description, 50, $end='...') }}</p>
+                                        <div class="action">
+                                            <a href="{{url(\Illuminate\Support\Str::slug(strtolower($item->name), '-'))}}" class="button btn-small red">{{__('frontpage.read')}} {{__('frontpage.more')}}</a>
+                                            {{-- <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a> --}}
+                                        </div>
                                     </div>
-                                    <p class="description">{{ \Illuminate\Support\Str::limit($item->description, 50, $end='...') }}</p>
-                                    <div class="action">
-                                        <a href="{{url(\Illuminate\Support\Str::slug(strtolower($item->name), '-'))}}" class="button btn-small red">{{__('frontpage.read')}} {{__('frontpage.more')}}</a>
-                                        {{-- <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a> --}}
-                                    </div>
-                                </div>
-                            </article>
-                        </div>                    
-                    @endforeach         
+                                </article>
+                            </div>                    
+                        @endforeach         
+                    </div>
                 </div>
-            </div>
+              </div>
+			  
 
         </section>
     <div class="global-map-area section parallax" data-stellar-background-ratio="0.5">
