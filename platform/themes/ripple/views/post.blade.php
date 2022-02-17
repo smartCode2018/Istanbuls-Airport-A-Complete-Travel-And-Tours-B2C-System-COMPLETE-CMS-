@@ -29,6 +29,28 @@
         @endif
         {!! clean($post->content) !!}
         <div class="fb-like" data-href="{{ Request::url() }}" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+        <br>
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+        
+            */
+            var disqus_config = function () {
+            this.page.url = 'https://demo-istanbulsairport-com.disqus.com/{{$post->id}}';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = '{{$post->id}}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+        
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://demo-istanbulsairport-com.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">.</a></noscript>  
     </div>
     @php $relatedPosts = get_related_posts($post->id, 2); @endphp
 
@@ -56,4 +78,6 @@
     @endif
     <br>
     {!! apply_filters(BASE_FILTER_PUBLIC_COMMENT_AREA, theme_option('facebook_comment_enabled_in_post', 'yes') == 'yes' ? Theme::partial('comments') : null) !!}
+    <br>
+    
 </article>
