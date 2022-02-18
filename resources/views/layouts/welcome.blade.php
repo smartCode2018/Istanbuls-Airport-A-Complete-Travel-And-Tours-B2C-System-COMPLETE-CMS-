@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{{-- Code by Justice Kelechi aka smartcode --}}
 <!--[if IE 8]>          <html class="ie ie8"> <![endif]-->
 <!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
 <!--[if gt IE 9]><!--><html dir="{{__('frontpage.page-dir')}}" lang="page-lang"> <!--<![endif]-->
@@ -502,6 +503,7 @@
  });
 })(jQuery);
 </script>
+{{-- Code by Justice Kelechi aka smartcode --}}
 </body>
 </html>
 

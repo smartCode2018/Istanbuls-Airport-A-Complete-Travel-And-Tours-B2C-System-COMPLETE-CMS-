@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{{-- Code by Justice kelechi aka smartcode --}}
 <!--[if IE 7]><html class="ie ie7" lang="{{ app()->getLocale() }}"><![endif]-->
 <!--[if IE 8]><html class="ie ie8" lang="{{ app()->getLocale() }}"><![endif]-->
 <!--[if IE 9]><html class="ie ie9" lang="{{ app()->getLocale() }}"><![endif]-->

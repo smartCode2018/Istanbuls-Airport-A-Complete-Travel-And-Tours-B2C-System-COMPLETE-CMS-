@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{{-- Code by Justice Kelechi aka smartcode --}}
 <html lang="en">
     <head>
         <title>Finance Dashboard</title>
@@ -311,4 +312,5 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../../dist/js/pages/dashboard2.js"></script>
     </body>
+    {{-- Code by Justice Kelechi aka smartcode --}}
 </html>

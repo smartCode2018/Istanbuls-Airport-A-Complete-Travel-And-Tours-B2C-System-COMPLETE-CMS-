@@ -58,4 +58,5 @@
 {!! Theme::footer() !!}
 
 </body>
+{{-- Code by Justice Kelechi aka smartcode --}}
 </html>
