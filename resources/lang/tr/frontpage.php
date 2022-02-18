@@ -41,7 +41,6 @@ return [
     'selectType' => 'SELECT TYPE',
     'DropOfLocation' => 'DROP OFF LOCATION',
     'PickUpLocation' => 'PICK UP LOCATION',
-    'flightStatus' => 'Search For Flight Detail',
     'adults' => 'ADULTS',
     'kids' => 'KIDS',
     'continue' => 'CONTINUE',

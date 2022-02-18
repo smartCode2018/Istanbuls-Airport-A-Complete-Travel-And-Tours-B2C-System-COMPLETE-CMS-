@@ -42,7 +42,7 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                     <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-shopping-cart"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Total Bookings</span>
-                        <span class="info-box-number">760</span>
+                        <span class="info-box-number">{{$bookings}}</span>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                     <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-coins"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Total Amount</span>
-                        <span class="info-box-number">760</span>
+                        <span class="info-box-number">{{isset($amount->total)? $amount->total : 0 }}</span>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                     <span class="info-box-icon bg-success elevation-1"><i class="fas fa-check"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">Total Completed</span>
-                        <span class="info-box-number">760</span>
+                        <span class="info-box-number">{{isset($paid->total)? $paid->total : 0 }}</span>
                     </div>
                 </div>
             </div>
@@ -109,10 +109,9 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
                                     <button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
                                     </button>
                                     <div class="dropdown-menu" style="">
-                                    <button class="dropdown-item btn-info mb-1" href="#" onclick="sAlert()">Active</button>
-                                    <button class="dropdown-item btn-danger mb-1" href="#">Canceled</button>
-                                    <button class="dropdown-item btn-success mb-1" href="#">Completed</button>
-                                    <button class="dropdown-item btn-warning" href="#">Pending</button>
+                                      <button class="dropdown-item btn-success mb-1"  onclick="sAlert({{$item->product_id}}, 'paid')">Paid</button>
+                                      <button class="dropdown-item btn-danger mb-1"  onclick="sAlert({{$item->product_id}}, 'cancelled')">Cancel</button>
+                                      <button class="dropdown-item btn-warning"  onclick="sAlert({{$item->product_id}}, 'pending')">Pending</button>
                                     </div>
                                     </div>
                                   </div>
@@ -251,6 +250,9 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
           </div>
       </div>
   </div>
+  <form name='token'>
+    @csrf 
+  </form>
 </div>
 
 @endsection
@@ -290,21 +292,43 @@ a.dataLayer=a.dataLayer||[],a.zaraz.track=(e,t)=>{for(key in a.zarazData.tracks.
   });
 </script>
 <script>
-    const sAlert = () => {
+    const sAlert = (id, status) => {
+      let ulink = document.location.origin+'/super-admin/evisa'
+      let _token = document.querySelector("form[name='token'] input[name='_token']").value;
+      
         swal({
             title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
+            text: "You want to modify this field",
             icon: "warning",
             buttons: true,
             dangerMode: true,
             })
             .then((willDelete) => {
             if (willDelete) {
-                swal("Poof! Your imaginary file has been deleted!", {
-                icon: "success",
+                
+                //update db
+                $.ajax({
+                  url: ulink,
+                  type:"POST",
+                  data:{
+                    id:id,
+                    status:status,
+                    _token: _token
+                  },
+                  success:function(response){
+                    swal("Product status updated sucessfully", {
+                    icon: "success",
+                    });
+                    
+                  },
+                  error: function(error) {
+                  console.log(error);
+                  }
                 });
+
+                
             } else {
-                swal("Your imaginary file is safe!");
+                swal("Action Teminated");
             }
             });
     }

@@ -50,7 +50,6 @@ return [
     'departure' => 'Departure',
     'domestic' => 'Domestic',
     'international' => 'INTERNATIONAL',
-    'flightStatus' => 'Search For Flight Detail',
     'flight' => 'Flight',
     'city' => 'City',
     'type' => 'Type',

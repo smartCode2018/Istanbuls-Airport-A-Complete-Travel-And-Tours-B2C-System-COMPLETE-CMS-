@@ -14,7 +14,7 @@ return [
     */
 
     // Page settings
-    'font-family' => "font-family: 'Lato', sans-serif;",
+    'font-family' => "font-family: 'Roboto', sans-serif;",
     'page-dir' =>'',
     'page-lang' => 'en',
     'ajax-lang' => '/en',
@@ -44,7 +44,6 @@ return [
     'PickUpLocation' => 'PICK UP LOCATION',
     'adults' => 'ADULTS',
     'kids' => 'KIDS',
-    'flightStatus' => 'Search For Flight Detail',
     'continue' => 'CONTINUE',
     'for' => 'for',
     'things-to-do' => 'Things To Do',

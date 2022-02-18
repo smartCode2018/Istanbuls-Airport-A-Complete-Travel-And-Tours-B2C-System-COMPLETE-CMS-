@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use App\Models\CovidPCRTest;
+use App\Models\Order;
 use DB;
 use Illuminate\Http\Request;
 
@@ -56,8 +57,17 @@ class CovidPCRTestController extends Controller
     //admin finance functions
 
     public function getTestBookings(){
-        $covids = DB::select("select orders.*, covid_p_c_r_tests.* from orders join covid_p_c_r_tests ON orders.product_id = covid_p_c_r_tests.id ORDER BY orders.updated_at ASC");
-        return view('admin.covid_pcr_table', compact('covids'));
+        $bookings = DB::table('covid_p_c_r_tests')->get()->count();
+        $paid = DB::select("select sum(orders.price) as total, covid_p_c_r_tests.id from orders join covid_p_c_r_tests ON orders.product_id = covid_p_c_r_tests.id where orders.product_id = covid_p_c_r_tests.id and orders.status = 'paid' group by covid_p_c_r_tests.id");
+        $amount = DB::select("select sum(orders.price) as total, covid_p_c_r_tests.id from orders join covid_p_c_r_tests ON orders.product_id = covid_p_c_r_tests.id where orders.product_id = covid_p_c_r_tests.id group by covid_p_c_r_tests.id");
+        
+        $covids = DB::select("select orders.*, covid_p_c_r_tests.* from orders join covid_p_c_r_tests ON orders.product_id = covid_p_c_r_tests.id where orders.product_id = covid_p_c_r_tests.id ORDER BY orders.updated_at ASC");
+        return view('admin.covid_pcr_table', compact('covids','bookings','paid','amount'));
+    }
+
+    public function updateTestBookings(Request $request){
+        DB::table('orders')->where('product_id', $request->id)->update(['status'=>$request->status]);
+        return true;
     }
 
 

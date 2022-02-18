@@ -9256,7 +9256,7 @@ ul.search-tabs li.active a {
 }
 .search-box .bx-wrapper .bx-controls-direction a {
     width: 30px;
-    height: 22px;
+    height: 30px;
     margin-top: -11px;
 }
 .search-box .bx-wrapper .bx-controls-direction a.disabled {
@@ -9268,7 +9268,7 @@ ul.search-tabs li.active a {
     display: block;
     position: absolute;
     text-indent: 0;
-    line-height: 20px;
+    line-height: 28px;
     text-align: center;
     width: 30px;
     color: #fff;
@@ -14061,12 +14061,13 @@ body {
 .banner-action-btn {
     background: #e01514;
     color: #fff;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 20px;
     padding-right: 20px;
     margin-top: 25px !important;
     font-weight: bold;
+    font-size: 18px;
 }
 .banner-action-btn:hover {
     border-style: solid !important;
@@ -14254,7 +14255,7 @@ body {
 }
 
 .text-custom-size {
-    font-size: 13px !important;
+    font-size: 16px !important;
 }
 
 .f-input-custom-style {
@@ -14291,7 +14292,7 @@ body {
 }
 
 .imgmenu {
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .btn-x-img {
@@ -14304,4 +14305,8 @@ body {
     padding: 15px;
     color: #fff;
     height: 50px;
+}
+
+.mlinkfont {
+    font-family: "Lato", Arial, Helvetica, sans-serif;
 }

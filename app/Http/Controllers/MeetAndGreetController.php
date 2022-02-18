@@ -72,17 +72,44 @@ class MeetAndGreetController extends Controller
     //admin finance functions
 
     public function getMGABookings(){
-        $mga = DB::select("select orders.*, meet_and_greets.* from orders join meet_and_greets ON orders.product_id = meet_and_greets.id ORDER BY orders.updated_at ASC");
-        return view('admin.mga_table', compact('mga'));
+        $bookings = DB::table('meet_and_greets')->get()->count();
+        $paid = DB::select("select sum(orders.price) as total, meet_and_greets.id from orders join meet_and_greets ON orders.product_id = meet_and_greets.id where orders.product_id = meet_and_greets.id and orders.status = 'paid' group by meet_and_greets.id");
+        $amount = DB::select("select sum(orders.price) as total, meet_and_greets.id from orders join meet_and_greets ON orders.product_id = meet_and_greets.id where orders.product_id = meet_and_greets.id group by meet_and_greets.id");
+        
+        $mga = DB::select("select orders.*, meet_and_greets.* from orders join meet_and_greets ON orders.product_id = meet_and_greets.id where orders.product_id = meet_and_greets.id ORDER BY orders.updated_at ASC");
+        return view('admin.mga_table', compact('mga','amount','paid','bookings'));
     } 
     public function getLoungeBookings(){
-        $lounge = DB::select("select orders.*, lounges.* from orders join lounges ON orders.product_id = lounges.id ORDER BY orders.updated_at ASC");
-        return view('admin.lounge_table', compact('lounge')); 
+        $bookings = DB::table('lounges')->get()->count();
+        $paid = DB::select("select sum(orders.price) as total, lounges.id from orders join lounges ON orders.product_id = lounges.id where orders.product_id = lounges.id and orders.status = 'paid' group by lounges.id");
+        $amount = DB::select("select sum(orders.price) as total, lounges.id from orders join lounges ON orders.product_id = lounges.id where orders.product_id = lounges.id group by lounges.id");
+        
+        $lounge = DB::select("select orders.*, lounges.* from orders join lounges ON orders.product_id = lounges.id where orders.product_id = lounges.id ORDER BY orders.updated_at ASC");
+        return view('admin.lounge_table', compact('lounge','amount','paid','bookings')); 
     } 
     public function getRentCarBookings(){
-        $rentCar = DB::select("select orders.*, rent_cars.* from orders join rent_cars ON orders.product_id = rent_cars.id ORDER BY orders.updated_at ASC");
-        return view('admin.rent_car_table', compact('rentCar'));
-    } 
+        $bookings = DB::table('rent_cars')->get()->count();
+        $paid = DB::select("select sum(orders.price) as total, rent_cars.id from orders join rent_cars ON orders.product_id = rent_cars.id where orders.product_id = rent_cars.id and orders.status = 'paid' group by rent_cars.id");
+        $amount = DB::select("select sum(orders.price) as total, rent_cars.id from orders join rent_cars ON orders.product_id = rent_cars.id where orders.product_id = rent_cars.id group by rent_cars.id");
+        
+        $rentCar = DB::select("select orders.*, rent_cars.* from orders join rent_cars ON orders.product_id = rent_cars.id where orders.product_id = rent_cars.id ORDER BY orders.updated_at ASC");
+        return view('admin.rent_car_table', compact('rentCar','amount','paid','bookings'));
+    }
+    
+    public function updateMGABookings(Request $request){
+        DB::table('orders')->where('product_id', $request->id)->update(['status'=>$request->status]);
+        return true;
+    }
+
+    public function updateLoungeBookings(Request $request){
+        DB::table('orders')->where('product_id', $request->id)->update(['status'=>$request->status]);
+        return true;
+    }
+
+    public function updateRentCarBookings(Request $request){
+        DB::table('orders')->where('product_id', $request->id)->update(['status'=>$request->status]);
+        return true;
+    }
 
     
 

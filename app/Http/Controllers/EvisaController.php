@@ -70,8 +70,17 @@ class EvisaController extends Controller
     //admin finance functions
 
     public function getEvisaBookings(){
-        $evisa = DB::select("select orders.*, evisas.* from orders join evisas ON orders.product_id = evisas.id ORDER BY orders.updated_at ASC");
-        return view('admin.evisa_table', compact('evisa'));
+
+        $bookings = DB::table('evisas')->get()->count();
+        $paid = DB::select("select sum(orders.price) as total, evisas.id from orders join evisas ON orders.product_id = evisas.id where orders.product_id = evisas.id and orders.status = 'paid' group by evisas.id");
+        $amount = DB::select("select sum(orders.price) as total, evisas.id from orders join evisas ON orders.product_id = evisas.id where orders.product_id = evisas.id group by evisas.id");
+        $evisa = DB::select("select orders.*, evisas.* from orders join evisas ON orders.product_id = evisas.id where orders.product_id = evisas.id ORDER BY orders.updated_at ASC");
+        return view('admin.evisa_table', compact('evisa','amount','paid','bookings'));
+    }
+
+    public function updateEvisaBookings(Request $request){
+        DB::table('orders')->where('product_id', $request->id)->update(['status'=>$request->status]);
+        return true;
     }
 
 

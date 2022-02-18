@@ -4,17 +4,17 @@
 @endsection
 
         @section('content')
-        <div style="background-image: url('{{asset('images/assets/slider/6.jpg')}}');
+    <div style="background-image: url('{{asset('images/assets/slider/6.jpg')}}');
         background-size: cover;" id="slideshow">
             <div class="fullwidthbanner-container">
                 <div style="padding-top: 160px; padding-bottom: 150px;" class="container">
                 	<div class="row" >
 								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									<div  class="bg-dark" >
-										<h1 style=" margin-bottom: 10px; font-size: 50px; font-weight: bold; color:#000;" >{{__('frontpage.bannerTitle')}}</h1>
+										<h1 style=" margin-bottom: 10px; font-size: 50px; font-weight: bold; color:#000;" ><strong>{{__('frontpage.bannerTitle')}}</strong></h1>
 										<h2 style="margin-bottom: 40px; font-weight:bold; font-size: 25px; font-family: 'Mulish', sans-serif; color: rgb(46, 46, 46);;">{{__('frontpage.bannerSubtitle')}}</h2>
-										<div style=" !important;">
-											<a style="font-size: 18px;"  href="#" class="banner-action-btn fw-bold">{{__('frontpage.bannerBtn')}}</a>
+										<div style="">
+											<a  href="#" class="banner-action-btn fw-bold">{{__('frontpage.bannerBtn')}}</a>
 										</div>
 									</div>
 									
@@ -35,9 +35,9 @@
                         <li><a href="#covid-tab" data-toggle="tab">{{__('frontpage.covid-19')}}</a></li>   
                         {{-- <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li> --}}
                     </ul>
-                    <div class="visible-mobile">
-                        <ul id="mobile-search-tabs" class="search-tabs clearfix">
-                            <li class="active"><a href="#visit-istanbul-tab">{{__('frontpage.vistIstanbul')}}</a></li>
+                    <div class="visible-mobile" >
+                        <ul id="mobile-search-tabs" class="search-tabs clearfix" >
+                            <li  class="active"><a href="#visit-istanbul-tab">{{__('frontpage.vistIstanbul')}}</a></li>
                             <li><a href="#airport-service-tab">{{__('frontpage.airportAccess')}}</a></li>
                             <li ><a href="#flight-status-tab">{{__('frontpage.flightStatus')}}</a></li>
                             <li><a href="#premium-service-tab">{{__('frontpage.premiumService')}}</a></li>
@@ -271,7 +271,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <h1 style="text-align:center">{{__('frontpage.meet-and-greet')}}</h1>
-                                        <div style="background: #adadad05; padding-top:10px;" class="row">
+                                        <div  class="row">
                                             <div  class="row image-box style5">
                                                 <div class="col-sm-4">
                                                     <article class="box">
@@ -295,24 +295,6 @@
                                                 <div class="col-sm-4">
                                                     <article class="box">
                                                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                                            <a style="max-height:160px;" title="" href="{{route('vip-pass-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/3.jpg')}}"></a>
-                                                            <figcaption class="entry-date">
-                                                                <h3 class="caption-title">BOOK NOW</h3>
-                                                                {{-- <span>3 activities</span> --}}
-                                                            </figcaption>
-                                                        </figure>
-                                                        <div class="details">
-                                                            <div class="detail">
-                                                                {{-- <span class="price"><small>Fee</small>€250</span> --}}
-                                                                <h3 class="box-title"><a href="{{route('mga-booking', 'transfer')}}"><strong style="text-transform: uppercase">VIP PASS PACKAGE</strong> </a></h3>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </article>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <article class="box">
-                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
                                                             <a style="max-height:160px;" title="" href="{{route('lounge-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/3.jpg')}}"></a>
                                                             <figcaption class="entry-date">
                                                                 <h3 class="caption-title">BOOK NOW</h3>
@@ -328,10 +310,30 @@
                                                         
                                                     </article>
                                                 </div>
+
                                                 <div class="col-sm-4">
                                                     <article class="box">
                                                         <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                                            <a style="max-height:160px;" title="" href="{{route('covid-pcr-test-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/3.jpg')}}"></a>
+                                                            <a style="max-height:160px;" title="" href="{{route('vip-pass-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/2.jpg')}}"></a>
+                                                            <figcaption class="entry-date">
+                                                                <h3 class="caption-title">BOOK NOW</h3>
+                                                                {{-- <span>3 activities</span> --}}
+                                                            </figcaption>
+                                                        </figure>
+                                                        <div class="details">
+                                                            <div class="detail">
+                                                                {{-- <span class="price"><small>Fee</small>€250</span> --}}
+                                                                <h3 class="box-title"><a href="{{route('mga-booking', 'transfer')}}"><strong style="text-transform: uppercase">VIP PASS PACKAGE</strong> </a></h3>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </article>
+                                                </div>
+                                                
+                                                <div class="col-sm-4">
+                                                    <article class="box">
+                                                        <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                                            <a style="max-height:160px;" title="" href="{{route('covid-pcr-test-booking')}}"><img width="370" height="160" alt="" src="{{asset('images/assets/others/covid.jpg')}}"></a>
                                                             <figcaption class="entry-date">
                                                                 <h3 class="caption-title">BOOK NOW</h3>
                                                                 {{-- <span>3 activities</span> --}}
@@ -361,7 +363,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <h1 style="text-align:center"><strong>{{__('frontpage.vistIstanbulHeader')}}</strong></h1>
-                                        <div style="background: #adadad05; padding-top:10px;" class="row">
+                                        <div  class="row">
                                             <div  class="row image-box style5">
                                                 <div class="col-sm-4">
                                                     <article class="box">
@@ -713,8 +715,8 @@
 						</div>
 					</div>
 			  </section> --}}
-              <div class="row">
-                <div  class="section container tg-sectionspace">
+              <div>
+                <div style="padding: 0px 0px 50px 0px;" class="section container">
                     <h2 style="font-size: 30px;">{{__('frontpage.explore')}} {{__('frontpage.our')}} <span style="color: #E01514;" class="fw-bold">{{__('frontpage.top')}} {{__('frontpage.destination')}}</span></h2>
                     <div class="row image-box hotel listing-style1">
                         @foreach ($featured as $item)

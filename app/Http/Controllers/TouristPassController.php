@@ -80,13 +80,30 @@ class TouristPassController extends Controller
     //admin finance functions
 
     public function getPassBookings(){
-        $touristPass = DB::select("select orders.*, tourist_passes.* from orders join tourist_passes ON orders.product_id = tourist_passes.id ORDER BY orders.updated_at ASC");
-        return view('admin.tourist_pass_table', compact('touristPass'));
+        $bookings = DB::table('tourist_passes')->get()->count();
+        $paid = DB::select("select sum(orders.price) as total, tourist_passes.id from orders left join tourist_passes ON orders.product_id = tourist_passes.id where orders.product_id = tourist_passes.id and orders.status = 'paid' group by tourist_passes.id ");
+        $amount = DB::select("select sum(orders.price) as total, tourist_passes.id from orders join tourist_passes ON orders.product_id = tourist_passes.id where orders.product_id = tourist_passes.id group by tourist_passes.id");
+        $touristPass = DB::select("select orders.*, tourist_passes.* from orders join tourist_passes ON orders.product_id = tourist_passes.id where orders.product_id = tourist_passes.id ORDER BY orders.updated_at ASC");
+        return view('admin.tourist_pass_table', compact('touristPass','amount','paid','bookings'));
     }
 
     public function getToursBookings(){
-        $tours = DB::select("select orders.*, tours.* from orders join tours ON orders.product_id = tours.id ORDER BY orders.updated_at ASC");
-        return view('admin.tour_booking_table', compact('tours'));
+        $bookings = DB::table('tours')->get()->count();
+        $paid = DB::select("select sum(orders.price) as total, tours.id from orders join tours ON orders.product_id = tours.id where orders.product_id = tours.id and orders.status = 'paid' group by tours.id");
+        $amount = DB::select("select sum(orders.price) as total, tours.id from orders join tours ON orders.product_id = tours.id where orders.product_id = tours.id group by tours.id");
+        
+        $tours = DB::select("select orders.*, tours.* from orders join tours ON orders.product_id = tours.id where orders.product_id = tours.id ORDER BY orders.updated_at ASC");
+        return view('admin.tour_booking_table', compact('tours','amount','paid','bookings'));
+    }
+
+    public function updatePassBookings(Request $request){
+        DB::table('orders')->where('product_id', $request->id)->update(['status'=>$request->status]);
+        return true;
+    }
+
+    public function updateToursBookings(Request $request){
+        DB::table('orders')->where('product_id', $request->id)->update(['status'=>$request->status]);
+        return true;
     }
 
     /**

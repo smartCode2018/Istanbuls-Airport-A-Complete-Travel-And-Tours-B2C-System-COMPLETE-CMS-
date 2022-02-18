@@ -157,8 +157,8 @@
 
         </script>
         <!-- Javascript Page Loader -->
-    <script type="text/javascript" src="js/pace.min.js" data-pace-options='{ "ajax": true }'></script>
-    <script type="text/javascript" src="js/page-loading.js"></script>
+    {{-- <script type="text/javascript" src="js/pace.min.js" data-pace-options='{ "ajax": true }'></script>
+    <script type="text/javascript" src="js/page-loading.js"></script> --}}
 
         {{-- @livewireStyles --}}
     </head>
@@ -213,7 +213,7 @@
 
             <div class="container">
                 <h1 class="logo navbar-brand">
-                    <a href="index.html" title="Istanbul Airport - home">
+                    <a href="/" title="Istanbul Airport - home">
                         <img style="height: 60px !important; width:150px !important;" class="img-responsive" src="{{asset('images/logo/logo.png')}}" alt="Istanbuls Airport" />
                     </a>
                 </h1>
@@ -221,14 +221,14 @@
                 <nav id="main-menu" role="navigation">
                     <ul class="menu">
                         <li class="f-title text-custom-size">
-                            <a href="{{ route('home') }}"><b>{{__('frontpage.home')}}</b></a>
+                            <a class="mlinkfont" href="{{ route('home') }}"><b>{{__('frontpage.home')}}</b></a>
                         </li>
                         @foreach (\Botble\Menu\Models\MenuNode::where('position', '>', 0)->get() as $item)
                         @if ($item->title == 'Contact')  
                         @else
                         <li  class="text-custom-size">
                         {{-- <a href="{{ url($item->url) }}">{{$item->title}}</a> --}}
-                        <a href="{{ url($item->url) }}">
+                        <a class="mlinkfont" href="{{ url($item->url) }}">
                         @php
                             if($item->title == 'Airport Access'){
                                echo  __('frontpage.airportAccess');

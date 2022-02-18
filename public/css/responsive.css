@@ -503,6 +503,8 @@
 
     .visible-mobile .search-tabs {
         display: block !important;
+        height: 55px !important;
+        font-size: 20px !important;
     }
 
     .search-box .search-tab-content {

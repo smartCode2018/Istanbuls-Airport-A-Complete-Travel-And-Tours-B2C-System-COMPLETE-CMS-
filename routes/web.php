@@ -61,14 +61,23 @@ Route::put('/covid19-pcr-booking', [CovidPCRTestController::class, 'store'])->na
 Route::middleware(['adminfinance'])->group(function(){
     Route::get('/super-admin/dashboard', [AdminDashboardController::class, 'index'])->name('super-admin-dashboard');
     Route::get('/super-admin/tourist-pass', [TouristPassController::class, 'getPassBookings'])->name('super-admin-tourist-pass');
+    Route::post('/super-admin/tourist-pass', [TouristPassController::class, 'updatePassBookings']);
     Route::get('/super-admin/museum-pass', [MuseumPassController::class, 'getPassBookings'])->name('super-admin-museum-pass');
+    Route::post('/super-admin/museum-pass', [MuseumPassController::class, 'updatePassBookings']);
     Route::get('/super-admin/istanbul-tours', [TouristPassController::class, 'getToursBookings'])->name('super-admin-istanbul-tours');
+    Route::post('/super-admin/istanbul-tours', [TouristPassController::class, 'updateToursBookings']);
     Route::get('/super-admin/covidpcr-test', [CovidPCRTestController::class, 'getTestBookings'])->name('super-admin-covidpcr-test');
+    Route::post('/super-admin/covidpcr-test', [CovidPCRTestController::class, 'updateTestBookings']);
     Route::get('/super-admin/istanbul-taxi', [AirportServicesController::class, 'getTaxiBookings'])->name('super-admin-istanbul-taxi');
+    Route::post('/super-admin/istanbul-taxi', [AirportServicesController::class, 'updateTaxiBookings']);
     Route::get('/super-admin/evisa', [EvisaController::class, 'getEvisaBookings'])->name('super-admin-evisa');
+    Route::post('/super-admin/evisa', [EvisaController::class, 'updateEvisaBookings']);
     Route::get('/super-admin/meet-and-greet', [MeetAndGreetController::class, 'getMGABookings'])->name('super-admin-mga');
+    Route::post('/super-admin/meet-and-greet', [MeetAndGreetController::class, 'updateMGABookings']);
     Route::get('/super-admin/rent-car', [MeetAndGreetController::class, 'getRentCarBookings'])->name('super-admin-rent-car');
+    Route::post('/super-admin/rent-car', [MeetAndGreetController::class, 'updateRentCarBookings']);
     Route::get('/super-admin/lounge', [MeetAndGreetController::class, 'getLoungeBookings'])->name('super-admin-lounge');
+    Route::post('/super-admin/lounge', [MeetAndGreetController::class, 'updateLoungeBookings']);
 });
 
 

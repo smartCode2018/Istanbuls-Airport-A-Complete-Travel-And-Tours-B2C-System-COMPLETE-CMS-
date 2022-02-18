@@ -30,10 +30,10 @@
                 <h3>{{$totalTouristPass}}</h3>
                 <h6>Tourist Pass Bookings</h6>
               </div>
-                <div class="icon">
+                <div class="icon"> 
                   <i class="fas fa-shopping-cart"></i>
                 </div>
-              <a href="{route('super-admin-tourist-pass')}}" class="small-box-footer">
+              <a href="{{route('super-admin-tourist-pass')}}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -172,7 +172,7 @@
                         <tr>
                           <td><a href="pages/examples/invoice.html">{{$tour->id}}</a></td>
                           <td>{{$tour->firstname }} {{$tour->lastname}}</td>
-                          <td><span class="badge <?php($tour->status == 'pending')?'badge-warning':($tour->status == 'paid')?'badge-success':($tour->status == 'cancelled')? 'badge-danger' : '' ?>">{{$tour->status}}</span></td>
+                          <td><span class="badge <?php($tour->status == 'pending')?'badge-warning':(($tour->status == 'paid')?'badge-success': 'badge-danger') ?>">{{$tour->status}}</span></td>
                           <td>
                             <div class="sparkbar" data-color="#00a65a" data-height="20">{{$tour->price}}</div>
                           </td>

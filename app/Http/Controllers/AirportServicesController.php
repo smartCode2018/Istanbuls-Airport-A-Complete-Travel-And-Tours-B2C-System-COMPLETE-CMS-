@@ -66,8 +66,16 @@ class AirportServicesController extends Controller
     //admin finance functions
 
     public function getTaxiBookings(){
-        $taxi = DB::select("select orders.*, airport_services.* from orders join airport_services ON orders.product_id = airport_services.id ORDER BY orders.updated_at ASC");
-        return view('admin.taxi_booking_table', compact('taxi'));
+        $bookings = DB::table('airport_services')->get()->count();
+        $paid = DB::select("select sum(orders.price) as total, airport_services.id from orders join airport_services ON orders.product_id = airport_services.id where orders.product_id = airport_services.id and orders.status = 'paid' group by airport_services.id");
+        $amount = DB::select("select sum(orders.price) as total, airport_services.id from orders join airport_services ON orders.product_id = airport_services.id where orders.product_id = airport_services.id group by airport_services.id");
+        $taxi = DB::select("select orders.*, airport_services.* from orders join airport_services ON orders.product_id = airport_services.id where orders.product_id = airport_services.id ORDER BY orders.updated_at ASC");
+        return view('admin.taxi_booking_table', compact('taxi','bookings','paid','amount'));
+    }
+
+    public function updateTaxiBookings(Request $request){
+        DB::table('orders')->where('product_id', $request->id)->update(['status'=>$request->status]);
+        return true;
     }
 
     /**

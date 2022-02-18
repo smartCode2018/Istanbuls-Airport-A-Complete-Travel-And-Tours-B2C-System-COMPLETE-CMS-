@@ -55,8 +55,17 @@ class MuseumPassController extends Controller
     //admin finance functions
 
     public function getPassBookings(){
-        $museum_pass = DB::select("select orders.*, museum_passes.* from orders join museum_passes ON orders.product_id = museum_passes.id ORDER BY orders.updated_at ASC");
-        return view('admin.museum_pass_table', compact('museum_pass'));
+        $bookings = DB::table('museum_passes')->get()->count();
+        $paid = DB::select("select sum(orders.price) as total, museum_passes.id from orders join museum_passes ON orders.product_id = museum_passes.id where orders.product_id = museum_passes.id and orders.status = 'paid' group by museum_passes.id");
+        $amount = DB::select("select sum(orders.price) as total, museum_passes.id from orders join museum_passes ON orders.product_id = museum_passes.id where orders.product_id = museum_passes.id group by museum_passes.id");
+        
+        $museum_pass = DB::select("select orders.*, museum_passes.* from orders join museum_passes ON orders.product_id = museum_passes.id where orders.product_id = museum_passes.id ORDER BY orders.updated_at ASC");
+        return view('admin.museum_pass_table', compact('museum_pass','amount','paid','bookings'));
+    }
+
+    public function updatePassBookings(Request $request){
+        DB::table('orders')->where('product_id', $request->id)->update(['status'=>$request->status]);
+        return true;
     }
 
     /**
